@@ -1,0 +1,143 @@
+%-------------------------------------------------------------------------------
+% Resume — Prakhar Gupta
+% Compile on Overleaf with pdfLaTeX
+%-------------------------------------------------------------------------------
+\documentclass[a4paper,9pt]{extarticle}
+
+%--- Packages ---
+\usepackage[top=0.15in, bottom=0.15in, left=0.35in, right=0.35in]{geometry}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage[export]{adjustbox}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[unicode, draft=false]{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks, breaklinks, urlcolor=linkcolour, linkcolor=linkcolour}
+
+%--- Section formatting ---
+\titleformat{\section}{\normalsize\bfseries\uppercase}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{2pt}{1pt}
+
+%--- Bullet list ---
+\newenvironment{cvlist}{%
+  \begin{itemize}[nosep, leftmargin=1.2em, itemsep=0.5pt, topsep=1pt, label=\textbullet, after=\vspace{2pt}]
+}{%
+  \end{itemize}
+}
+
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+
+%===============================================================================
+\begin{document}
+\pagestyle{empty}
+
+%--- HEADER ---
+\pdfbookmark[1]{Header}{header}
+{\centering
+{\LARGE\textbf{Prakhar Gupta}} \\[2pt]
+{\normalsize Full-Stack Developer | Open Source Contributor} \\[2pt]
+\adjustbox{max width=\linewidth}{\small
+\href{tel:+918175846122}{+91 81758 46122} $|$
+\href{mailto:prakhar06.work@gmail.com}{prakhar06.work@gmail.com} $|$
+\href{https://github.com/prx-my}{github.com/prx-my} $|$
+\href{https://x.com/_prxmy}{x.com/\_prxmy} $|$
+\href{https://linkedin.com/in/Prakharrdev}{linkedin.com/in/Prakharrdev} $|$
+\href{https://www.prxmy.in/}{prxmy.in}}\par
+}
+
+\vspace{4pt}
+
+%--- OPEN SOURCE ---
+\section{Open Source}
+\noindent\textbf{Sugar Labs (musicblocks-v4)} -- \textbf{Open Source Contributor} | \href{https://github.com/sugarlabs/musicblocks-v4/pull/646}{\small [PR \#646]} \hfill \textbf{Jul 2026 -- Present}\\[1pt]
+\noindent\textit{TypeScript, SVG Geometry}
+\begin{cvlist}
+  \item  Fixed SVG renderer geometry bugs by correcting stroke calculations and path-generation logic, resolving visual distortions across the MusicBlocks UI toolkit, merged by maintainer within 3 hours.\end{cvlist}
+
+\noindent\textbf{FaceGate-Mac} -- \textbf{macOS Face-Auth App Locker} | \href{https://github.com/dweep-desai/FaceGate-Mac}{\small [Code]} | \href{https://dweep-desai.github.io/FaceGate-web/}{\small [Web]} | \href{https://github.com/dweep-desai/FaceGate-Mac/releases/tag/v1.2.0}{\small [Release]} \hfill \textbf{Jun 2026 -- Present}\\[1pt]
+\noindent\textit{Swift, AVFoundation, AppKit}
+\begin{cvlist}
+  \item  Contributed 3 merged PRs to a 300+ star macOS face-auth locker delivering security hardening (emergency kill toggle), concurrency fixes (camera race condition), and persistent overlay architecture with app-window mode — featured in v1.2.0 release.\end{cvlist}
+
+%--- EXPERIENCE ---
+\section{Experience}
+
+% ---------- QMax ----------
+\noindent\textbf{QMax QCom Optimizer} -- \textbf{Freelance AI Engineer} \textit{(US Based Client)} \hfill \textbf{May 2026}\\[1pt]
+\textbf{Architected an 8-agent ad-optimization platform replacing manual analysis across 4 Q-commerce apps.}\\[1pt]
+\noindent\textit{Next.js, FastAPI, Prophet, Supabase, DuckDB, Claude, GPT-4o, DeepSeek}
+\begin{cvlist}
+\item Designed and delivered a full-stack multi-agent platform from scratch, reducing manual analysis workflows from days to seconds.
+\item  Built a 3-tier LLM fallback chain with governed chatbot workflows, improving reliability during API/model failures while keeping raw data secure.
+  \item  Delivered a 14-page dashboard with sub-second queries on a 3-tier storage stack (Postgres + DuckDB), consolidating 4 siloed platforms into a single analytical view.
+\end{cvlist}
+
+% ---------- Home Tutor ----------
+\noindent\textbf{Home Tutor Platform} -- \textbf{Freelance Full-Stack Developer} \textit{(Contract)} | \href{https://abha.prakhargupta.me/}{\small [Live]} \hfill \textbf{May 2026 -- Jun 2026}\\[1pt]
+\textbf{Delivered an SEO-optimized web platform with admin controls and a 3-channel lead capture system.}\\[1pt]
+\noindent\textit{Next.js, NextAuth, Supabase, Resend, Tailwind CSS}
+\begin{cvlist}
+  \item \textbf{Full-Stack Build:} Developed a 9-page public site and 12-section admin dashboard, enabling a non-technical client to manage SEO and content independently.
+  \item \textbf{Backend Abstraction:} Engineered CRUD API powering 12 admin sections with role-based auth, eliminating massive code duplication.
+  \item \textbf{Growth Architecture:} Deployed database-driven SEO metadata and dynamic sitemaps, generating direct leads through a unified WhatsApp + Email pipeline.
+\end{cvlist}
+
+% ---------- Bits & Bytes ----------
+\noindent\textbf{Bits \& Bytes} -- \textbf{Back-End Developer Intern} | \href{https://github.com/Prakharrdev/bitsnbytes-discord-utility}{\small [Code]} \hfill \textbf{Apr 2026 -- May 2026}\\[1pt]
+\textbf{Developed a full-stack Discord utility bot for a 1,000-member tech community, automating onboarding workflows, meeting scheduling with voice orchestration, audio transcription, and role-based access control.}\\[1pt]\noindent\textit{Node.js, discord.js, SQLite, Notion API, Docker, FFmpeg}
+\begin{cvlist}
+  \item \textbf{Platform Migration:} Redesigned the architecture with Docker and self-registering slash commands, eliminating deployment failures.
+  \item \textbf{Centralized Auth \& Storage:} Implemented role-based authorization gateways and hybrid SQLite+Notion storage, significantly reducing API latency.
+  \item \textbf{Meeting System:} Built an end-to-end meeting scheduler with FFmpeg audio merging for live, timestamped transcripts.
+\end{cvlist}
+
+%--- PROJECTS ---
+\section{Projects}
+
+% ========== RailMind ==========
+\noindent\textbf{RailMind} -- \textbf{Train Conflict Resolution Engine} | \href{https://github.com/Prakharrdev/railmind}{\small [Code]} | \href{https://railmind.perkkk.dev}{\small [Live]} \hfill \textbf{Jun 2026}\\[1pt]
+\textbf{Beam-search planning engine that reduces train priority conflicts across a 437km simulated corridor.}\\[1pt]
+\noindent\textit{Python, FastAPI, NetworkX, React, WebSockets, SQLite}
+\begin{cvlist}
+  \item \textbf{Planning Algorithm:} Implemented a beam-search engine that cuts passenger-delay costs by \textbf{10.07\%} over FCFS dispatch with only \textbf{23ms} planner latency.
+  \item \textbf{Robust Testing:} Built a disruption-injection system for 3 real-world failure types, rigorously validating the engine across 50 simulated corridor scenarios.
+  \item \textbf{Explainability:} Developed a real-time WebSocket React dashboard with an interactive decision-tree visualizer, transforming black-box AI into transparent recommendations.
+  \item \textbf{Real-World Validation:} Presented prototype to Khajuraho Railway Station Master and received positive feedback. \href{https://x.com/prakharbuildss/status/2074232602010263635}{\small [Post]}
+\end{cvlist}
+
+% ========== JanSamadhan ==========
+\noindent\textbf{JanSamadhan} -- \textbf{Civic Grievance Platform} | \href{https://jansamadhan.perkkk.dev}{\small [Live]} | \href{https://github.com/Prakharrdev/ps-crmdev1}{\small [Code]} | \href{https://youtu.be/JvkJd1MAV3M}{\small [Demo]} \hfill \textbf{Mar 2026}\\[1pt]
+\textbf{Grievance routing platform piloted with a Delhi ward and winner at India Innovates '26.}\\[1pt]
+\noindent\textit{FastAPI, Next.js, PostgreSQL/PostGIS, Redis, Gemini AI, WhatsApp Cloud API, GCP}
+\begin{cvlist}
+  \item \textbf{AI Intake Pipeline:} Built a multilingual Gemini chatbot classifying complaints across 43 categories with auto-severity and authority routing at ~3 paise per inference, paired with a full WhatsApp conversational flow supporting 10 Indian languages, image-first intake, and 20m spatial deduplication before ticket creation.
+  \item \textbf{Database Architecture:} Designed an 8-table PostgreSQL schema with ENUM-enforced state machines, 28 Row-Level Security policies for department-isolated access, and PostGIS spatial indexes keeping ward-level queries under 100ms.
+  \item \textbf{Computer Vision:} Deployed an ONNX-optimized YOLOv8 model at 20ms inference on GCP Cloud Run for automatic civic issue detection from CCTV feeds.
+\end{cvlist}
+
+%--- TECHNICAL SKILLS ---
+\section{Technical Skills} 
+\noindent\textbf{Languages:} Python, TypeScript, JavaScript, Swift, SQL, HTML/CSS, C++  \\[1pt]
+\noindent\textbf{Frontend / Backend:} React, Next.js, Node.js, FastAPI, Tailwind CSS, REST APIs, WebSockets, NextAuth, discord.js \\[1pt]
+\noindent\textbf{AI / ML:} Multi-Agent Systems, LLM Orchestration, Gemini AI, Prophet, NetworkX. \\[1pt]
+\noindent\textbf{Data / DevOps:} PostgreSQL/PostGIS, SQLite, Redis, DuckDB, Docker, CI/CD, GCP, Railway/Render \\[1pt]
+\noindent\textbf{Tools / Platforms:} Git, FFmpeg, WhatsApp Cloud API, Supabase
+
+%--- ACHIEVEMENTS ---
+\section{Achievements}
+\noindent\textbf{India Innovates '26 -- National Grand Finale Winner:} JanSamadhan civic grievance platform \hfill \href{https://www.linkedin.com/posts/manipal-university-jaipur_manipaluniversityjaipur-indiainnovates2026-ugcPost-7450213112731049984-a94A}{\small [Post]}\\[1pt]
+\noindent\textbf{InnovateNSUT '26 -- 1st Place:} Leafline, a civic issue reporter \hfill \href{https://www.linkedin.com/posts/prakharrdev_hackathon-civictech-fullstackdevelopment-activity-7424364658448363521-RG4Y}{\small [Post]}
+
+%--- EDUCATION ---
+\section{Education}
+\noindent\textbf{Manipal University Jaipur} -- \textit{Bachelor of Technology in Computer Science \& Engineering} \hfill \textbf{Expected Graduation: May 2029}
+
+\end{document}
