@@ -1,3 +1,5 @@
+import { AwsLogo } from "@/components/aws-logo";
+import { Scribble } from "@/components/scribble";
 import { OpenSource } from "@/components/open-source";
 import { Projects } from "@/components/projects";
 import { Arrow, ExtLink, Section } from "@/components/ui";
@@ -35,6 +37,29 @@ export default function Home() {
               </li>
             ))}
           </ul>
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <a
+              href="/resume"
+              className="group relative inline-flex items-center gap-1 self-center text-sm font-medium"
+            >
+              Resume <span aria-hidden className="text-faint">↗</span>
+              <Scribble />
+            </a>
+            <a
+              href="/aws~env"
+              aria-label="Open the aws~env page"
+              className="group relative inline-flex items-center gap-2 opacity-80 transition-opacity hover:opacity-100 focus-visible:opacity-100"
+            >
+              <AwsLogo small />
+              <Scribble flip />
+              <span
+                aria-hidden
+                className="text-faint transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-ink"
+              >
+                ↗
+              </span>
+            </a>
+          </div>
         </div>
         <div
           aria-hidden
