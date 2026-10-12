@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
 import { AwsLogo } from "@/components/aws-logo";
 import { SocialIcon, type SocialKind } from "@/components/social-icon";
+import { awsVideo } from "@/content";
 
 export const metadata: Metadata = {
   title: "aws~env",
   robots: { index: false },
 };
-
-// Paste the YouTube video ID (the part after `v=`) here. Empty shows a placeholder.
-const VIDEO_ID = "YWgCT_omVGM";
 
 const people: {
   name: string;
@@ -70,24 +68,26 @@ export default function AwsEnv() {
       </header>
 
       <div className="mt-10 grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-12">
-      <div className="aspect-video w-full overflow-hidden rounded-lg border border-line bg-beige">
-        {VIDEO_ID ? (
+      <div>
+        <div className="aspect-video w-full overflow-hidden rounded-lg border border-line bg-beige">
           <iframe
-            src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}`}
-            title="Video preview"
+            src={`https://www.youtube-nocookie.com/embed/${awsVideo.id}`}
+            title={awsVideo.title}
             loading="lazy"
             allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
             allowFullScreen
             referrerPolicy="strict-origin-when-cross-origin"
             className="size-full"
           />
-        ) : (
-          <div className="flex size-full items-center justify-center p-6 text-center">
-            <p className="font-mono text-xs tracking-wide text-faint uppercase">
-              No video added yet
-            </p>
-          </div>
-        )}
+        </div>
+        <p className="mt-3 text-sm">
+          <a
+            href="/aws~env/video"
+            className="link text-muted transition-colors hover:text-ink focus-visible:text-ink"
+          >
+            Full screen <span aria-hidden className="text-faint">↗</span>
+          </a>
+        </p>
       </div>
 
       <nav aria-label="People" className="min-w-0">

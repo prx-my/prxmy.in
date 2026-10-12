@@ -71,6 +71,11 @@ export const profile = {
   ] satisfies Link[],
 };
 
+export const awsVideo = {
+  id: "YWgCT_omVGM",
+  title: "EcoAudit: See Your Code's Energy, CO₂ and Water Footprint",
+};
+
 export const about: string[] = [
   "I build client websites at Schrader, a digital marketing agency in Michigan, and contribute to open source in my spare time: 9 merged PRs at OWASP, 5 at Sugar Labs.",
   "Most of my own projects are civic tools for Delhi. The latest, JanSamadhan, routes complaints to 10 city authorities and won the India Innovates '26 grand finale.",
