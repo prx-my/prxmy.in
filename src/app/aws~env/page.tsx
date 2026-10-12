@@ -15,7 +15,7 @@ const people: {
 }[] = [
   {
     name: "Prakhar",
-    href: "/resume",
+    href: "/resume.pdf",
     socials: {
       github: "https://github.com/prx-my",
       linkedin: "https://www.linkedin.com/in/prxmy/",
@@ -35,7 +35,7 @@ const people: {
   },
   {
     name: "Shrey",
-    href: "/aws~env/shrey-resume.pdf",
+    href: "/shrey/resume.pdf",
     socials: {
       github: "https://github.com/MrPanda009",
       linkedin: "https://www.linkedin.com/in/shrey-singh-70898237b/",
@@ -44,7 +44,7 @@ const people: {
   },
   {
     name: "Shreyas",
-    href: "/aws~env/shreyas-resume.pdf",
+    href: "/shreyas/resume.pdf",
     socials: {
       github: "https://github.com/shryssssss-maker",
       linkedin: "https://www.linkedin.com/in/shreyas-singh-bbbb20384/",
