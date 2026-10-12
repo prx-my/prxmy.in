@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 // Paste the YouTube video ID (the part after `v=`) here. Empty shows a placeholder.
-const VIDEO_ID = "";
+const VIDEO_ID = "YWgCT_omVGM";
 
 const people: {
   name: string;
