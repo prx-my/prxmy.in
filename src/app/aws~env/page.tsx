@@ -82,7 +82,7 @@ export default function AwsEnv() {
         </div>
         <p className="mt-3 text-sm">
           <a
-            href="/aws~env/video"
+            href="/aws-env/video"
             className="link text-muted transition-colors hover:text-ink focus-visible:text-ink"
           >
             Full screen <span aria-hidden className="text-faint">↗</span>

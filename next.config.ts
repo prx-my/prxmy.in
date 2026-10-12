@@ -2,6 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
+  async redirects() {
+    return [{ source: "/aws~env/video", destination: "/aws-env/video", permanent: false }];
+  },
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {
