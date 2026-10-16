@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Newsreader } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { profile } from "@/content";
 import "./globals.css";
 
@@ -38,7 +39,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${newsreader.variable} antialiased`}
     >
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
