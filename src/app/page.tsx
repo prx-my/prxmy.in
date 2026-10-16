@@ -5,6 +5,7 @@ import { Projects } from "@/components/projects";
 import { Arrow, ExtLink, Section } from "@/components/ui";
 import {
   about,
+  booking,
   education,
   experience,
   openSource,
@@ -52,6 +53,18 @@ export default function Home() {
             >
               <AwsLogo small />
               <Scribble flip />
+              <span
+                aria-hidden
+                className="text-faint transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-ink"
+              >
+                ↗
+              </span>
+            </a>
+            <a
+              href="/book"
+              className="group inline-flex items-center gap-1 text-sm text-muted transition-colors hover:text-ink focus-visible:text-ink"
+            >
+              {booking.navLabel}
               <span
                 aria-hidden
                 className="text-faint transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-ink"

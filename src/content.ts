@@ -71,6 +71,21 @@ export const profile = {
   ] satisfies Link[],
 };
 
+export const booking = {
+  navLabel: "Book a call",
+  eyebrow: "Booking",
+  headline: "Book a call",
+  intro:
+    "Pick a slot and it lands on my calendar with a Google Meet link. I'm in Jaipur, so times are shown in yours.",
+  // Cal.com event type slug to preselect. Must be one of the non-hidden event
+  // types on the account; ignored if it isn't there.
+  preferredSlug: "30min",
+  empty: "Nothing open in the next two weeks.",
+  fallback: "Nothing that works?",
+  confirmed: "You're on the calendar. A confirmation with the Google Meet link is on its way to you.",
+  another: "Book another time",
+};
+
 export const awsVideo = {
   id: "YWgCT_omVGM",
   title: "EcoAudit: See Your Code's Energy, CO₂ and Water Footprint",
