@@ -2,6 +2,7 @@ import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { socialImage } from "@/lib/metadata";
+import { profile } from "@/content";
 
 export const alt = socialImage.alt;
 export const size = { width: 1200, height: 630 };
@@ -16,9 +17,9 @@ export default async function OpenGraphImage() {
   return new ImageResponse(
     <div style={{ display: "flex", width: "100%", height: "100%", background: "#f2ebdc", color: "#191714", fontFamily: "Geist", borderTop: "8px solid #c13529", padding: "48px", position: "relative" }}>
       <div style={{ display: "flex", flexDirection: "column", width: 660, paddingTop: 8 }}>
-        <div style={{ display: "flex", fontSize: 20, letterSpacing: 4, color: "#ad2c24", marginBottom: 44 }}>PRXMY.IN</div>
+        <div style={{ display: "flex", fontFamily: "Bodoni", fontWeight: 900, fontSize: 36, lineHeight: 1, letterSpacing: -2, marginBottom: 32 }}>{profile.brand}<span style={{ color: "#c13529" }}>.</span></div>
         <div style={{ display: "flex", fontFamily: "Bodoni", fontWeight: 900, fontSize: 108, lineHeight: .95, letterSpacing: -5 }}>PRAKHAR</div>
-        <div style={{ display: "flex", fontFamily: "Bodoni", fontWeight: 900, fontSize: 108, lineHeight: .95, letterSpacing: -5 }}>GUPTA<span style={{ color: "#c13529" }}>.</span></div>
+        <div style={{ display: "flex", fontFamily: "Bodoni", fontWeight: 900, fontSize: 108, lineHeight: .95, letterSpacing: -5 }}>GUPTA</div>
         <div style={{ display: "flex", fontSize: 27, marginTop: 30 }}>Backend & full-stack developer</div>
         <div style={{ display: "flex", height: 1, background: "#191714", width: 590, marginTop: 36, marginBottom: 22 }} />
         <div style={{ display: "flex", fontSize: 19, color: "#696055" }}>Client work · Open source · Independent builds</div>

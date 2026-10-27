@@ -16,7 +16,7 @@ export function pageMetadata({ title, description, path }: { title: string; desc
     title,
     description,
     alternates: { canonical: path },
-    openGraph: { title: fullTitle, description, url: path, siteName: profile.name, locale: "en_IN", type: "website", images: [socialImage] },
+    openGraph: { title: fullTitle, description, url: path, siteName: `${profile.brand} · ${profile.name}`, locale: "en_IN", type: "website", images: [socialImage] },
     twitter: { card: "summary_large_image", creator: "@_prxmy", title: fullTitle, description, images: [socialImage] },
   };
 }

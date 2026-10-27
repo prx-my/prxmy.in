@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <circle cx="32" cy="32" r="31" fill="#efeae0" stroke="#e4ddcf" stroke-width="2"/>
-  <text x="32" y="42" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="27" fill="#161513">PG</text>
+  <rect width="64" height="64" rx="12" fill="#f2ebdc"/>
+  <path d="M24 -500V-461H165V881H24V920H545V658Q577 793 656.5 865.5Q736 938 856 938Q965 938 1062.0 881.0Q1159 824 1220.0 717.0Q1281 610 1281 460Q1281 310 1220.0 202.5Q1159 95 1062.0 37.5Q965 -20 856 -20Q737 -20 657.0 53.0Q577 126 545 262V-461H684V-500ZM755 53Q789 53 810.0 92.5Q831 132 841.0 221.0Q851 310 851 460Q851 610 841.0 698.5Q831 787 810.0 825.5Q789 864 755 864Q711 864 662.0 819.0Q613 774 579.0 684.5Q545 595 545 460Q545 324 579.0 233.5Q613 143 662.0 98.0Q711 53 755 53Z" transform="translate(11.282 39.049) scale(0.02990 -0.02990)" fill="#191714"/>
+  <circle cx="48" cy="42" r="4" fill="#c13529"/>
 </svg>

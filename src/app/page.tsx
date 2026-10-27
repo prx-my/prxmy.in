@@ -13,6 +13,7 @@ import { GitHubActivity } from "@/components/github-activity";
 import { Feedback } from "@/components/feedback";
 import { VisitorCounter } from "@/components/visitor-counter";
 import { homeStructuredData, serializeJsonLd } from "@/lib/structured-data";
+import { Wordmark } from "@/components/wordmark";
 
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 
@@ -27,7 +28,7 @@ export default async function Home() {
       <a href="#main" className="skip-link">Skip to content</a>
       <header className="noir-header page-width">
         <div className="noir-masthead">
-          <a className="noir-wordmark" href="#main" aria-label="Prakhar Gupta, home">PG<span>.</span></a>
+          <a className="noir-wordmark" href="#main" aria-label="prxmy — Prakhar Gupta, home"><Wordmark /></a>
           <nav aria-label="Main navigation"><a href="#projects">The work</a><a href="#about">About</a><a href="#open-source">Open source</a><a href="#contact">Contact</a></nav>
           <div className="masthead-tools"><QuickNavigation items={portfolio.index}/><ThemeToggle/></div>
         </div>
@@ -35,7 +36,7 @@ export default async function Home() {
       <main id="main">
         <section className="noir-hero page-width" aria-labelledby="hero-heading">
           <div className="hero-copy">
-            <h1 id="hero-heading"><span>Prakhar</span>{" "}<span>Gupta<span className="red-period">.</span></span></h1>
+            <h1 id="hero-heading"><span>Prakhar</span>{" "}<span>Gupta</span></h1>
             <p className="hero-role">{profile.role}</p>
             <div className="hero-buttons"><TextButton href="#projects" variant="red">View the work</TextButton><TextButton href="/resume" variant="outline">Résumé</TextButton></div>
             <div className="hero-secondary"><a href="/book" className="link">{booking.navLabel}<Arrow/></a><span aria-hidden="true">/</span><a href="/aws~env" className="link">The AWS project<Arrow/></a></div>
@@ -72,7 +73,7 @@ export default async function Home() {
         <section id="experience" className="noir-section page-width" aria-labelledby="experience-heading">
           <div id="experience-heading"><SectionTitle title="Experience"/></div>
           <div className="experience-layout">
-            <div className="experience-timeline">{experience.map(job=><article key={job.org}><p className="eyebrow job-date">{job.period}</p><h3>{job.href ? <ExtLink href={job.href}>{job.org}<Arrow/></ExtLink> : job.org}</h3><p className="job-role">{job.role}</p><p className="job-place">{job.place}</p><ul className="experience-points">{job.points.map(point=><li key={point}>{point}</li>)}</ul>{job.links && <ul className="client-links">{job.links.map(link=><li key={link.href}><ExtLink href={link.href}>{link.label}<Arrow/></ExtLink></li>)}</ul>}<p className="data-note">Agency outcomes are curated separately from public GitHub activity.</p></article>)}</div>
+            <div className="experience-timeline">{experience.map(job=><article key={job.org}><p className="eyebrow job-date">{job.period}</p><h3>{job.href ? <ExtLink href={job.href}>{job.org}<Arrow/></ExtLink> : job.org}</h3><p className="job-role">{job.role}</p><p className="job-place">{job.place}</p><ul className="experience-points">{job.points.map(point=><li key={point}>{point}</li>)}</ul>{job.links && <ul className="client-links">{job.links.map(link=><li key={link.href}><ExtLink href={link.href}>{link.label}<Arrow/></ExtLink></li>)}</ul>}</article>)}</div>
             <aside className="client-note"><span className="note-pin" aria-hidden="true"/><Feedback quote={feedback.client}/></aside>
           </div>
         </section>
@@ -97,10 +98,10 @@ export default async function Home() {
             <div className="contact-copy"><p>{portfolio.contactIntro}</p><TextButton href="/book" variant="red">{booking.navLabel}</TextButton><ExtLink href={`mailto:${profile.email}`} className="contact-email">{profile.email}<Arrow/></ExtLink></div>
             <WebLines className="contact-web"/>
           </div>
-          <footer className="page-width noir-footer"><span className="footer-mark">PG.</span><p>© 2026 Prakhar Gupta · Jaipur, India</p><ul>{profile.links.map(link=><li key={link.label}><ExtLink href={link.href}>{link.label}<Arrow/></ExtLink></li>)}</ul><a href="#main" className="back-top" aria-label="Back to top">↑</a></footer>
-          <VisitorCounter />
         </section>
+        <VisitorCounter />
       </main>
+      <footer className="page-width noir-footer"><span className="footer-mark"><Wordmark /></span><p>© 2026 Prakhar Gupta · Jaipur, India</p><ul>{profile.links.map(link=><li key={link.label}><ExtLink href={link.href}>{link.label}<Arrow/></ExtLink></li>)}</ul><a href="#main" className="back-top" aria-label="Back to top">↑</a></footer>
     </div>
   );
 }
