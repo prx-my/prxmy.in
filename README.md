@@ -19,6 +19,16 @@ The previous reference-based design was committed as `da506ae` before the redesi
 
 The keyboard index opens with its button or Cmd/Ctrl+K, supports search and arrow keys, and closes with Escape. Disclosure lists remain native controls; motion respects reduced-motion preferences. Featured work begins with EcoAudit, JanSamadhan and RailMind.
 
+## Sharing, analytics, and visitors
+
+`/opengraph-image` generates a 1200×630 social card using the portfolio artwork and bundled, OFL-licensed Bodoni and Geist fonts. Open Graph and X/Twitter large-image metadata use the canonical `https://www.prxmy.in` domain. The custom `not-found.tsx` covers unmatched URLs and missing projects, with a noindex tag and links back to the work.
+
+Vercel Web Analytics is mounted once in the root layout and enabled on the existing Vercel project. The footer uses the official Analytics `visits/count` API's **visitors** field, separately from page views. Counts follow Vercel's anonymized daily visitor methodology; they are not an all-time count of distinct people.
+
+Set a dedicated, server-only `VERCEL_ANALYTICS_TOKEN` in Vercel Production to refresh the total hourly. Redeploy after adding the variable. The token is sent only to Vercel's API and is never passed to the browser. A timeout, invalid response, missing token, or API failure preserves the last verified total, with its actual count-through date visible in the footer.
+
+`src/data/visitors.json` is a real, sanitized Analytics snapshot. Refresh it using your existing local Vercel CLI login with `npm run visitors:refresh`; this writes only totals and timestamps and does not copy the CLI credential into the app. Official API reference: [Vercel Web Analytics API](https://vercel.com/docs/analytics/web-analytics-api).
+
 This checkout is `noir-site`, separate from the workspace's `portfolio-site` copy and résumé drafts. For a preview alongside another checkout, use `npm run dev -- --port 3002`.
 
 ## Environment

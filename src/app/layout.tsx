@@ -33,11 +33,21 @@ export const metadata: Metadata = {
   metadataBase: new URL(profile.site),
   title: `${profile.name}, ${profile.role}`,
   description: profile.summary,
+  applicationName: "Prakhar Gupta",
   openGraph: {
-    title: profile.name,
+    title: `${profile.name} · ${profile.role}`,
     description: profile.summary,
     url: profile.site,
-    type: "profile",
+    siteName: "Prakhar Gupta",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    creator: "@_prxmy",
+    title: `${profile.name} · ${profile.role}`,
+    description: profile.summary,
+    images: [{ url: "/opengraph-image", alt: "Prakhar Gupta — Backend & Full-Stack Developer" }],
   },
 };
 

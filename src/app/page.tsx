@@ -11,6 +11,7 @@ import { Arrow, ExtLink } from "@/components/ui";
 import { OpenSource } from "@/components/open-source";
 import { GitHubActivity } from "@/components/github-activity";
 import { Feedback } from "@/components/feedback";
+import { VisitorCounter } from "@/components/visitor-counter";
 
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 
@@ -95,6 +96,7 @@ export default async function Home() {
             <WebLines className="contact-web"/>
           </div>
           <footer className="page-width noir-footer"><span className="footer-mark">PG.</span><p>© 2026 Prakhar Gupta · Jaipur, India</p><ul>{profile.links.map(link=><li key={link.label}><ExtLink href={link.href}>{link.label}<Arrow/></ExtLink></li>)}</ul><a href="#main" className="back-top" aria-label="Back to top">↑</a></footer>
+          <VisitorCounter />
         </section>
       </main>
     </div>

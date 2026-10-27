@@ -19,3 +19,7 @@ licenses. next-themes handles theme persistence. The local calendar, GitHub data
 reader, booking integration and personal content remain part of this portfolio.
 
 The original art prompt and design choices are recorded in [DESIGN.md](DESIGN.md).
+
+## Social card fonts
+
+The social card bundles small subsets of Bodoni Moda by Indestructible Type and Geist by Vercel, obtained from Google Fonts. They are distributed under the SIL Open Font License; the full licenses are included in `src/assets/fonts/OFL.txt` and `src/assets/fonts/OFL-Geist.txt`. The JPEG social-card illustration is an optimized derivative of this portfolio’s original `the-night-shift.webp` artwork.
