@@ -2,12 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Booking } from "@/components/booking";
 import { booking, profile } from "@/content";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: booking.navLabel,
-  description: booking.intro,
-  alternates: { canonical: "/book" },
-};
+export const metadata: Metadata = pageMetadata({ title: booking.navLabel, description: booking.intro, path: "/book" });
 
 export default function Book() {
   return (

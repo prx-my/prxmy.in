@@ -155,6 +155,7 @@ export function Booking() {
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (!eventTypeId || !slot || submitting) return;
+    const website = new FormData(event.currentTarget).get("website");
 
     setSubmitting(true);
     setFormError(null);
@@ -163,7 +164,7 @@ export function Booking() {
       const res = await fetch("/api/cal/bookings", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ eventTypeId, start: slot, timeZone, name, email, notes }),
+        body: JSON.stringify({ eventTypeId, start: slot, timeZone, name, email, notes, website }),
       });
       const data: { booking?: CalBooking; error?: string } = await res.json();
 
@@ -355,6 +356,14 @@ export function Booking() {
             className={`${field} resize-y`}
           />
         </label>
+
+        {/* Honeypot: hidden from people and assistive tech, filled in by form bots. */}
+        <div aria-hidden="true" className="absolute -left-[9999px] size-px overflow-hidden">
+          <label>
+            Website
+            <input name="website" tabIndex={-1} autoComplete="off" defaultValue="" />
+          </label>
+        </div>
 
         <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
           <button

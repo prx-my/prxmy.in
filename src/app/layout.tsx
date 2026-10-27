@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bodoni_Moda, Geist, Geist_Mono, Newsreader } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { profile } from "@/content";
+import { socialImage } from "@/lib/metadata";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
@@ -31,7 +32,7 @@ const bodoni = Bodoni_Moda({
 
 export const metadata: Metadata = {
   metadataBase: new URL(profile.site),
-  title: `${profile.name}, ${profile.role}`,
+  title: { default: `${profile.name}, ${profile.role}`, template: `%s · ${profile.name}` },
   description: profile.summary,
   applicationName: profile.brand,
   openGraph: {
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
     creator: "@_prxmy",
     title: `${profile.name} · ${profile.role}`,
     description: profile.summary,
-    images: [{ url: "/opengraph-image", alt: "Prakhar Gupta — Backend & Full-Stack Developer" }],
+    images: [socialImage],
   },
 };
 

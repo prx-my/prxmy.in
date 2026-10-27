@@ -6,6 +6,7 @@ import { Arrow, ExtLink } from "@/components/ui";
 import { Technology } from "@/components/technology";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { ProjectVisual } from "@/components/project-visual";
+import { pageMetadata } from "@/lib/metadata";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -15,11 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const project = projects.find((item) => item.slug === slug);
   if (!project) notFound();
-  return {
-    title: `${project.name} · Prakhar Gupta`, description: project.summary,
-    alternates: { canonical: `/projects/${project.slug}` },
-    openGraph: { title: `${project.name} · Prakhar Gupta`, description: project.summary, type: "website" },
-  };
+  return pageMetadata({ title: project.name, description: project.summary, path: `/projects/${project.slug}` });
 }
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {

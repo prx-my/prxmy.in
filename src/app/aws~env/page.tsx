@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { AwsLogo } from "@/components/aws-logo";
 import { SocialIcon, type SocialKind } from "@/components/social-icon";
 import { awsVideo } from "@/content";
+import { pageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "aws~env",
+  ...pageMetadata({ title: "aws~env", description: `${awsVideo.title}. The team behind EcoAudit at WeMakeDevs × AWS Environmental Hacks.`, path: "/aws~env" }),
   robots: { index: false },
 };
 

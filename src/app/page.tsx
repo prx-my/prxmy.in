@@ -12,6 +12,7 @@ import { OpenSource } from "@/components/open-source";
 import { GitHubActivity } from "@/components/github-activity";
 import { Feedback } from "@/components/feedback";
 import { VisitorCounter } from "@/components/visitor-counter";
+import { homeStructuredData, serializeJsonLd } from "@/lib/structured-data";
 import { Wordmark } from "@/components/wordmark";
 
 export const metadata: Metadata = { alternates: { canonical: "/" } };
@@ -23,6 +24,7 @@ export default async function Home() {
 
   return (
     <div className="noir-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(homeStructuredData()) }} />
       <a href="#main" className="skip-link">Skip to content</a>
       <header className="noir-header page-width">
         <div className="noir-masthead">
