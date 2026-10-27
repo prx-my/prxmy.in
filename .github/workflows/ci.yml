@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      # Without GITHUB_TOKEN or CAL_API_KEY the site falls back to its committed snapshots.
+      - name: Smoke test the production build
+        run: |
+          npx next start -p 3000 &
+          for i in $(seq 1 30); do curl -sf http://localhost:3000/robots.txt > /dev/null && break; sleep 1; done
+          npm run smoke -- http://localhost:3000

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { awsVideo } from "@/content";
+import { pageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "aws~env · video",
+  ...pageMetadata({ title: "aws~env · video", description: awsVideo.title, path: "/aws-env/video" }),
   robots: { index: false },
 };
 

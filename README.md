@@ -31,6 +31,14 @@ Set a dedicated, server-only `VERCEL_ANALYTICS_TOKEN` in Vercel Production to re
 
 This checkout is `noir-site`, separate from the workspace's `portfolio-site` copy and résumé drafts. For a preview alongside another checkout, use `npm run dev -- --port 3002`.
 
+## Crawling, headers, and checks
+
+`robots.ts`, `sitemap.ts` and `llms.txt/route.ts` are generated from `src/content.ts`. Every page builds its title, description, canonical, Open Graph and X metadata with `pageMetadata` in `src/lib/metadata.ts`. Nested metadata fields replace the root layout's instead of merging with them, so pages never set `openGraph` by hand. `src/proxy.ts` answers unknown `/projects/*` slugs with a real 404. Without it, the streamed page would already have sent a 200, and `cacheComponents` rules out `dynamicParams = false`.
+
+`next.config.ts` sends the security headers (CSP, HSTS, nosniff, frame and referrer policies) and `X-Robots-Tag: noindex` on teammates' résumés. It also permanently redirects the previous `prakhargupta.me` domain once that domain is attached to this Vercel project.
+
+`npm run smoke -- <base URL>` crawls the sitemap. It checks status codes, unique titles and descriptions, self-referencing canonicals, social tags, JSON-LD, internal links, 404s, noindex pages and headers. CI runs it against a local production build. `.github/workflows/production-smoke.yml` runs it against https://www.prxmy.in after each production deployment and daily.
+
 ## Environment
 
 Copy the entries you need from `.env.example` into `.env.local`. Keep this file out of Git.

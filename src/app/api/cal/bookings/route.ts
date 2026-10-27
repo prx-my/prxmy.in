@@ -51,6 +51,9 @@ function parseBooking(body: unknown): BookingInput | string {
   if (typeof body !== "object" || body === null) return "Expected a JSON object.";
   const raw = body as Record<string, unknown>;
 
+  // The booking form's hidden honeypot field; people never fill it in.
+  if (text(raw.website)) return "That slot couldn't be booked. Try another one.";
+
   const eventTypeId = Number(raw.eventTypeId);
   if (!Number.isInteger(eventTypeId) || eventTypeId <= 0) {
     return "eventTypeId must be a positive integer.";
