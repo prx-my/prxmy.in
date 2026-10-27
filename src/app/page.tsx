@@ -1,184 +1,147 @@
-import { AwsLogo } from "@/components/aws-logo";
-import { Scribble } from "@/components/scribble";
-import { OpenSource } from "@/components/open-source";
-import { Projects } from "@/components/projects";
-import { Arrow, ExtLink, Section } from "@/components/ui";
-import {
-  about,
-  booking,
-  education,
-  experience,
-  openSource,
-  profile,
-  projects,
-  wins,
-} from "@/content";
+import { education, experience, openSource, profile, projects, wins } from "@/content";
+import "./portfolio.css";
+
+const featuredNames = ["Ecoaudit", "Bhumi Vikas Sahayak", "JanSamadhan", "Clarity SMS"];
+const featured = featuredNames
+  .map((name) => projects.find((project) => project.name === name))
+  .filter((project): project is (typeof projects)[number] => Boolean(project));
+const moreWork = projects.filter((project) => !featuredNames.includes(project.name));
+
+function ProjectCard({ project, index }: { project: (typeof projects)[number]; index: number }) {
+  return (
+    <article className="project-card">
+      <div className="project-card-top">
+        <span>0{index + 1} / SELECTED WORK</span><span>{project.year}</span>
+      </div>
+      <div>
+        <p className="project-badge">{project.badge ?? "Independent project"}</p>
+        <h3>{project.name}</h3>
+        <p className="project-summary">{project.summary}</p>
+        <p className="project-challenge">{project.hardPart}</p>
+      </div>
+      <div className="project-card-bottom">
+        <span>{project.stack.slice(0, 4).join(" / ")}</span>
+        <div>{project.links.map((link) => (
+          <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">{link.label} ↗</a>
+        ))}</div>
+      </div>
+    </article>
+  );
+}
 
 export default function Home() {
+  const schrader = experience[0];
   return (
-    <main className="mx-auto max-w-[680px] px-6 pt-20 pb-28 sm:pt-28">
-      <header className="flex flex-col-reverse gap-6 sm:flex-row sm:items-start sm:justify-between">
-        <div>
-          <h1 className="font-serif text-5xl leading-none tracking-tight">{profile.name}</h1>
-          <p className="mt-4 max-w-md text-lg leading-snug text-muted">{profile.tagline}</p>
-          <p className="mt-5 text-sm text-muted">
-            <span className="mr-2 font-mono text-xs tracking-wide text-faint uppercase">Now</span>
-            {profile.now}
-          </p>
-          <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm">
-            <li>
-              <ExtLink href={`mailto:${profile.email}`}>{profile.email}</ExtLink>
-            </li>
-            {profile.links.map((l) => (
-              <li key={l.label}>
-                <ExtLink href={l.href}>
-                  {l.label}
-                  <Arrow />
-                </ExtLink>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
-            <a
-              href="/resume"
-              className="group relative inline-flex items-center gap-1 self-center text-sm font-medium"
-            >
-              Resume <span aria-hidden className="text-faint">↗</span>
-              <Scribble />
-            </a>
-            <a
-              href="/aws~env"
-              aria-label="Open the aws~env page"
-              className="group relative inline-flex items-center gap-2 opacity-80 transition-opacity hover:opacity-100 focus-visible:opacity-100"
-            >
-              <AwsLogo small />
-              <Scribble flip />
-              <span
-                aria-hidden
-                className="text-faint transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-ink"
-              >
-                ↗
-              </span>
-            </a>
-            <a
-              href="/book"
-              className="group inline-flex items-center gap-1 text-sm text-muted transition-colors hover:text-ink focus-visible:text-ink"
-            >
-              {booking.navLabel}
-              <span
-                aria-hidden
-                className="text-faint transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-ink"
-              >
-                ↗
-              </span>
-            </a>
+    <main className="portfolio">
+      <div className="hero-wrap" id="top">
+        <nav className="portfolio-nav page-container" aria-label="Main navigation">
+          <a className="wordmark" href="#top" aria-label="Prakhar Gupta, back to top">
+            <span className="wordmark-symbol">p.</span><span>prakhar gupta</span>
+          </a>
+          <div className="nav-links">
+            <a href="#work">Work</a><a href="#experience">Experience</a>
+            <a href="#open-source">Open source</a><a href="/resume">Resume ↗</a>
+          </div>
+        </nav>
+        <section className="hero page-container" aria-labelledby="hero-title">
+          <div className="hero-copy">
+            <p className="eyebrow"><span className="status-dot" /> AVAILABLE FOR SOFTWARE ENGINEERING INTERNSHIPS</p>
+            <h1 id="hero-title">Useful software, <em>built to last.</em></h1>
+            <p className="hero-intro">I&apos;m Prakhar, a full-stack developer building client websites at Schrader and contributing security fixes to OWASP. I like the hard problems behind simple interfaces.</p>
+            <div className="hero-actions">
+              <a className="button button-bright" href="#work">Explore my work <span aria-hidden="true">↘</span></a>
+              <a className="button button-outline" href={`mailto:${profile.email}`}>Get in touch <span aria-hidden="true">↗</span></a>
+            </div>
+            <p className="hero-location">Based in Jaipur, India <span aria-hidden="true">•</span> Working globally</p>
+          </div>
+          <div className="hero-visual" aria-label="Selected work and contribution highlights">
+            <div className="visual-orbit orbit-one" /><div className="visual-orbit orbit-two" />
+            <div className="visual-monogram" aria-hidden="true">PG</div>
+            <div className="visual-note visual-note-top"><span>NOW BUILDING</span><strong>Schrader Web Solutions</strong><small>Client and agency websites</small></div>
+            <div className="visual-note visual-note-bottom"><span>OPEN SOURCE</span><strong>OWASP / cve-lite-cli</strong><small>Security tooling in TypeScript</small></div>
+          </div>
+        </section>
+        <div className="hero-ribbon page-container">
+          <span>01 / THE WORK</span><div>Schrader <i /> OWASP <i /> Sugar Labs <i /> Independent projects</div>
+          <a href="#experience" aria-label="Scroll to experience">↓</a>
+        </div>
+      </div>
+
+      <section className="portfolio-section experience-section page-container" id="experience">
+        <div className="section-heading">
+          <p className="section-kicker">01 / EXPERIENCE</p>
+          <h2>Building for real people,<br /><em>with real constraints.</em></h2>
+          <p>Production websites, agency collaboration, and products that people actually use.</p>
+        </div>
+        <article className="experience-feature">
+          <div className="experience-feature-side"><span className="live-pill"><span /> CURRENT ROLE</span><p>{schrader.period}</p><p>{schrader.place}</p></div>
+          <div className="experience-feature-main">
+            <div className="experience-title-row">
+              <div><p className="mini-label">WEB DEVELOPER</p><h3>{schrader.org}</h3></div>
+              <a href={schrader.href} target="_blank" rel="noopener noreferrer" aria-label="Visit Schrader Web Solutions">↗</a>
+            </div>
+            <ul>{schrader.points.map((point) => <li key={point}>{point}</li>)}</ul>
+            <div className="client-links"><span>SELECTED SITES</span>{schrader.links?.map((link) => (
+              <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">{link.label} ↗</a>
+            ))}</div>
+          </div>
+        </article>
+        <div className="earlier-roles">{experience.slice(1).map((role) => (
+          <article key={role.org}><span>{role.period}</span><h3>{role.org}</h3><p>{role.role}</p><p>{role.points[0]}</p></article>
+        ))}</div>
+      </section>
+
+      <section className="portfolio-section work-section" id="work">
+        <div className="page-container">
+          <div className="section-heading section-heading-inline">
+            <div><p className="section-kicker">02 / SELECTED WORK</p><h2>Built for<br /><em>a purpose.</em></h2></div>
+            <p>From developer tools to public services, each project starts with a specific problem and ends with something people can try.</p>
+          </div>
+          <div className="project-grid">{featured.map((project, index) => <ProjectCard key={project.name} project={project} index={index} />)}</div>
+          <div className="more-work"><span>ALSO BUILT</span>{moreWork.map((project) => (
+            <a key={project.name} href={project.links[0]?.href ?? "#work"} target="_blank" rel="noopener noreferrer">{project.name} ↗</a>
+          ))}</div>
+        </div>
+      </section>
+
+      <section className="portfolio-section oss-section" id="open-source">
+        <div className="page-container">
+          <div className="section-heading section-heading-inline">
+            <div><p className="section-kicker">03 / OPEN SOURCE</p><h2>Small fixes.<br /><em>Real consequences.</em></h2></div>
+            <p>I work on bugs that affect what users see, what a security scan reports, and whether an app behaves reliably.</p>
+          </div>
+          <div className="oss-list">{openSource.map((repo) => (
+            <article className="oss-row" key={repo.href}>
+              <div><p className="mini-label">{repo.org}</p><h3><a href={repo.href} target="_blank" rel="noopener noreferrer">{repo.repo} ↗</a></h3><p>{repo.about}</p></div>
+              <div className="oss-example"><p>{repo.prs[0]?.title}</p><a href={repo.prs[0]?.href} target="_blank" rel="noopener noreferrer">Read PR #{repo.prs[0]?.number} ↗</a></div>
+              <a className="oss-count" href={repo.mergedHref} target="_blank" rel="noopener noreferrer"><strong>{repo.mergedCount}</strong><span>merged PRs ↗</span></a>
+            </article>
+          ))}</div>
+        </div>
+      </section>
+
+      <section className="portfolio-section close-section page-container" id="about">
+        <div className="close-grid">
+          <div><p className="section-kicker">04 / ABOUT</p><h2>Curious about the<br /><em>details that matter.</em></h2>
+            <p className="about-copy">I&apos;m a Computer Science student at Manipal University Jaipur. I care about clear interfaces, sound engineering, and proving that a system works beyond the happy path.</p>
+            <p className="about-copy">Recent work spans agency sites, open-source security fixes, and civic technology for Delhi.</p>
+            <a className="text-link" href="/resume">Read my resume ↗</a>
+          </div>
+          <div className="close-details">
+            <div><p className="mini-label">RECOGNITION</p>{wins.map((win) => <p key={win.title}><strong>{win.title}</strong><span>{win.context} · {win.year}</span></p>)}</div>
+            <div><p className="mini-label">EDUCATION</p>{education.slice(0, 1).map((school) => <p key={school.name}><strong>{school.name}</strong><span>{school.degree} · {school.period}</span></p>)}</div>
           </div>
         </div>
-        <div
-          aria-hidden
-          className="flex size-24 shrink-0 items-center justify-center rounded-full border border-line bg-beige font-serif text-4xl tracking-tight select-none sm:size-28 sm:text-[2.6rem]"
-        >
-          {profile.initials}
-        </div>
-      </header>
+      </section>
 
-      <Section id="about" title="About">
-        <div className="flex flex-col gap-4 leading-relaxed">
-          {about.map((p) => (
-            <p key={p}>{p}</p>
-          ))}
-        </div>
-      </Section>
-
-      <Section id="experience" title="Experience">
-        <div className="flex flex-col gap-8">
-          {experience.map((e) => (
-            <div key={e.org}>
-              <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-                <h3 className="font-medium">
-                  {e.href ? <ExtLink href={e.href}>{e.org}</ExtLink> : e.org}
-                  <span className="font-normal text-muted">, {e.role}</span>
-                </h3>
-                <span className="font-mono text-xs text-faint">{e.period}</span>
-              </div>
-              <p className="text-sm text-faint">{e.place}</p>
-              <ul className="mt-3 flex flex-col gap-2 text-[0.95rem] leading-relaxed text-muted">
-                {e.points.map((pt) => (
-                  <li key={pt} className="relative pl-4 before:absolute before:left-0 before:content-['–']">
-                    {pt}
-                  </li>
-                ))}
-              </ul>
-              {e.links && (
-                <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                  {e.links.map((l) => (
-                    <li key={l.href}>
-                      <ExtLink href={l.href}>
-                        {l.label}
-                        <Arrow />
-                      </ExtLink>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      <Section id="projects" title="Projects">
-        <Projects items={projects} />
-      </Section>
-
-      {openSource.length > 0 && (
-        <Section id="open-source" title="Open source">
-          <OpenSource repos={openSource} />
-        </Section>
-      )}
-
-      <Section id="wins" title="Recognition">
-        <ul className="divide-y divide-line border-y border-line">
-          {wins.map((w) => (
-            <li key={w.title} className="flex items-baseline justify-between gap-4 py-3">
-              <div>
-                <p>{w.href ? <ExtLink href={w.href}>{w.title}</ExtLink> : w.title}</p>
-                <p className="text-sm text-muted">{w.context}</p>
-              </div>
-              <span className="font-mono text-xs text-faint">{w.year}</span>
-            </li>
-          ))}
-        </ul>
-      </Section>
-
-      <Section id="education" title="Education">
-        <div className="flex flex-col gap-5">
-          {education.map((s) => (
-            <div key={s.name} className="flex flex-wrap items-baseline justify-between gap-x-4">
-              <div>
-                <h3 className="font-medium">{s.name}</h3>
-                <p className="text-sm text-muted">
-                  {s.degree}
-                  {s.note && <span className="text-faint"> · {s.note}</span>}
-                </p>
-              </div>
-              <span className="font-mono text-xs text-faint">{s.period}</span>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      <footer className="mt-24 border-t border-line pt-10">
-        <p className="font-serif text-3xl tracking-tight">Let&apos;s build something.</p>
-        <p className="mt-3 max-w-md leading-relaxed text-muted">
-          Open to backend and full-stack internships and interesting collaborations.
-        </p>
-        <ExtLink href={`mailto:${profile.email}`} className="mt-5 inline-block text-lg">
-          {profile.email}
-        </ExtLink>
-        <p className="mt-16 font-mono text-xs text-faint">
-          © 2026 {profile.name} · {profile.location}
-        </p>
-      </footer>
+      <footer className="portfolio-footer"><div className="page-container">
+        <p className="section-kicker">LET&apos;S CONNECT</p><h2>Have a problem<br /><em>worth solving?</em></h2>
+        <a className="footer-email" href={`mailto:${profile.email}`}>{profile.email} ↗</a>
+        <div className="footer-bottom"><span>© 2026 Prakhar Gupta · Jaipur, India</span><div>
+          {profile.links.map((link) => <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">{link.label} ↗</a>)}
+          <a href="#top">Back to top ↑</a>
+        </div></div>
+      </div></footer>
     </main>
   );
 }

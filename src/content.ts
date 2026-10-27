@@ -39,6 +39,7 @@ export type OssRepo = {
   avatar: string;
   about: string;
   mergedHref: string;
+  mergedCount: number;
   prs: PullRequest[];
 };
 
@@ -59,10 +60,10 @@ export const profile = {
   site: "https://prxmy.in",
   initials: "PG",
   location: "Jaipur, India",
-  tagline: "Backend & full-stack developer. Second year of CS at Manipal University Jaipur.",
+  tagline: "I build dependable web products, security tools, and civic software.",
   summary:
-    "Backend and full-stack developer from Jaipur. Web developer at Schrader, contributor to OWASP and Sugar Labs, and winner of the India Innovates '26 grand finale.",
-  now: "Writing compute-waste detectors at WeMakeDevs × AWS Environmental Hacks. Fixing bugs in OWASP cve-lite-cli.",
+    "Web developer at Schrader Web Solutions, open-source contributor to OWASP and Sugar Labs, and builder of practical software for public problems.",
+  now: "Web developer at Schrader · contributing to OWASP · building Ecoaudit",
   email: "prakhar06.work@gmail.com",
   links: [
     { label: "GitHub", href: "https://github.com/prx-my" },
@@ -92,13 +93,13 @@ export const awsVideo = {
 };
 
 export const about: string[] = [
-  "I build client websites at Schrader, a digital marketing agency in Michigan, and contribute to open source in my spare time: 9 merged PRs at OWASP, 5 at Sugar Labs.",
-  "Most of my own projects are civic tools for Delhi. The latest, JanSamadhan, routes complaints to 10 city authorities and won the India Innovates '26 grand finale.",
+  "I work remotely with Schrader Web Solutions in Michigan, building and maintaining websites for local businesses. I also contribute to OWASP security tooling and Sugar Labs' Music Blocks.",
+  "My independent work spans developer tools and civic software, from an evidence-based compute-waste scanner to a Delhi grievance platform that won the India Innovates '26 grand finale.",
 ];
 
 export const experience: Experience[] = [
   {
-    org: "Schrader",
+    org: "Schrader Web Solutions",
     href: "https://schrader.co",
     role: "Web Developer",
     place: "Traverse City, Michigan · Remote",
@@ -113,6 +114,25 @@ export const experience: Experience[] = [
       { label: "Grace Electric", href: "https://graceelectric-blond.vercel.app" },
       { label: "Hot Tub Solutions", href: "https://hottubsolutions.vercel.app" },
       { label: "schrader.co", href: "https://schrader.co" },
+    ],
+  },
+  {
+    org: "Home Tutor Platform",
+    role: "Freelance Full-Stack Developer",
+    place: "Remote",
+    period: "May–Jun 2026",
+    points: [
+      "Delivered a nine-page public site and 12-section admin dashboard with role-based content controls.",
+      "Built database-driven SEO and a WhatsApp and email lead-capture flow.",
+    ],
+  },
+  {
+    org: "Bits & Bytes",
+    role: "Back-End Developer Intern",
+    place: "Remote",
+    period: "Apr–May 2026",
+    points: [
+      "Built scheduling, role-based access, and audio transcription for a Discord utility bot serving a 1,000-member community.",
     ],
   },
 ];
@@ -134,15 +154,40 @@ export const projects: Project[] = [
     ],
   },
   {
-    name: "Compute-waste scanner",
+    name: "Ecoaudit",
     year: "2026",
-    badge: "WeMakeDevs × AWS Environmental Hacks · in progress",
+    badge: "Developer tooling · WeMakeDevs × AWS Environmental Hacks",
     summary:
-      "Clones any public repo and reports code, infra, logging and LLM patterns that waste compute, with the exact line as evidence. I wrote 45 of its ~120 detectors and the AWS scan API.",
+      "Scans public repositories for avoidable compute waste and reports source-level evidence without running the code. I contributed detectors and the AWS scan API.",
     hardPart:
       "Proving waste from static evidence alone, never running the scanned code, and making detectors written in Python and TypeScript by four people pass one shared contract.",
     stack: ["Python", "TypeScript", "AWS Lambda", "API Gateway", "S3", "Next.js"],
-    links: [{ label: "Source", href: "https://github.com/AWS-env/environmental-hacks" }],
+    links: [
+      { label: "Live", href: "https://main.dz3ac51z9uzpr.amplifyapp.com/" },
+      { label: "Source", href: "https://github.com/AWS-env/environmental-hacks" },
+    ],
+  },
+  {
+    name: "Bhumi Vikas Sahayak",
+    year: "2026",
+    badge: "Four-person team project · October 2026",
+    summary:
+      "A cited answer tool for Madhya Pradesh building rules. Clerks can ask in English, Hindi, or Hinglish and open the exact rule and PDF page behind each answer.",
+    hardPart:
+      "Hybrid retrieval and reranking put the correct rule in the top five for all 15 in-scope sample questions; a not-found gate handles questions the rulebook cannot answer.",
+    stack: ["Next.js", "FastAPI", "Qdrant", "Cerebras", "Sarvam AI"],
+    links: [{ label: "Source", href: "https://github.com/AWS-env/sarthi" }],
+  },
+  {
+    name: "Clarity SMS",
+    year: "2026",
+    badge: "Messaging and voice operations",
+    summary:
+      "A two-way Twilio inbox and browser dialer with contacts, delivery history, and usage monitoring.",
+    hardPart:
+      "Added consent-controlled AI voice agents, live transcripts, provider usage reconciliation, and budget controls without disturbing the existing SMS and manual call flows.",
+    stack: ["Next.js", "TypeScript", "Twilio", "Neon PostgreSQL"],
+    links: [{ label: "Source", href: "https://github.com/prx-my/clarity-sms" }],
   },
   {
     name: "RailMind",
@@ -192,8 +237,9 @@ export const openSource: OssRepo[] = [
     repo: "cve-lite-cli",
     href: "https://github.com/OWASP/cve-lite-cli",
     avatar: "/logos/OWASP.png",
-    about: "Dependency vulnerability scanner for JS/TS projects · 760 stars",
+    about: "Dependency vulnerability scanner for JavaScript and TypeScript projects",
     mergedHref: merged("OWASP/cve-lite-cli"),
+    mergedCount: 13,
     prs: [
       {
         number: 1202,
@@ -261,8 +307,9 @@ export const openSource: OssRepo[] = [
     repo: "musicblocks-v4",
     href: "https://github.com/sugarlabs/musicblocks-v4",
     avatar: "/logos/sugarlabs.png",
-    about: "Visual programming for music, used in classrooms · 125 stars",
+    about: "Visual programming for music, used in classrooms",
     mergedHref: merged("sugarlabs/musicblocks-v4"),
+    mergedCount: 5,
     prs: [
       {
         number: 850,
@@ -305,8 +352,9 @@ export const openSource: OssRepo[] = [
     repo: "FaceGate-Mac",
     href: "https://github.com/dweep-desai/FaceGate-Mac",
     avatar: "/logos/dweep-desai.jpg",
-    about: "Face ID app locker for macOS · 560 stars",
+    about: "Face-authenticated app locker for macOS",
     mergedHref: merged("dweep-desai/FaceGate-Mac"),
+    mergedCount: 4,
     prs: [
       {
         number: 124,
