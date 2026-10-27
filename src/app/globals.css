@@ -84,7 +84,7 @@ details > summary::-webkit-details-marker { display: none; }
 .theme-toggle { display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; color: var(--ink); }
 .theme-toggle:hover { color: var(--signal); }
 
-.noir-hero { display: grid; grid-template-columns: minmax(0,1.35fr) minmax(0,1fr); gap: 62px; position: relative; padding-block: 62px 57px; align-items: center; }
+.noir-hero { display: grid; grid-template-columns: minmax(0,1fr); gap: 62px; position: relative; padding-block: 62px 57px; align-items: center; }
 .hero-copy { position: relative; z-index: 2; animation: copy-arrive 600ms ease-out both; }
 .hero-copy h1 { font-family: var(--font-bodoni),Georgia,serif; font-weight: 900; font-size: clamp(76px,8.6vw,118px); line-height: .91; letter-spacing: -.07em; text-transform: uppercase; margin-left: -5px; }
 .hero-copy h1 > span { display: block; }
@@ -341,4 +341,124 @@ details > summary::-webkit-details-marker { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .lost-case, .lost-stamp, .lost-glass { transform: none; }
+}
+
+/* Secondary pages share the portfolio's newspaper grid and type system. */
+.editorial-page { min-height: 100dvh; }
+.editorial-masthead nav a[aria-current="page"] { color: var(--accent); }
+.editorial-masthead nav a[aria-current="page"]::after { width: 100%; background: var(--signal); }
+.editorial-main { padding-block: 52px 80px; }
+.editorial-heading { padding-bottom: 34px; border-bottom: 1px solid var(--ink); }
+.editorial-heading > .eyebrow, .editorial-heading > div > .eyebrow { color: var(--accent); }
+.editorial-heading h1 { margin-top: 20px; font-family: var(--font-bodoni),Georgia,serif; font-size: clamp(60px,7.5vw,96px); font-weight: 900; line-height: 1.05; letter-spacing: -.06em; }
+.editorial-heading h1 > span, .editorial-section-label h2 > span { color: var(--signal); }
+.editorial-lead { font-family: var(--font-newsreader),Georgia,serif; font-size: 31px; line-height: 1.3; letter-spacing: -.025em; }
+.editorial-footer { flex-wrap: wrap; }
+.editorial-back { margin-left: auto; font-size: var(--text-small); }
+.booking-layout { display: grid; grid-template-columns: minmax(0,.75fr) minmax(0,1.25fr); gap: 64px; align-items: start; margin-top: 40px; }
+.booking-intro { padding-top: 8px; }
+.booking-intro > p:not(.editorial-lead) { margin-top: 22px; color: var(--muted); font-size: var(--text-body); line-height: 1.9; max-width: 360px; }
+.meeting-facts { margin-top: 30px; border-top: 4px double var(--ink); }
+.meeting-facts > div { display: grid; grid-template-columns: 100px minmax(0,1fr); gap: 12px; padding-block: 15px; border-bottom: 1px solid var(--line); font-size: var(--text-small); }
+.meeting-facts dt { color: var(--muted); }.meeting-facts dd { font-weight: 500; }
+.booking-email a { overflow-wrap: anywhere; color: var(--ink); }
+.booking-guide { margin-top: 28px; display: grid; gap: 12px; font-size: var(--text-small); }
+.booking-guide li { display: flex; align-items: baseline; gap: 14px; }
+.booking-guide span { font-family: var(--font-geist-mono),monospace; font-size: var(--text-meta); color: var(--accent); }
+.booking-duration { display: block; margin-top: 3px; font-family: var(--font-geist-mono),monospace; font-size: var(--text-meta); opacity: .8; }
+.booking-sheet { position: relative; min-width: 0; border: 1px solid var(--ink); background: var(--surface); padding: 28px; box-shadow: 7px 7px 0 var(--beige); }
+.booking-sheet-heading { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 20px; border-bottom: 1px solid var(--line); color: var(--muted); }
+.booking-sheet-heading > span:last-child { color: var(--accent); }
+.booking-controls { margin-top: 26px; }
+.booking-dates { display: grid; grid-template-columns: repeat(7,minmax(0,1fr)); gap: 6px; }
+.booking-choice { min-height: 44px; border-radius: 0; }
+.booking-choice[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 -3px 0 var(--signal); }
+.booking-dates .booking-choice { padding-block: 10px; }
+.booking-date-month { margin-top: 3px; }
+.booking-choice:disabled { opacity: .5; }
+.booking-field { min-height: 44px; border-radius: 0; background: var(--paper); }
+.booking-field:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+.booking-submit:disabled { box-shadow: none; transform: none; }
+.booking-confirmed { margin-top: 28px; }
+.booking-confirmed > p:first-child { color: var(--accent); }
+.aws-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; }
+.aws-heading .editorial-lead { margin-top: 20px; color: var(--muted); }
+.aws-heading > [role="img"] { flex-shrink: 0; margin-bottom: 6px; }
+.aws-footprint { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); border-bottom: 1px solid var(--ink); }
+.aws-footprint > div { padding: 22px 24px; border-left: 1px solid var(--line); }
+.aws-footprint > div:first-child { padding-left: 0; border-left: 0; }
+.aws-footprint dt { font-family: var(--font-geist-mono),monospace; font-size: var(--text-meta); text-transform: uppercase; letter-spacing: .08em; color: var(--accent); }
+.aws-footprint dd { margin-top: 8px; font-family: var(--font-newsreader),Georgia,serif; font-size: 24px; line-height: 1.25; }
+.aws-layout { display: grid; grid-template-columns: minmax(0,1fr) 310px; gap: 52px; padding-top: 36px; }
+.editorial-section-label { padding-bottom: 22px; }
+.editorial-section-label > .eyebrow { color: var(--accent); }
+.editorial-section-label h2 { margin-top: 10px; font-family: var(--font-newsreader),Georgia,serif; font-size: 35px; letter-spacing: -.035em; line-height: 1.2; }
+.aws-video-frame { aspect-ratio: 16 / 9; border: 1px solid var(--ink); background: #171613; box-shadow: 6px 6px 0 var(--beige); }
+.aws-video-frame iframe { width: 100%; height: 100%; }
+.aws-video figcaption { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; margin-top: 20px; font-size: var(--text-small); color: var(--muted); line-height: 1.8; }
+.aws-video figcaption a { white-space: nowrap; color: var(--ink); }
+.aws-project-note { border-top: 4px double var(--ink); padding-top: 23px; margin-top: 32px; }
+.aws-project-note > .eyebrow { color: var(--accent); }
+.aws-project-note > p + p { max-width: 540px; margin-top: 12px; font-family: var(--font-newsreader),Georgia,serif; font-size: 27px; line-height: 1.45; }
+.aws-project-note > a { display: inline-block; margin-top: 18px; font-size: var(--text-small); }
+.aws-project-note > .aws-project-description { margin-top: 18px; font-family: var(--font-geist-sans),sans-serif; font-size: var(--text-body); color: var(--muted); line-height: 1.85; letter-spacing: 0; }
+.aws-project-links { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; margin-top: 24px; font-size: var(--text-small); }
+.aws-team { border-left: 1px solid var(--line); padding-left: 30px; }
+.aws-team-intro { font-size: var(--text-small); line-height: 1.85; color: var(--muted); margin-bottom: 24px; }
+.aws-team-list { border-top: 4px double var(--ink); }
+.aws-team-list > li { display: grid; grid-template-columns: 24px minmax(0,1fr); gap: 14px; padding-block: 20px; border-bottom: 1px solid var(--line); }
+.team-number { padding-top: 5px; color: var(--accent); }
+.team-name { font-family: var(--font-newsreader),Georgia,serif; font-size: 28px; line-height: 1.3; }
+.team-name > span { font-family: var(--font-geist-sans),sans-serif; font-size: 18px; color: var(--accent); }
+.team-resume { font-size: var(--text-meta); color: var(--muted); margin-top: 4px; }
+.team-socials { display: flex; margin-top: 9px; margin-left: -4px; }
+.team-socials a { border-radius: 0; width: 36px; height: 36px; }
+@media (max-width: 1000px) {
+  .booking-layout { gap: 30px; grid-template-columns: minmax(0,.65fr) minmax(0,1fr); }
+  .booking-sheet { padding: 22px; }
+  .booking-sheet-heading > span:last-child { display: none; }
+  .aws-layout { grid-template-columns: minmax(0,1fr) 260px; gap: 30px; }
+  .aws-team { padding-left: 24px; }
+}
+@media (max-width: 760px) {
+  .editorial-main { padding-block: 35px 56px; }
+  .editorial-masthead { flex-wrap: wrap; gap: 0 16px; padding-top: 14px; }
+  .editorial-masthead > .masthead-tools { order: 0; margin-left: auto; padding-left: 14px; }
+  .editorial-masthead > nav { order: 1; width: 100%; justify-content: space-between; gap: 14px; margin-left: 0; }
+  .editorial-masthead > nav a { font-size: var(--text-meta); letter-spacing: .03em; }
+  .booking-layout { grid-template-columns: minmax(0,1fr); gap: 30px; margin-top: 28px; }
+  .booking-intro .editorial-lead br { display: none; }
+  .booking-intro > p:not(.editorial-lead) { max-width: 100%; }
+  .meeting-facts { margin-top: 22px; }
+  .booking-sheet { padding: 23px 18px; box-shadow: 4px 4px 0 var(--beige); }
+  .booking-dates { gap: 4px; }
+  .booking-dates .booking-choice { padding-inline: 0; }
+  .aws-heading { align-items: flex-start; flex-direction: column; }
+  .aws-heading .editorial-lead { font-size: 27px; }
+  .aws-footprint > div { padding: 18px 12px; }
+  .aws-footprint dd { font-size: 20px; }
+  .aws-layout { grid-template-columns: minmax(0,1fr); gap: 38px; }
+  .aws-team { padding-left: 0; border-left: 0; }
+  .aws-team-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 24px; }
+  .aws-video figcaption { flex-wrap: wrap; gap: 10px; }
+  .editorial-footer { gap: 14px 22px; }
+  .editorial-back { margin-left: 0; }
+}
+@media (max-width: 380px) {
+  .booking-sheet { padding-inline: 12px; }
+  .booking-dates { gap: 3px; }
+  .aws-team-list { grid-template-columns: minmax(0,1fr); }
+}
+@media (max-width: 760px) {
+  .editorial-masthead > nav { display: flex; }
+  .editorial-masthead > nav a:nth-child(3) { display: flex; }
+}
+.editorial-page .editorial-masthead > nav { display: flex; }
+.editorial-page .editorial-masthead > nav a { display: flex; }
+@media (max-width: 540px) {
+  .aws-team-list { grid-template-columns: minmax(0,1fr); }
+  .aws-footprint { grid-template-columns: minmax(0,1fr); }
+  .aws-footprint > div, .aws-footprint > div:first-child { padding: 15px 0; border-left: 0; border-top: 1px solid var(--line); }
+  .aws-footprint > div:first-child { border-top: 0; }
+  .aws-footprint dd { margin-top: 4px; }
 }

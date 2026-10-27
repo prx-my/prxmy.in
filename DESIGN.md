@@ -17,6 +17,10 @@ This is a developer's portfolio with a 1930s detective/newspaper/comic sensibili
 - Motion is brief: hero arrival, small link movements and project-art hover feedback. Respect reduced motion and keep ordinary document scrolling.
 - Existing project descriptions, GitHub verification, booking, résumé, links and endorsements remain functional content.
 
+## Secondary pages
+
+`/book` and `/aws~env` use a shared editorial masthead and footer, with the same theme control, Bodoni headlines, red punctuation, and ruled sections as the homepage. Booking keeps the Cal.com flow in a paper scheduling sheet with a two-week date grid, meeting durations, and a short booking guide. The AWS page frames the EcoAudit demo beside a numbered team directory, with an energy/carbon/water strip and project/source links; mobile stacks the sections. The homepage hero uses a single text column without the Night Shift illustration.
+
 ## Original artwork
 
 `public/art/the-night-shift.webp` was generated specifically for this portfolio using the built-in image generation tool, then converted to WebP for delivery. It replaces the reference portfolio's banner. No reference image was supplied to the generation call.
