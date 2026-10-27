@@ -54,6 +54,10 @@ const icons: Record<SocialKind, { label: string; svg: ReactNode }> = {
 // Pulls the icon toward the cursor while hovered, springs back on leave.
 const PULL = 0.4;
 
+export function SocialGlyph({ kind }: { kind: SocialKind }) {
+  return icons[kind].svg;
+}
+
 export function SocialIcon({
   kind,
   href,

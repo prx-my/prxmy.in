@@ -1,4 +1,4 @@
-// Every word on the site lives here. Layout code never hardcodes copy.
+// Curated portfolio copy. GitHub metrics live separately in the verified snapshot.
 
 export type Link = { label: string; href: string };
 
@@ -14,6 +14,9 @@ export type Experience = {
 
 export type Project = {
   name: string;
+  slug: string;
+  preview?: string;
+  coverLabel?: string;
   year: string;
   badge?: string;
   summary: string;
@@ -60,6 +63,7 @@ export const profile = {
   initials: "PG",
   location: "Jaipur, India",
   tagline: "Backend & full-stack developer. Second year of CS at Manipal University Jaipur.",
+  availability: "Open to full-time roles & freelance projects",
   summary:
     "Backend and full-stack developer from Jaipur. Web developer at Schrader, contributor to OWASP and Sugar Labs, and winner of the India Innovates '26 grand finale.",
   now: "Writing compute-waste detectors at WeMakeDevs × AWS Environmental Hacks. Fixing bugs in OWASP cve-lite-cli.",
@@ -92,9 +96,73 @@ export const awsVideo = {
 };
 
 export const about: string[] = [
-  "I build client websites at Schrader, a digital marketing agency in Michigan, and contribute to open source in my spare time: 9 merged PRs at OWASP, 5 at Sugar Labs.",
+  "I build client websites at Schrader, a digital marketing agency in Michigan, and contribute to open source in my spare time, including OWASP, Sugar Labs and FaceGate.",
   "Most of my own projects are civic tools for Delhi. The latest, JanSamadhan, routes complaints to 10 city authorities and won the India Innovates '26 grand finale.",
 ];
+
+export const portfolio = {
+  edition: "Portfolio / 2026",
+  workLabel: "View work",
+  resumeLabel: "Résumé",
+  awsLabel: "AWS project",
+  locationLabel: "Based in Jaipur, India",
+  currentLabel: "Currently at",
+  workIntro: "Civic platforms, developer tools, and the engineering behind them.",
+  openSourceIntro: "Small fixes. Lasting impact. Contributions to tools people rely on.",
+  activityIntro: "The work, day by day.",
+  contactTitle: "Let’s build something.",
+  contactIntro: "Hiring a backend or full-stack developer? Have a project in mind? I’m open to full-time roles, freelance work, and interesting collaborations.",
+  nav: [
+    { label: "Work", href: "#projects" },
+    { label: "About", href: "#about" },
+    { label: "Open source", href: "#open-source" },
+  ] satisfies Link[],
+  index: [
+    { label: "About", href: "#about" },
+    { label: "Experience", href: "#experience" },
+    { label: "Selected work", href: "#projects" },
+    { label: "Open source", href: "#open-source" },
+    { label: "GitHub activity", href: "#activity" },
+    { label: "Recognition", href: "#wins" },
+    { label: "Education", href: "#education" },
+    { label: "Contact", href: "#contact" },
+    { label: "Résumé", href: "/resume" },
+    { label: "Book a call", href: "/book" },
+    { label: "AWS project", href: "/aws~env" },
+    { label: "GitHub profile", href: "https://github.com/prx-my" },
+  ] satisfies Link[],
+};
+
+// Derived from the technologies already documented in the project descriptions.
+export const toolkit = [
+  { label: "Backend & data", items: ["Python", "FastAPI", "Node.js", "PostGIS", "Supabase", "Redis"] },
+  { label: "Web", items: ["TypeScript", "React", "Next.js", "Vite"] },
+  { label: "Infrastructure & tools", items: ["AWS Lambda", "API Gateway", "S3", "Docker", "Playwright"] },
+];
+
+// Curated quotations: the client recommendation was supplied by Prakhar;
+// the GitHub excerpt was checked against the linked public discussion.
+export const feedback = {
+  client: {
+    label: "From a client",
+    excerpt: "He’s reliable, communicates well, and consistently delivers quality work on time.",
+    author: "Bret Schrader",
+    context: "Owner, Schrader Web Solutions · Client recommendation",
+    href: "https://www.linkedin.com/in/bret-schrader/",
+    date: "2026-07-20",
+    fullText: [
+      "Prakhar has been an incredible asset to my agency over the past few weeks. He has built custom websites, set up databases, created high quality graphics, and consistently delivered excellent work for my clients. He’s responsive, proactive, and always available for meetings, updates, and quick fixes when needed.",
+      "I highly recommend Prakhar to anyone looking for web development, custom coding, database solutions, or graphic design. He’s reliable, communicates well, and consistently delivers quality work on time.",
+    ],
+  },
+  upstream: {
+    label: "From an open-source reviewer",
+    excerpt: "Thanks, and the work has been consistently good.",
+    author: "@sonukapoor",
+    context: "OWASP/cve-lite-cli · Public feedback on PR #1202",
+    href: "https://github.com/OWASP/cve-lite-cli/pull/1202#issuecomment-5952212718",
+  },
+};
 
 export const experience: Experience[] = [
   {
@@ -119,7 +187,25 @@ export const experience: Experience[] = [
 
 export const projects: Project[] = [
   {
+    name: "EcoAudit",
+    slug: "ecoaudit",
+    preview: "/portfolio/ecoaudit.jpg",
+    year: "2026",
+    badge: "WeMakeDevs × AWS Environmental Hacks · in progress",
+    summary:
+      "Clones any public repo and reports code, infra, logging and LLM patterns that waste compute, with the exact line as evidence. I wrote 45 of its ~120 detectors and the AWS scan API.",
+    hardPart:
+      "Proving waste from static evidence alone, never running the scanned code, and making detectors written in Python and TypeScript by four people pass one shared contract.",
+    stack: ["Python", "TypeScript", "AWS Lambda", "API Gateway", "S3", "Next.js"],
+    links: [
+      { label: "Demo", href: "/aws-env/video" },
+      { label: "Source", href: "https://github.com/AWS-env/environmental-hacks" },
+    ],
+  },
+  {
     name: "JanSamadhan",
+    slug: "jansamadhan",
+    preview: "/portfolio/jansamadhan.jpg",
     year: "2026",
     badge: "Grand Finale winner, India Innovates '26",
     summary:
@@ -134,18 +220,9 @@ export const projects: Project[] = [
     ],
   },
   {
-    name: "Compute-waste scanner",
-    year: "2026",
-    badge: "WeMakeDevs × AWS Environmental Hacks · in progress",
-    summary:
-      "Clones any public repo and reports code, infra, logging and LLM patterns that waste compute, with the exact line as evidence. I wrote 45 of its ~120 detectors and the AWS scan API.",
-    hardPart:
-      "Proving waste from static evidence alone, never running the scanned code, and making detectors written in Python and TypeScript by four people pass one shared contract.",
-    stack: ["Python", "TypeScript", "AWS Lambda", "API Gateway", "S3", "Next.js"],
-    links: [{ label: "Source", href: "https://github.com/AWS-env/environmental-hacks" }],
-  },
-  {
     name: "RailMind",
+    slug: "railmind",
+    coverLabel: "Search-based dispatch planning",
     year: "2026",
     summary:
       "Dispatch decision support for Indian Railways on a simulated 437 km Delhi–Kanpur corridor. Cuts cascade delay by 10% against first-come-first-served dispatch.",
@@ -159,6 +236,8 @@ export const projects: Project[] = [
   },
   {
     name: "oracle-academy",
+    slug: "oracle-academy",
+    coverLabel: "A terminal for the student hub",
     year: "2026",
     summary:
       "A terminal client for Oracle Academy's Student Hub: sign in once via SSO, then list classes and work through sections from the CLI.",
@@ -169,6 +248,8 @@ export const projects: Project[] = [
   },
   {
     name: "Leafline",
+    slug: "leafline",
+    coverLabel: "Civic reporting, connected",
     year: "2026",
     badge: "1st Place, InnovateNSUT '26",
     summary:

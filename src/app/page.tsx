@@ -1,184 +1,127 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import { cacheLife } from "next/cache";
 import { AwsLogo } from "@/components/aws-logo";
-import { Scribble } from "@/components/scribble";
 import { OpenSource } from "@/components/open-source";
-import { Projects } from "@/components/projects";
+import { GitHubActivity } from "@/components/github-activity";
+import { ProjectsGrid } from "@/components/ProjectsGrid";
+import { ExperienceList } from "@/components/ExperienceList";
+import { RightNavbar } from "@/components/RightNavbar";
+import { QuickNavigation } from "@/components/quick-navigation";
+import { ThemeToggle } from "@/components/theme-toggle";
+import SoftPillButton from "@/components/pixel-perfect/soft-pill-button";
+import { FlipCoverButton } from "@/components/pixel-perfect/flip-cover-button";
+import SocialHoverCard from "@/components/pixel-perfect/social-hover-card";
+import { Technology } from "@/components/technology";
+import { FooterBackground } from "@/components/FooterBackground";
+import { Feedback } from "@/components/feedback";
 import { Arrow, ExtLink, Section } from "@/components/ui";
-import {
-  about,
-  booking,
-  education,
-  experience,
-  openSource,
-  profile,
-  projects,
-  wins,
-} from "@/content";
+import { SocialGlyph, type SocialKind } from "@/components/social-icon";
+import { about, booking, education, experience, feedback, openSource, portfolio, profile, projects, toolkit, wins } from "@/content";
+import { getGitHubData } from "@/lib/github";
 
-export default function Home() {
+export const metadata: Metadata = { alternates: { canonical: "/" } };
+
+const index = [
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "GitHub", href: "#activity" },
+  { label: "Open source", href: "#open-source" },
+  { label: "Skills", href: "#skills" },
+  { label: "Recognition", href: "#wins" },
+  { label: "Contact", href: "#contact" },
+];
+
+export default async function Home() {
+  "use cache";
+  cacheLife({ stale: 300, revalidate: 3600, expire: 86400 });
+  const github = await getGitHubData();
+
   return (
-    <main className="mx-auto max-w-[680px] px-6 pt-20 pb-28 sm:pt-28">
-      <header className="flex flex-col-reverse gap-6 sm:flex-row sm:items-start sm:justify-between">
-        <div>
-          <h1 className="font-serif text-5xl leading-none tracking-tight">{profile.name}</h1>
-          <p className="mt-4 max-w-md text-lg leading-snug text-muted">{profile.tagline}</p>
-          <p className="mt-5 text-sm text-muted">
-            <span className="mr-2 font-mono text-xs tracking-wide text-faint uppercase">Now</span>
-            {profile.now}
-          </p>
-          <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm">
-            <li>
-              <ExtLink href={`mailto:${profile.email}`}>{profile.email}</ExtLink>
-            </li>
-            {profile.links.map((l) => (
-              <li key={l.label}>
-                <ExtLink href={l.href}>
-                  {l.label}
-                  <Arrow />
-                </ExtLink>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
-            <a
-              href="/resume"
-              className="group relative inline-flex items-center gap-1 self-center text-sm font-medium"
-            >
-              Resume <span aria-hidden className="text-faint">↗</span>
-              <Scribble />
-            </a>
-            <a
-              href="/aws~env"
-              aria-label="Open the aws~env page"
-              className="group relative inline-flex items-center gap-2 opacity-80 transition-opacity hover:opacity-100 focus-visible:opacity-100"
-            >
-              <AwsLogo small />
-              <Scribble flip />
-              <span
-                aria-hidden
-                className="text-faint transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-ink"
-              >
-                ↗
-              </span>
-            </a>
-            <a
-              href="/book"
-              className="group inline-flex items-center gap-1 text-sm text-muted transition-colors hover:text-ink focus-visible:text-ink"
-            >
-              {booking.navLabel}
-              <span
-                aria-hidden
-                className="text-faint transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-ink"
-              >
-                ↗
-              </span>
-            </a>
+    <div className="reference-page">
+      <a className="skip-link" href="#main">Skip to content</a>
+      <RightNavbar items={index} />
+      <main id="main" className="reference-column">
+        <div className="profile-banner">
+          <Image src="/portfolio/banner.jpg" alt="" fill priority sizes="(min-width: 768px) 640px, 100vw" className="banner-image" />
+          <div className="banner-wash" aria-hidden="true" />
+          <span className="banner-wordmark">PG.</span>
+          <span className="banner-caption">JAIPUR, INDIA <span aria-hidden="true">/</span> PORTFOLIO ’26</span>
+        </div>
+
+        <header className="profile-header">
+          <div className="profile-identity">
+            <div className="profile-photo-frame"><Image src="/portfolio/avatar.png" alt="Prakhar’s GitHub avatar" width={80} height={80} priority /></div>
+            <div><h1>{profile.name}<span>.</span></h1><p>{profile.role}</p></div>
           </div>
-        </div>
-        <div
-          aria-hidden
-          className="flex size-24 shrink-0 items-center justify-center rounded-full border border-line bg-beige font-serif text-4xl tracking-tight select-none sm:size-28 sm:text-[2.6rem]"
-        >
-          {profile.initials}
-        </div>
-      </header>
+          <div className="profile-controls"><QuickNavigation items={portfolio.index} /><ThemeToggle /></div>
+        </header>
 
-      <Section id="about" title="About">
-        <div className="flex flex-col gap-4 leading-relaxed">
-          {about.map((p) => (
-            <p key={p}>{p}</p>
-          ))}
-        </div>
-      </Section>
-
-      <Section id="experience" title="Experience">
-        <div className="flex flex-col gap-8">
-          {experience.map((e) => (
-            <div key={e.org}>
-              <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-                <h3 className="font-medium">
-                  {e.href ? <ExtLink href={e.href}>{e.org}</ExtLink> : e.org}
-                  <span className="font-normal text-muted">, {e.role}</span>
-                </h3>
-                <span className="font-mono text-xs text-faint">{e.period}</span>
-              </div>
-              <p className="text-sm text-faint">{e.place}</p>
-              <ul className="mt-3 flex flex-col gap-2 text-[0.95rem] leading-relaxed text-muted">
-                {e.points.map((pt) => (
-                  <li key={pt} className="relative pl-4 before:absolute before:left-0 before:content-['–']">
-                    {pt}
-                  </li>
-                ))}
-              </ul>
-              {e.links && (
-                <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                  {e.links.map((l) => (
-                    <li key={l.href}>
-                      <ExtLink href={l.href}>
-                        {l.label}
-                        <Arrow />
-                      </ExtLink>
-                    </li>
-                  ))}
-                </ul>
-              )}
+        <div className="reference-content">
+          <section id="about" aria-label="About Prakhar" className="profile-intro">
+            <p>{profile.tagline}</p>
+            <ul className="intro-points">{about.map((paragraph) => <li key={paragraph}>{paragraph}</li>)}</ul>
+            <p className="profile-now"><span>Currently</span>{profile.now}</p>
+            <p className="profile-availability"><i aria-hidden="true"/>{profile.availability}</p>
+            <div className="profile-actions">
+              <FlipCoverButton href="/book" label={booking.navLabel} />
+              <SoftPillButton as="a" href={`mailto:${profile.email}`} className="profile-email-button"><SocialGlyph kind="email" />Send an email</SoftPillButton>
+              <SoftPillButton as="a" href="/resume" className="profile-resume-button">Résumé<Arrow /></SoftPillButton>
             </div>
-          ))}
-        </div>
-      </Section>
-
-      <Section id="projects" title="Projects">
-        <Projects items={projects} />
-      </Section>
-
-      {openSource.length > 0 && (
-        <Section id="open-source" title="Open source">
-          <OpenSource repos={openSource} />
-        </Section>
-      )}
-
-      <Section id="wins" title="Recognition">
-        <ul className="divide-y divide-line border-y border-line">
-          {wins.map((w) => (
-            <li key={w.title} className="flex items-baseline justify-between gap-4 py-3">
-              <div>
-                <p>{w.href ? <ExtLink href={w.href}>{w.title}</ExtLink> : w.title}</p>
-                <p className="text-sm text-muted">{w.context}</p>
-              </div>
-              <span className="font-mono text-xs text-faint">{w.year}</span>
-            </li>
-          ))}
-        </ul>
-      </Section>
-
-      <Section id="education" title="Education">
-        <div className="flex flex-col gap-5">
-          {education.map((s) => (
-            <div key={s.name} className="flex flex-wrap items-baseline justify-between gap-x-4">
-              <div>
-                <h3 className="font-medium">{s.name}</h3>
-                <p className="text-sm text-muted">
-                  {s.degree}
-                  {s.note && <span className="text-faint"> · {s.note}</span>}
-                </p>
-              </div>
-              <span className="font-mono text-xs text-faint">{s.period}</span>
+            <div className="profile-social-block">
+              <p>Find me on</p>
+              <div className="profile-socials">{profile.links.map((link) => (
+                <SocialHoverCard key={link.label} socialName={link.label} href={link.href}><SocialGlyph kind={link.label.toLowerCase() as SocialKind} /><span>{link.label}</span></SocialHoverCard>
+              ))}<a className="social-pill aws-pill" href="/aws~env"><AwsLogo small /><span>AWS project ↗</span></a></div>
             </div>
-          ))}
-        </div>
-      </Section>
+          </section>
 
-      <footer className="mt-24 border-t border-line pt-10">
-        <p className="font-serif text-3xl tracking-tight">Let&apos;s build something.</p>
-        <p className="mt-3 max-w-md leading-relaxed text-muted">
-          Open to backend and full-stack internships and interesting collaborations.
-        </p>
-        <ExtLink href={`mailto:${profile.email}`} className="mt-5 inline-block text-lg">
-          {profile.email}
-        </ExtLink>
-        <p className="mt-16 font-mono text-xs text-faint">
-          © 2026 {profile.name} · {profile.location}
-        </p>
-      </footer>
-    </main>
+          <Section id="experience" title="Experience">
+            <ExperienceList items={experience} />
+            <Feedback quote={feedback.client} />
+          </Section>
+
+          <Section id="projects" title="Projects">
+            <ProjectsGrid items={projects} />
+          </Section>
+
+          <Section id="activity" title="GitHub activity">
+            <GitHubActivity github={github} />
+          </Section>
+
+          <Section id="open-source" title="Open source contributions">
+            <OpenSource repos={openSource} github={github} />
+            <Feedback quote={feedback.upstream} />
+          </Section>
+
+          <Section id="skills" title="Skills & technologies">
+            <div className="reference-skills">
+              {toolkit.map((group) => <div key={group.label}><h3>{group.label}</h3><ul>{group.items.map((name) => <li key={name}><Technology name={name}/></li>)}</ul></div>)}
+            </div>
+          </Section>
+
+          <Section id="wins" title="Recognition">
+            <ul className="reference-recognition">{wins.map((win) => <li key={win.title}><span className="recognition-year">{win.year}</span><h3>{win.title}</h3><p>{win.context}</p></li>)}</ul>
+          </Section>
+
+          <Section id="education" title="Education">
+            <div className="education-list">{education.map((school) => <article key={school.name}><div><h3>{school.name}</h3><p>{school.degree}</p><p className="education-note">{school.note} · {school.place}</p></div><span>{school.period}</span></article>)}</div>
+          </Section>
+
+          <Section id="contact" title="Let’s build something">
+            <p className="contact-intro">{portfolio.contactIntro}</p>
+            <div className="contact-actions"><FlipCoverButton href="/book" label={booking.navLabel}/><ExtLink href={`mailto:${profile.email}`}>{profile.email}<Arrow /></ExtLink></div>
+          </Section>
+
+          <footer className="reference-footer">
+            <p className="footer-signature">{profile.name}<span>.</span></p>
+            <p>Backend, full-stack & a little curiosity.</p>
+            <div><span>© 2026 · {profile.location}</span><a className="link" href="#main">Back to top ↑</a></div>
+          </footer>
+        </div>
+        <div className="reference-footer-grid" aria-hidden="true"><FooterBackground /></div>
+      </main>
+    </div>
   );
 }

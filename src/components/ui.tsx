@@ -4,14 +4,22 @@ export function Section({
   id,
   title,
   children,
+  number,
+  intro,
 }: {
   id: string;
   title: string;
   children: ReactNode;
+  number?: string;
+  intro?: string;
 }) {
   return (
-    <section id={id} className="mt-20 scroll-mt-16">
-      <h2 className="mb-6 font-serif text-[1.6rem] leading-none tracking-tight">{title}</h2>
+    <section id={id} aria-labelledby={`${id}-heading`} className="portfolio-section">
+      <div className="section-heading">
+        {number && <span aria-hidden="true" className="eyebrow section-number">{number}</span>}
+        <h2 id={`${id}-heading`}>{title}</h2>
+      </div>
+      {intro && <p className="section-intro">{intro}</p>}
       {children}
     </section>
   );

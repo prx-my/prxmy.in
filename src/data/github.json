@@ -1,0 +1,1952 @@
+{
+  "version": 1,
+  "username": "prx-my",
+  "fetchedAt": "2026-10-27T13:40:04.860Z",
+  "calendar": {
+    "from": "2025-10-28T00:00:00.000Z",
+    "to": "2026-10-27T13:40:04.860Z",
+    "totalContributions": 1851,
+    "weeks": [
+      {
+        "contributionDays": [
+          {
+            "date": "2025-10-28",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-10-29",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-10-30",
+            "contributionCount": 1
+          },
+          {
+            "date": "2025-10-31",
+            "contributionCount": 5
+          },
+          {
+            "date": "2025-11-01",
+            "contributionCount": 0
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2025-11-02",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-11-03",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-11-04",
+            "contributionCount": 1
+          },
+          {
+            "date": "2025-11-05",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-11-06",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-11-07",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-11-08",
+            "contributionCount": 17
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2025-11-09",
+            "contributionCount": 32
+          },
+          {
+            "date": "2025-11-10",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-11-11",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-11-12",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-11-13",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-11-14",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-11-15",
+            "contributionCount": 0
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2025-11-16",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-11-17",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-11-18",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-11-19",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-11-20",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-11-21",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-11-22",
+            "contributionCount": 0
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2025-11-23",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-11-24",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-11-25",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-11-26",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-11-27",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-11-28",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-11-29",
+            "contributionCount": 0
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2025-11-30",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-01",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-02",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-03",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-04",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-05",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-06",
+            "contributionCount": 0
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2025-12-07",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-08",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-09",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-10",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-11",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-12",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-13",
+            "contributionCount": 0
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2025-12-14",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-15",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-16",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-17",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-18",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-19",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-20",
+            "contributionCount": 0
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2025-12-21",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-22",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-23",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-24",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-25",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-26",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-27",
+            "contributionCount": 1
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2025-12-28",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-29",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-30",
+            "contributionCount": 0
+          },
+          {
+            "date": "2025-12-31",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-01",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-02",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-03",
+            "contributionCount": 0
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-01-04",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-05",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-06",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-07",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-08",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-09",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-10",
+            "contributionCount": 0
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-01-11",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-12",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-13",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-14",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-15",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-16",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-17",
+            "contributionCount": 0
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-01-18",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-19",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-20",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-21",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-22",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-23",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-24",
+            "contributionCount": 0
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-01-25",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-26",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-27",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-28",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-29",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-30",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-01-31",
+            "contributionCount": 2
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-02-01",
+            "contributionCount": 17
+          },
+          {
+            "date": "2026-02-02",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-02-03",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-02-04",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-02-05",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-02-06",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-02-07",
+            "contributionCount": 0
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-02-08",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-02-09",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-02-10",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-02-11",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-02-12",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-02-13",
+            "contributionCount": 5
+          },
+          {
+            "date": "2026-02-14",
+            "contributionCount": 24
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-02-15",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-02-16",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-02-17",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-02-18",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-02-19",
+            "contributionCount": 6
+          },
+          {
+            "date": "2026-02-20",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-02-21",
+            "contributionCount": 0
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-02-22",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-02-23",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-02-24",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-02-25",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-02-26",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-02-27",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-02-28",
+            "contributionCount": 0
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-03-01",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-03-02",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-03-03",
+            "contributionCount": 2
+          },
+          {
+            "date": "2026-03-04",
+            "contributionCount": 17
+          },
+          {
+            "date": "2026-03-05",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-03-06",
+            "contributionCount": 15
+          },
+          {
+            "date": "2026-03-07",
+            "contributionCount": 10
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-03-08",
+            "contributionCount": 24
+          },
+          {
+            "date": "2026-03-09",
+            "contributionCount": 5
+          },
+          {
+            "date": "2026-03-10",
+            "contributionCount": 18
+          },
+          {
+            "date": "2026-03-11",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-03-12",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-03-13",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-03-14",
+            "contributionCount": 0
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-03-15",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-03-16",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-03-17",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-03-18",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-03-19",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-03-20",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-03-21",
+            "contributionCount": 0
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-03-22",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-03-23",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-03-24",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-03-25",
+            "contributionCount": 4
+          },
+          {
+            "date": "2026-03-26",
+            "contributionCount": 6
+          },
+          {
+            "date": "2026-03-27",
+            "contributionCount": 33
+          },
+          {
+            "date": "2026-03-28",
+            "contributionCount": 6
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-03-29",
+            "contributionCount": 15
+          },
+          {
+            "date": "2026-03-30",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-03-31",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-04-01",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-04-02",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-04-03",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-04-04",
+            "contributionCount": 0
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-04-05",
+            "contributionCount": 5
+          },
+          {
+            "date": "2026-04-06",
+            "contributionCount": 13
+          },
+          {
+            "date": "2026-04-07",
+            "contributionCount": 3
+          },
+          {
+            "date": "2026-04-08",
+            "contributionCount": 4
+          },
+          {
+            "date": "2026-04-09",
+            "contributionCount": 5
+          },
+          {
+            "date": "2026-04-10",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-04-11",
+            "contributionCount": 28
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-04-12",
+            "contributionCount": 43
+          },
+          {
+            "date": "2026-04-13",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-04-14",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-04-15",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-04-16",
+            "contributionCount": 24
+          },
+          {
+            "date": "2026-04-17",
+            "contributionCount": 21
+          },
+          {
+            "date": "2026-04-18",
+            "contributionCount": 10
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-04-19",
+            "contributionCount": 10
+          },
+          {
+            "date": "2026-04-20",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-04-21",
+            "contributionCount": 13
+          },
+          {
+            "date": "2026-04-22",
+            "contributionCount": 2
+          },
+          {
+            "date": "2026-04-23",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-04-24",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-04-25",
+            "contributionCount": 0
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-04-26",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-04-27",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-04-28",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-04-29",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-04-30",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-05-01",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-05-02",
+            "contributionCount": 0
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-05-03",
+            "contributionCount": 15
+          },
+          {
+            "date": "2026-05-04",
+            "contributionCount": 31
+          },
+          {
+            "date": "2026-05-05",
+            "contributionCount": 21
+          },
+          {
+            "date": "2026-05-06",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-05-07",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-05-08",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-05-09",
+            "contributionCount": 0
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-05-10",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-05-11",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-05-12",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-05-13",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-05-14",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-05-15",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-05-16",
+            "contributionCount": 0
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-05-17",
+            "contributionCount": 9
+          },
+          {
+            "date": "2026-05-18",
+            "contributionCount": 11
+          },
+          {
+            "date": "2026-05-19",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-05-20",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-05-21",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-05-22",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-05-23",
+            "contributionCount": 9
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-05-24",
+            "contributionCount": 39
+          },
+          {
+            "date": "2026-05-25",
+            "contributionCount": 13
+          },
+          {
+            "date": "2026-05-26",
+            "contributionCount": 3
+          },
+          {
+            "date": "2026-05-27",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-05-28",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-05-29",
+            "contributionCount": 25
+          },
+          {
+            "date": "2026-05-30",
+            "contributionCount": 8
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-05-31",
+            "contributionCount": 13
+          },
+          {
+            "date": "2026-06-01",
+            "contributionCount": 10
+          },
+          {
+            "date": "2026-06-02",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-06-03",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-06-04",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-06-05",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-06-06",
+            "contributionCount": 0
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-06-07",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-06-08",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-06-09",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-06-10",
+            "contributionCount": 2
+          },
+          {
+            "date": "2026-06-11",
+            "contributionCount": 2
+          },
+          {
+            "date": "2026-06-12",
+            "contributionCount": 5
+          },
+          {
+            "date": "2026-06-13",
+            "contributionCount": 12
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-06-14",
+            "contributionCount": 15
+          },
+          {
+            "date": "2026-06-15",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-06-16",
+            "contributionCount": 10
+          },
+          {
+            "date": "2026-06-17",
+            "contributionCount": 3
+          },
+          {
+            "date": "2026-06-18",
+            "contributionCount": 6
+          },
+          {
+            "date": "2026-06-19",
+            "contributionCount": 5
+          },
+          {
+            "date": "2026-06-20",
+            "contributionCount": 1
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-06-21",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-06-22",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-06-23",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-06-24",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-06-25",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-06-26",
+            "contributionCount": 10
+          },
+          {
+            "date": "2026-06-27",
+            "contributionCount": 8
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-06-28",
+            "contributionCount": 3
+          },
+          {
+            "date": "2026-06-29",
+            "contributionCount": 2
+          },
+          {
+            "date": "2026-06-30",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-07-01",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-07-02",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-07-03",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-07-04",
+            "contributionCount": 0
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-07-05",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-07-06",
+            "contributionCount": 0
+          },
+          {
+            "date": "2026-07-07",
+            "contributionCount": 2
+          },
+          {
+            "date": "2026-07-08",
+            "contributionCount": 5
+          },
+          {
+            "date": "2026-07-09",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-07-10",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-07-11",
+            "contributionCount": 3
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-07-12",
+            "contributionCount": 3
+          },
+          {
+            "date": "2026-07-13",
+            "contributionCount": 2
+          },
+          {
+            "date": "2026-07-14",
+            "contributionCount": 5
+          },
+          {
+            "date": "2026-07-15",
+            "contributionCount": 2
+          },
+          {
+            "date": "2026-07-16",
+            "contributionCount": 21
+          },
+          {
+            "date": "2026-07-17",
+            "contributionCount": 54
+          },
+          {
+            "date": "2026-07-18",
+            "contributionCount": 2
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-07-19",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-07-20",
+            "contributionCount": 54
+          },
+          {
+            "date": "2026-07-21",
+            "contributionCount": 29
+          },
+          {
+            "date": "2026-07-22",
+            "contributionCount": 7
+          },
+          {
+            "date": "2026-07-23",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-07-24",
+            "contributionCount": 4
+          },
+          {
+            "date": "2026-07-25",
+            "contributionCount": 1
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-07-26",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-07-27",
+            "contributionCount": 17
+          },
+          {
+            "date": "2026-07-28",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-07-29",
+            "contributionCount": 10
+          },
+          {
+            "date": "2026-07-30",
+            "contributionCount": 20
+          },
+          {
+            "date": "2026-07-31",
+            "contributionCount": 2
+          },
+          {
+            "date": "2026-08-01",
+            "contributionCount": 3
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-08-02",
+            "contributionCount": 15
+          },
+          {
+            "date": "2026-08-03",
+            "contributionCount": 17
+          },
+          {
+            "date": "2026-08-04",
+            "contributionCount": 2
+          },
+          {
+            "date": "2026-08-05",
+            "contributionCount": 7
+          },
+          {
+            "date": "2026-08-06",
+            "contributionCount": 2
+          },
+          {
+            "date": "2026-08-07",
+            "contributionCount": 27
+          },
+          {
+            "date": "2026-08-08",
+            "contributionCount": 21
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-08-09",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-08-10",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-08-11",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-08-12",
+            "contributionCount": 15
+          },
+          {
+            "date": "2026-08-13",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-08-14",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-08-15",
+            "contributionCount": 1
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-08-16",
+            "contributionCount": 11
+          },
+          {
+            "date": "2026-08-17",
+            "contributionCount": 8
+          },
+          {
+            "date": "2026-08-18",
+            "contributionCount": 17
+          },
+          {
+            "date": "2026-08-19",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-08-20",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-08-21",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-08-22",
+            "contributionCount": 1
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-08-23",
+            "contributionCount": 13
+          },
+          {
+            "date": "2026-08-24",
+            "contributionCount": 6
+          },
+          {
+            "date": "2026-08-25",
+            "contributionCount": 11
+          },
+          {
+            "date": "2026-08-26",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-08-27",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-08-28",
+            "contributionCount": 8
+          },
+          {
+            "date": "2026-08-29",
+            "contributionCount": 2
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-08-30",
+            "contributionCount": 7
+          },
+          {
+            "date": "2026-08-31",
+            "contributionCount": 2
+          },
+          {
+            "date": "2026-09-01",
+            "contributionCount": 11
+          },
+          {
+            "date": "2026-09-02",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-09-03",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-09-04",
+            "contributionCount": 14
+          },
+          {
+            "date": "2026-09-05",
+            "contributionCount": 8
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-09-06",
+            "contributionCount": 10
+          },
+          {
+            "date": "2026-09-07",
+            "contributionCount": 7
+          },
+          {
+            "date": "2026-09-08",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-09-09",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-09-10",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-09-11",
+            "contributionCount": 4
+          },
+          {
+            "date": "2026-09-12",
+            "contributionCount": 10
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-09-13",
+            "contributionCount": 10
+          },
+          {
+            "date": "2026-09-14",
+            "contributionCount": 14
+          },
+          {
+            "date": "2026-09-15",
+            "contributionCount": 22
+          },
+          {
+            "date": "2026-09-16",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-09-17",
+            "contributionCount": 3
+          },
+          {
+            "date": "2026-09-18",
+            "contributionCount": 4
+          },
+          {
+            "date": "2026-09-19",
+            "contributionCount": 3
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-09-20",
+            "contributionCount": 15
+          },
+          {
+            "date": "2026-09-21",
+            "contributionCount": 4
+          },
+          {
+            "date": "2026-09-22",
+            "contributionCount": 6
+          },
+          {
+            "date": "2026-09-23",
+            "contributionCount": 3
+          },
+          {
+            "date": "2026-09-24",
+            "contributionCount": 6
+          },
+          {
+            "date": "2026-09-25",
+            "contributionCount": 3
+          },
+          {
+            "date": "2026-09-26",
+            "contributionCount": 1
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-09-27",
+            "contributionCount": 2
+          },
+          {
+            "date": "2026-09-28",
+            "contributionCount": 7
+          },
+          {
+            "date": "2026-09-29",
+            "contributionCount": 21
+          },
+          {
+            "date": "2026-09-30",
+            "contributionCount": 16
+          },
+          {
+            "date": "2026-10-01",
+            "contributionCount": 22
+          },
+          {
+            "date": "2026-10-02",
+            "contributionCount": 18
+          },
+          {
+            "date": "2026-10-03",
+            "contributionCount": 2
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-10-04",
+            "contributionCount": 3
+          },
+          {
+            "date": "2026-10-05",
+            "contributionCount": 10
+          },
+          {
+            "date": "2026-10-06",
+            "contributionCount": 7
+          },
+          {
+            "date": "2026-10-07",
+            "contributionCount": 2
+          },
+          {
+            "date": "2026-10-08",
+            "contributionCount": 16
+          },
+          {
+            "date": "2026-10-09",
+            "contributionCount": 36
+          },
+          {
+            "date": "2026-10-10",
+            "contributionCount": 183
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-10-11",
+            "contributionCount": 30
+          },
+          {
+            "date": "2026-10-12",
+            "contributionCount": 21
+          },
+          {
+            "date": "2026-10-13",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-10-14",
+            "contributionCount": 14
+          },
+          {
+            "date": "2026-10-15",
+            "contributionCount": 3
+          },
+          {
+            "date": "2026-10-16",
+            "contributionCount": 14
+          },
+          {
+            "date": "2026-10-17",
+            "contributionCount": 4
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-10-18",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-10-19",
+            "contributionCount": 2
+          },
+          {
+            "date": "2026-10-20",
+            "contributionCount": 1
+          },
+          {
+            "date": "2026-10-21",
+            "contributionCount": 4
+          },
+          {
+            "date": "2026-10-22",
+            "contributionCount": 16
+          },
+          {
+            "date": "2026-10-23",
+            "contributionCount": 3
+          },
+          {
+            "date": "2026-10-24",
+            "contributionCount": 9
+          }
+        ]
+      },
+      {
+        "contributionDays": [
+          {
+            "date": "2026-10-25",
+            "contributionCount": 12
+          },
+          {
+            "date": "2026-10-26",
+            "contributionCount": 2
+          },
+          {
+            "date": "2026-10-27",
+            "contributionCount": 1
+          }
+        ]
+      }
+    ]
+  },
+  "publicMergedCount": 221,
+  "repositories": [
+    {
+      "nameWithOwner": "OWASP/cve-lite-cli",
+      "url": "https://github.com/OWASP/cve-lite-cli",
+      "description": "Fast, developer-friendly JS/TS dependency vulnerability scanner with local lockfile scanning, OSV matching, direct vs transitive visibility, --fix, JSON output, and practical remediation guidance.",
+      "stars": 774,
+      "mergedCount": 15,
+      "highlights": [
+        {
+          "number": 1202,
+          "title": "fix(usage): surface the 5000-file scan cap so --only-used can't drop findings (#1180)",
+          "url": "https://github.com/OWASP/cve-lite-cli/pull/1202",
+          "repository": "OWASP/cve-lite-cli",
+          "mergedAt": "2026-10-01T21:31:52Z",
+          "additions": 702,
+          "deletions": 103
+        },
+        {
+          "number": 1183,
+          "title": "fix(version): apply the 0.x caret rule in satisfiesRange",
+          "url": "https://github.com/OWASP/cve-lite-cli/pull/1183",
+          "repository": "OWASP/cve-lite-cli",
+          "mergedAt": "2026-09-21T16:58:56Z",
+          "additions": 36,
+          "deletions": 5
+        },
+        {
+          "number": 1271,
+          "title": "fix(report): emit HTML override fix commands relative to the scanned project",
+          "url": "https://github.com/OWASP/cve-lite-cli/pull/1271",
+          "repository": "OWASP/cve-lite-cli",
+          "mergedAt": "2026-10-09T12:19:50Z",
+          "additions": 111,
+          "deletions": 23
+        },
+        {
+          "number": 1231,
+          "title": "fix(output): disclose compact-mode finding and command-group truncation",
+          "url": "https://github.com/OWASP/cve-lite-cli/pull/1231",
+          "repository": "OWASP/cve-lite-cli",
+          "mergedAt": "2026-09-26T13:23:20Z",
+          "additions": 330,
+          "deletions": 2
+        },
+        {
+          "number": 1230,
+          "title": "refactor(cli): extract CLI flag literals into named constants (#420 task 1)",
+          "url": "https://github.com/OWASP/cve-lite-cli/pull/1230",
+          "repository": "OWASP/cve-lite-cli",
+          "mergedAt": "2026-09-24T13:54:46Z",
+          "additions": 173,
+          "deletions": 93
+        },
+        {
+          "number": 1229,
+          "title": "refactor(cli): de-duplicate flag-conflict errors (#420 task 3)",
+          "url": "https://github.com/OWASP/cve-lite-cli/pull/1229",
+          "repository": "OWASP/cve-lite-cli",
+          "mergedAt": "2026-09-30T12:22:37Z",
+          "additions": 11,
+          "deletions": 7
+        },
+        {
+          "number": 1228,
+          "title": "style(cli): add braces to remaining single-line if statements (#420 task 4)",
+          "url": "https://github.com/OWASP/cve-lite-cli/pull/1228",
+          "repository": "OWASP/cve-lite-cli",
+          "mergedAt": "2026-09-29T11:44:31Z",
+          "additions": 33,
+          "deletions": 11
+        },
+        {
+          "number": 1181,
+          "title": "fix(overrides): correct OA008 pluralization and order copies by version",
+          "url": "https://github.com/OWASP/cve-lite-cli/pull/1181",
+          "repository": "OWASP/cve-lite-cli",
+          "mergedAt": "2026-09-23T12:19:18Z",
+          "additions": 20,
+          "deletions": 2
+        },
+        {
+          "number": 1200,
+          "title": "docs: add OA010 override hygiene rule documentation (#1194)",
+          "url": "https://github.com/OWASP/cve-lite-cli/pull/1200",
+          "repository": "OWASP/cve-lite-cli",
+          "mergedAt": "2026-09-22T11:36:53Z",
+          "additions": 115,
+          "deletions": 3
+        }
+      ]
+    },
+    {
+      "nameWithOwner": "sugarlabs/musicblocks-v4",
+      "url": "https://github.com/sugarlabs/musicblocks-v4",
+      "description": "A complete overhaul of Music Blocks",
+      "stars": 127,
+      "mergedCount": 5,
+      "highlights": [
+        {
+          "number": 850,
+          "title": "feat(masonry): duplicate a brick and its subtree as an independent tower",
+          "url": "https://github.com/sugarlabs/musicblocks-v4/pull/850",
+          "repository": "sugarlabs/musicblocks-v4",
+          "mergedAt": "2026-09-18T17:58:02Z",
+          "additions": 408,
+          "deletions": 11
+        },
+        {
+          "number": 919,
+          "title": "#870 | fix(masonry): clear and toggle brick selection on press",
+          "url": "https://github.com/sugarlabs/musicblocks-v4/pull/919",
+          "repository": "sugarlabs/musicblocks-v4",
+          "mergedAt": "2026-10-05T04:50:56Z",
+          "additions": 274,
+          "deletions": 22
+        },
+        {
+          "number": 871,
+          "title": "#868 | fix(masonry): separate drag and click selection",
+          "url": "https://github.com/sugarlabs/musicblocks-v4/pull/871",
+          "repository": "sugarlabs/musicblocks-v4",
+          "mergedAt": "2026-09-28T12:45:27Z",
+          "additions": 192,
+          "deletions": 28
+        },
+        {
+          "number": 942,
+          "title": "#936 | refactor(masonry): share the drag trailing-click suppression guard",
+          "url": "https://github.com/sugarlabs/musicblocks-v4/pull/942",
+          "repository": "sugarlabs/musicblocks-v4",
+          "mergedAt": "2026-10-08T09:41:52Z",
+          "additions": 131,
+          "deletions": 23
+        },
+        {
+          "number": 646,
+          "title": "fix(brick): correct tail step width bleed for strokeWidth > 2",
+          "url": "https://github.com/sugarlabs/musicblocks-v4/pull/646",
+          "repository": "sugarlabs/musicblocks-v4",
+          "mergedAt": "2026-06-28T20:27:27Z",
+          "additions": 3,
+          "deletions": 1
+        }
+      ]
+    },
+    {
+      "nameWithOwner": "dweep-desai/FaceGate-Mac",
+      "url": "https://github.com/dweep-desai/FaceGate-Mac",
+      "description": "World's first Face Authentication enabled MacOS App-locker, completely free and open-source. Unlock your Mac apps using Face , TouchID or password. Completely local and encrypted - your data never leaves your Mac",
+      "stars": 582,
+      "mergedCount": 4,
+      "highlights": [
+        {
+          "number": 124,
+          "title": "v1.3.0: Persistent App Window overlay, camera fixes, ActionAuthWindow integration",
+          "url": "https://github.com/dweep-desai/FaceGate-Mac/pull/124",
+          "repository": "dweep-desai/FaceGate-Mac",
+          "mergedAt": "2026-07-06T13:36:43Z",
+          "additions": 474,
+          "deletions": 62
+        },
+        {
+          "number": 140,
+          "title": "v1.3.1: fix duplicate Touch ID, privacy flash, Touch ID focus conflicts, build info",
+          "url": "https://github.com/dweep-desai/FaceGate-Mac/pull/140",
+          "repository": "dweep-desai/FaceGate-Mac",
+          "mergedAt": "2026-07-09T12:06:54Z",
+          "additions": 513,
+          "deletions": 173
+        },
+        {
+          "number": 110,
+          "title": "fix: resolve camera session race conditions on rapid lock cycles",
+          "url": "https://github.com/dweep-desai/FaceGate-Mac/pull/110",
+          "repository": "dweep-desai/FaceGate-Mac",
+          "mergedAt": "2026-06-27T09:40:19Z",
+          "additions": 64,
+          "deletions": 25
+        },
+        {
+          "number": 105,
+          "title": "feat: Add option to disable Emergency Kill Shortcut",
+          "url": "https://github.com/dweep-desai/FaceGate-Mac/pull/105",
+          "repository": "dweep-desai/FaceGate-Mac",
+          "mergedAt": "2026-06-26T19:02:46Z",
+          "additions": 32,
+          "deletions": 6
+        }
+      ]
+    }
+  ],
+  "recentMerges": [
+    {
+      "number": 1368,
+      "title": "docs: update override hygiene rule ranges",
+      "url": "https://github.com/OWASP/cve-lite-cli/pull/1368",
+      "repository": "OWASP/cve-lite-cli",
+      "mergedAt": "2026-10-27T12:36:13Z",
+      "additions": 3,
+      "deletions": 3
+    },
+    {
+      "number": 1365,
+      "title": "ci: test the declared Node floor on every push (#1356)",
+      "url": "https://github.com/OWASP/cve-lite-cli/pull/1365",
+      "repository": "OWASP/cve-lite-cli",
+      "mergedAt": "2026-10-26T12:43:47Z",
+      "additions": 36,
+      "deletions": 3
+    },
+    {
+      "number": 4,
+      "title": "Add monitoring and usage intelligence",
+      "url": "https://github.com/prx-my/clarity-sms/pull/4",
+      "repository": "prx-my/clarity-sms",
+      "mergedAt": "2026-10-25T18:10:25Z",
+      "additions": 4702,
+      "deletions": 29
+    },
+    {
+      "number": 3,
+      "title": "Add AI voice agents, consent controls and cost intelligence",
+      "url": "https://github.com/prx-my/clarity-sms/pull/3",
+      "repository": "prx-my/clarity-sms",
+      "mergedAt": "2026-10-25T17:50:36Z",
+      "additions": 4397,
+      "deletions": 70
+    },
+    {
+      "number": 2,
+      "title": "Make dialer country code button usable",
+      "url": "https://github.com/prx-my/clarity-sms/pull/2",
+      "repository": "prx-my/clarity-sms",
+      "mergedAt": "2026-10-24T20:46:38Z",
+      "additions": 7,
+      "deletions": 1
+    },
+    {
+      "number": 1,
+      "title": "Add browser voice dialer and call history",
+      "url": "https://github.com/prx-my/clarity-sms/pull/1",
+      "repository": "prx-my/clarity-sms",
+      "mergedAt": "2026-10-24T20:41:22Z",
+      "additions": 630,
+      "deletions": 16
+    },
+    {
+      "number": 1284,
+      "title": "refactor(sarif): replace the trailing positional parameters with an options object",
+      "url": "https://github.com/OWASP/cve-lite-cli/pull/1284",
+      "repository": "OWASP/cve-lite-cli",
+      "mergedAt": "2026-10-19T02:21:22Z",
+      "additions": 37,
+      "deletions": 35
+    },
+    {
+      "number": 1285,
+      "title": "chore: replace em dashes in source and output strings (#1283)",
+      "url": "https://github.com/OWASP/cve-lite-cli/pull/1285",
+      "repository": "OWASP/cve-lite-cli",
+      "mergedAt": "2026-10-17T13:07:31Z",
+      "additions": 125,
+      "deletions": 125
+    }
+  ],
+  "recentSince": "2026-07-29",
+  "recentComplete": true
+}

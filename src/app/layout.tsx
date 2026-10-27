@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Newsreader } from "next/font/google";
+import { Bodoni_Moda, Geist, Geist_Mono, Newsreader } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { profile } from "@/content";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -21,6 +22,13 @@ const newsreader = Newsreader({
   axes: ["opsz"],
 });
 
+const bodoni = Bodoni_Moda({
+  variable: "--font-bodoni",
+  subsets: ["latin"],
+  weight: "700",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(profile.site),
   title: `${profile.name}, ${profile.role}`,
@@ -37,10 +45,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${newsreader.variable} antialiased`}
+      suppressHydrationWarning
+      className={`${geistSans.variable} ${geistMono.variable} ${newsreader.variable} ${bodoni.variable} antialiased`}
     >
       <body className="font-sans">
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
         <Analytics />
       </body>
     </html>
