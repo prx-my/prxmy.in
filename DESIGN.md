@@ -6,6 +6,8 @@ This is a developer's portfolio with a 1930s detective/newspaper/comic sensibili
 
 - Warm ivory paper, ink black, aged beige, and deliberate vermilion red. Red marks actions, section punctuation and emphasis.
 - Bodoni is the nameplate; Newsreader supplies editorial headlines and quotations; Geist keeps body copy clear; monospace labels carry dates and small metadata.
+- The personal imprint is `prxmy.`: a compact lowercase Bodoni wordmark in the masthead, footer, 404 and social card, with the existing vermilion period. Prakhar Gupta remains the primary name. The favicon reduces the imprint to an outlined Bodoni `p` and red period for legibility at tab sizes.
+- The full name has no terminal period. The closing section returns to the page's paper palette before the footer, with a compact verified visitor count and an interactive souvenir stamp. Hover lifts the paper, activation presses a vermilion mark, and repeat activation replays it without altering analytics. Keyboard feedback and reduced motion are supported.
 - Headlines and body copy must have a visible hierarchy. Main text should not shrink to fit more decoration.
 - Use the shared type scale: 16px body, 14px supporting copy, 13px compact controls, 12px metadata, and 18px small headings. Preserve these sizes at smaller breakpoints; rearrange the layout instead of shrinking text. Large serif headings and the nameplate provide the comic/editorial hierarchy.
 - Double rules, figure captions, numbered case files, line illustrations and small web details provide the newspaper/comic character.
