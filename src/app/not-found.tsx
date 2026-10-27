@@ -4,7 +4,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { TextButton, WebLines } from "@/components/noir-details";
 
 export const metadata: Metadata = {
-  title: "Page not found · Prakhar Gupta",
+  title: { absolute: "Page not found · Prakhar Gupta" },
   description: "This trail went cold. Head back to Prakhar Gupta’s portfolio and explore the projects.",
   robots: { index: false, follow: true },
 };

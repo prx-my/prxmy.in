@@ -10,7 +10,8 @@
     "typecheck": "next typegen && tsc --noEmit",
     "test": "node --test tests/*.test.ts",
     "github:refresh": "node --env-file-if-exists=.env.local scripts/refresh-github.ts",
-    "visitors:refresh": "node scripts/refresh-visitors.ts"
+    "visitors:refresh": "node scripts/refresh-visitors.ts",
+    "smoke": "node scripts/smoke.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

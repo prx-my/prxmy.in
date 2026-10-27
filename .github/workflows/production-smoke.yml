@@ -1,0 +1,20 @@
+name: Production smoke test
+
+# Runs after every successful Vercel production deployment, and daily as a
+# basic uptime, metadata and broken-link monitor. A failed run emails the repo owner.
+on:
+  deployment_status:
+  schedule:
+    - cron: "30 3 * * *"
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    if: github.event_name != 'deployment_status' || (github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'Production')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm run smoke -- https://www.prxmy.in
