@@ -1,37 +1,21 @@
-# Portfolio interface reference
+# Design and asset provenance
 
-The portfolio interface was adapted at the owner's request from
-[Ashutoshx7/Portfolio-v2-](https://github.com/Ashutoshx7/Portfolio-v2-), cloned at
-commit `5b195ad9af385d5eae3c78bd34d5a1416c647473`.
+The previous reference-based version was saved locally at commit
+`da506aeee160df7e5eaa54f8eb1cdc59063185c2` before this redesign.
 
-The adaptation retains the original's narrow profile column, banner/profile
-composition, dotted guide lines, section intersections, side navigation, framed
-project previews, expandable experience rows, layered buttons, social hover
-cards, and fading dot footer. The palette and typography use this portfolio's
-ivory, ink, and oxblood theme.
+The current homepage layout, button system, case-file project presentation,
+section hierarchy, vector diagrams and generated hero illustration were created
+for Prakhar Gupta's portfolio. The copied banner, flip-cover buttons, social
+hover cards, framed project grid, right-hand index and dotted footer have been
+removed from this checkout.
 
-Directly adapted source components:
+The earlier experiment used [Ashutoshx7/Portfolio-v2-](https://github.com/Ashutoshx7/Portfolio-v2-).
+Its useful behavioral ideas informed the iteration: keyboard navigation,
+expandable details and access to full project descriptions. The former source
+adaptation and its provenance remain recoverable in the checkpoint commit.
 
-- `src/components/pixel-perfect/soft-pill-button.tsx`
-- `src/components/pixel-perfect/flip-cover-button.tsx` and its scoped CSS
-- `src/components/FooterBackground.tsx`
-- `src/components/RightNavbar.tsx`
-- `src/components/ProjectsGrid.tsx`
-- `src/components/ExperienceList.tsx`
-- `src/components/pixel-perfect/social-hover-card.tsx`
-- `src/components/theme-toggle.tsx`
-- `src/lib/utils.ts`
+Standard icons remain supplied by react-icons and retain their upstream
+licenses. next-themes handles theme persistence. The local calendar, GitHub data
+reader, booking integration and personal content remain part of this portfolio.
 
-The original flip-cover CSS credits Bennett Feely; that credit is retained.
-`public/portfolio/banner.jpg` is the original repository's light banner artwork,
-displayed through the portfolio's monochrome theme.
-
-Prakhar's avatar comes from his public GitHub profile. EcoAudit and JanSamadhan
-preview images come from the public thumbnails of the existing linked demos.
-The remaining project covers are illustrative, code-rendered title cards.
-Project detail pages retain the curated project descriptions and engineering
-notes. No reference-project achievements, endorsements, follower counts, or
-personal claims are used.
-
-The GitHub data reader, verified snapshot, booking integration, résumé routes,
-AWS pages, and all personal content belong to this existing portfolio.
+The original art prompt and design choices are recorded in [DESIGN.md](DESIGN.md).

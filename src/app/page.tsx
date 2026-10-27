@@ -1,37 +1,18 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { cacheLife } from "next/cache";
-import { AwsLogo } from "@/components/aws-logo";
-import { OpenSource } from "@/components/open-source";
-import { GitHubActivity } from "@/components/github-activity";
-import { ProjectsGrid } from "@/components/ProjectsGrid";
-import { ExperienceList } from "@/components/ExperienceList";
-import { RightNavbar } from "@/components/RightNavbar";
-import { QuickNavigation } from "@/components/quick-navigation";
-import { ThemeToggle } from "@/components/theme-toggle";
-import SoftPillButton from "@/components/pixel-perfect/soft-pill-button";
-import { FlipCoverButton } from "@/components/pixel-perfect/flip-cover-button";
-import SocialHoverCard from "@/components/pixel-perfect/social-hover-card";
-import { Technology } from "@/components/technology";
-import { FooterBackground } from "@/components/FooterBackground";
-import { Feedback } from "@/components/feedback";
-import { Arrow, ExtLink, Section } from "@/components/ui";
-import { SocialGlyph, type SocialKind } from "@/components/social-icon";
 import { about, booking, education, experience, feedback, openSource, portfolio, profile, projects, toolkit, wins } from "@/content";
 import { getGitHubData } from "@/lib/github";
+import { QuickNavigation } from "@/components/quick-navigation";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { NoirProjects } from "@/components/noir-projects";
+import { SectionTitle, TextButton, WebLines } from "@/components/noir-details";
+import { Arrow, ExtLink } from "@/components/ui";
+import { OpenSource } from "@/components/open-source";
+import { GitHubActivity } from "@/components/github-activity";
+import { Feedback } from "@/components/feedback";
 
 export const metadata: Metadata = { alternates: { canonical: "/" } };
-
-const index = [
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "GitHub", href: "#activity" },
-  { label: "Open source", href: "#open-source" },
-  { label: "Skills", href: "#skills" },
-  { label: "Recognition", href: "#wins" },
-  { label: "Contact", href: "#contact" },
-];
 
 export default async function Home() {
   "use cache";
@@ -39,88 +20,85 @@ export default async function Home() {
   const github = await getGitHubData();
 
   return (
-    <div className="reference-page">
-      <a className="skip-link" href="#main">Skip to content</a>
-      <RightNavbar items={index} />
-      <main id="main" className="reference-column">
-        <div className="profile-banner">
-          <Image src="/portfolio/banner.jpg" alt="" fill priority sizes="(min-width: 768px) 640px, 100vw" className="banner-image" />
-          <div className="banner-wash" aria-hidden="true" />
-          <span className="banner-wordmark">PG.</span>
-          <span className="banner-caption">JAIPUR, INDIA <span aria-hidden="true">/</span> PORTFOLIO ’26</span>
+    <div className="noir-page">
+      <a href="#main" className="skip-link">Skip to content</a>
+      <header className="noir-header page-width">
+        <div className="edition-line"><span>Independent developer / Jaipur, India</span><span>Portfolio edition · 2026</span></div>
+        <div className="noir-masthead">
+          <a className="noir-wordmark" href="#main" aria-label="Prakhar Gupta, home">PG<span>.</span></a>
+          <nav aria-label="Main navigation"><a href="#projects">The work</a><a href="#about">About</a><a href="#open-source">Open source</a><a href="#contact">Contact</a></nav>
+          <div className="masthead-tools"><QuickNavigation items={portfolio.index}/><ThemeToggle/></div>
         </div>
-
-        <header className="profile-header">
-          <div className="profile-identity">
-            <div className="profile-photo-frame"><Image src="/portfolio/avatar.png" alt="Prakhar’s GitHub avatar" width={80} height={80} priority /></div>
-            <div><h1>{profile.name}<span>.</span></h1><p>{profile.role}</p></div>
+      </header>
+      <main id="main">
+        <section className="noir-hero page-width" aria-labelledby="hero-heading">
+          <div className="hero-copy">
+            <p className="hero-kicker"><span aria-hidden="true"/>An engineer’s working collection</p>
+            <h1 id="hero-heading"><span>Prakhar</span>{" "}<span>Gupta<span className="red-period">.</span></span></h1>
+            <p className="hero-role">{profile.role}</p>
+            <div className="hero-availability"><span aria-hidden="true"/>Full-time roles & freelance projects</div>
+            <div className="hero-buttons"><TextButton href="#projects" variant="red">View the work</TextButton><TextButton href="/resume" variant="outline">Résumé</TextButton></div>
+            <div className="hero-secondary"><a href="/book" className="link">{booking.navLabel}<Arrow/></a><span aria-hidden="true">/</span><a href="/aws~env" className="link">The AWS project<Arrow/></a></div>
+            <ul className="hero-social-links">{profile.links.map(link=><li key={link.label}><ExtLink href={link.href}>{link.label}<Arrow/></ExtLink></li>)}</ul>
           </div>
-          <div className="profile-controls"><QuickNavigation items={portfolio.index} /><ThemeToggle /></div>
-        </header>
+          <figure className="hero-illustration">
+            <div className="hero-art-frame"><Image src="/art/the-night-shift.webp" alt="Original noir illustration: a detective at a desk, studying diagrams under a red lamp" width={1000} height={1250} priority sizes="(min-width: 1100px) 420px, (min-width: 720px) 40vw, calc(100vw - 64px)"/><div className="hero-art-edge" aria-hidden="true"/></div>
+            <span className="hero-art-tag">The night shift</span>
+            <figcaption><span>Fig. 01</span><span>Curiosity doesn’t clock out.</span></figcaption>
+          </figure>
+          <WebLines className="hero-web"/>
+        </section>
 
-        <div className="reference-content">
-          <section id="about" aria-label="About Prakhar" className="profile-intro">
-            <p>{profile.tagline}</p>
-            <ul className="intro-points">{about.map((paragraph) => <li key={paragraph}>{paragraph}</li>)}</ul>
-            <p className="profile-now"><span>Currently</span>{profile.now}</p>
-            <p className="profile-availability"><i aria-hidden="true"/>{profile.availability}</p>
-            <div className="profile-actions">
-              <FlipCoverButton href="/book" label={booking.navLabel} />
-              <SoftPillButton as="a" href={`mailto:${profile.email}`} className="profile-email-button"><SocialGlyph kind="email" />Send an email</SoftPillButton>
-              <SoftPillButton as="a" href="/resume" className="profile-resume-button">Résumé<Arrow /></SoftPillButton>
-            </div>
-            <div className="profile-social-block">
-              <p>Find me on</p>
-              <div className="profile-socials">{profile.links.map((link) => (
-                <SocialHoverCard key={link.label} socialName={link.label} href={link.href}><SocialGlyph kind={link.label.toLowerCase() as SocialKind} /><span>{link.label}</span></SocialHoverCard>
-              ))}<a className="social-pill aws-pill" href="/aws~env"><AwsLogo small /><span>AWS project ↗</span></a></div>
-            </div>
-          </section>
-
-          <Section id="experience" title="Experience">
-            <ExperienceList items={experience} />
-            <Feedback quote={feedback.client} />
-          </Section>
-
-          <Section id="projects" title="Projects">
-            <ProjectsGrid items={projects} />
-          </Section>
-
-          <Section id="activity" title="GitHub activity">
-            <GitHubActivity github={github} />
-          </Section>
-
-          <Section id="open-source" title="Open source contributions">
-            <OpenSource repos={openSource} github={github} />
-            <Feedback quote={feedback.upstream} />
-          </Section>
-
-          <Section id="skills" title="Skills & technologies">
-            <div className="reference-skills">
-              {toolkit.map((group) => <div key={group.label}><h3>{group.label}</h3><ul>{group.items.map((name) => <li key={name}><Technology name={name}/></li>)}</ul></div>)}
-            </div>
-          </Section>
-
-          <Section id="wins" title="Recognition">
-            <ul className="reference-recognition">{wins.map((win) => <li key={win.title}><span className="recognition-year">{win.year}</span><h3>{win.title}</h3><p>{win.context}</p></li>)}</ul>
-          </Section>
-
-          <Section id="education" title="Education">
-            <div className="education-list">{education.map((school) => <article key={school.name}><div><h3>{school.name}</h3><p>{school.degree}</p><p className="education-note">{school.note} · {school.place}</p></div><span>{school.period}</span></article>)}</div>
-          </Section>
-
-          <Section id="contact" title="Let’s build something">
-            <p className="contact-intro">{portfolio.contactIntro}</p>
-            <div className="contact-actions"><FlipCoverButton href="/book" label={booking.navLabel}/><ExtLink href={`mailto:${profile.email}`}>{profile.email}<Arrow /></ExtLink></div>
-          </Section>
-
-          <footer className="reference-footer">
-            <p className="footer-signature">{profile.name}<span>.</span></p>
-            <p>Backend, full-stack & a little curiosity.</p>
-            <div><span>© 2026 · {profile.location}</span><a className="link" href="#main">Back to top ↑</a></div>
-          </footer>
+        <div className="work-wire page-width" aria-label="Work overview">
+          <a href="#experience"><span>01</span><div><strong>Client work</strong><p>Currently at Schrader</p></div><span aria-hidden="true">↗</span></a>
+          <a href="#open-source"><span>02</span><div><strong>Open source</strong><p>OWASP · Sugar Labs · FaceGate</p></div><span aria-hidden="true">↗</span></a>
+          <a href="#projects"><span>03</span><div><strong>Independent builds</strong><p>Tools with a job to do</p></div><span aria-hidden="true">↗</span></a>
         </div>
-        <div className="reference-footer-grid" aria-hidden="true"><FooterBackground /></div>
+
+        <section id="projects" className="noir-section page-width" aria-labelledby="projects-heading">
+          <div id="projects-heading"><SectionTitle number="01" title="The selected work" note="Built, tested, shipped"/></div>
+          <NoirProjects items={projects}/>
+        </section>
+
+        <section id="about" className="noir-section page-width about-section" aria-labelledby="about-heading">
+          <div id="about-heading"><SectionTitle number="02" title="Behind the work" note="A short introduction"/></div>
+          <div className="about-layout">
+            <p className="about-lead">{profile.tagline}</p>
+            <div className="about-body">{about.map(paragraph=><p key={paragraph}>{paragraph}</p>)}<p className="now-note"><span>On the desk</span>{profile.now}</p></div>
+          </div>
+          <div className="toolkit-strip">{toolkit.map(group=><div key={group.label}><h3>{group.label}</h3><p>{group.items.join(" · ")}</p></div>)}</div>
+        </section>
+
+        <section id="experience" className="noir-section page-width" aria-labelledby="experience-heading">
+          <div id="experience-heading"><SectionTitle number="03" title="Work, in practice" note="Professional experience"/></div>
+          <div className="experience-layout">
+            <div className="experience-timeline">{experience.map(job=><article key={job.org}><p className="eyebrow job-date">{job.period}</p><h3>{job.href ? <ExtLink href={job.href}>{job.org}<Arrow/></ExtLink> : job.org}</h3><p className="job-role">{job.role}</p><p className="job-place">{job.place}</p><ul className="experience-points">{job.points.map(point=><li key={point}>{point}</li>)}</ul>{job.links && <ul className="client-links">{job.links.map(link=><li key={link.href}><ExtLink href={link.href}>{link.label}<Arrow/></ExtLink></li>)}</ul>}<p className="data-note">Agency outcomes are curated separately from public GitHub activity.</p></article>)}</div>
+            <aside className="client-note"><span className="note-pin" aria-hidden="true"/><Feedback quote={feedback.client}/></aside>
+          </div>
+        </section>
+
+        <section id="open-source" className="ink-section noir-section" aria-labelledby="oss-heading">
+          <div className="page-width ink-inner"><div id="oss-heading"><SectionTitle number="04" title="Out in the open" note="Contributing upstream"/></div><p className="ink-intro">Security tooling. Music education. A safer desktop.<br/>A few places where I’ve left the code better.</p><div className="oss-reading"><OpenSource repos={openSource} github={github}/><Feedback quote={feedback.upstream}/></div><WebLines className="ink-web"/></div>
+        </section>
+
+        <section id="activity" className="noir-section page-width activity-section" aria-labelledby="activity-heading">
+          <div id="activity-heading"><SectionTitle number="05" title="The daily record" note="Twelve months on GitHub"/></div>
+          <div className="activity-sheet"><div className="sheet-rule" aria-hidden="true"/><GitHubActivity github={github}/></div>
+        </section>
+
+        <div className="page-width closing-columns">
+          <section id="wins" className="noir-section" aria-labelledby="wins-heading"><div id="wins-heading"><SectionTitle number="06" title="Recognition" note="A few good days"/></div><ul className="noir-wins">{wins.map(win=><li key={win.title}><span>{win.year}</span><div><h3>{win.title}</h3><p>{win.context}</p></div></li>)}</ul></section>
+          <section id="education" className="noir-section" aria-labelledby="education-heading"><div id="education-heading"><SectionTitle number="07" title="Still learning" note="Education"/></div><div className="education-list">{education.map(school=><article key={school.name}><span className="eyebrow">{school.period}</span><h3>{school.name}</h3><p>{school.degree}</p><p className="education-note">{school.note} · {school.place}</p></article>)}</div></section>
+        </div>
+
+        <section id="contact" className="noir-contact noir-section" aria-labelledby="contact-heading">
+          <div className="page-width contact-layout">
+            <div><p className="eyebrow">08 / The next chapter</p><h2 id="contact-heading">Let’s build<br/><em>something</em><span>.</span></h2></div>
+            <div className="contact-copy"><p>{portfolio.contactIntro}</p><TextButton href="/book" variant="red">{booking.navLabel}</TextButton><ExtLink href={`mailto:${profile.email}`} className="contact-email">{profile.email}<Arrow/></ExtLink></div>
+            <WebLines className="contact-web"/>
+          </div>
+          <footer className="page-width noir-footer"><span className="footer-mark">PG.</span><p>© 2026 Prakhar Gupta · Jaipur, India</p><ul>{profile.links.map(link=><li key={link.label}><ExtLink href={link.href}>{link.label}<Arrow/></ExtLink></li>)}</ul><a href="#main" className="back-top" aria-label="Back to top">↑</a></footer>
+        </section>
       </main>
     </div>
   );

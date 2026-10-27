@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { projects } from "@/content";
 import { Arrow, ExtLink } from "@/components/ui";
 import { Technology } from "@/components/technology";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { ProjectVisual } from "@/components/project-visual";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -32,7 +32,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       <p className="eyebrow">Selected work / {project.year}</p>
       <h1>{project.name}<span>.</span></h1>
       {project.badge && <p className="detail-badge">{project.badge}</p>}
-      {project.preview && <div className="detail-preview"><Image src={project.preview} alt={`${project.name} demo preview`} fill priority sizes="(min-width: 768px) 720px, calc(100vw - 48px)" /></div>}
+      <div className="detail-preview"><ProjectVisual slug={project.slug}/></div>
       <section aria-labelledby="overview"><h2 id="overview">The project</h2><p>{project.summary}</p></section>
       <section aria-labelledby="engineering"><h2 id="engineering">The engineering</h2><p>{project.hardPart}</p></section>
       <section aria-labelledby="stack"><h2 id="stack">Built with</h2><ul className="detail-stack">{project.stack.map((name) => <li key={name}><Technology name={name}/></li>)}</ul></section>

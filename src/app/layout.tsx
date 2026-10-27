@@ -25,7 +25,7 @@ const newsreader = Newsreader({
 const bodoni = Bodoni_Moda({
   variable: "--font-bodoni",
   subsets: ["latin"],
-  weight: "700",
+  weight: ["700", "900"],
   display: "swap",
 });
 

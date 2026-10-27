@@ -47,7 +47,7 @@ export function QuickNavigation({ items }: { items: Link[] }) {
   return (
     <>
       <button type="button" className="index-trigger" onClick={open} aria-haspopup="dialog" aria-keyshortcuts="Meta+k Control+k">
-        <span>Index</span><kbd><span aria-hidden="true">⌘</span>K</kbd>
+        <span className="sr-only">Open portfolio index</span><kbd><span aria-hidden="true">⌘</span>K</kbd>
       </button>
       <dialog ref={dialog} className="index-dialog" aria-labelledby={titleId}
         onClick={(event) => { if (event.target === event.currentTarget) dialog.current?.close(); }}>

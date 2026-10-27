@@ -11,11 +11,15 @@ npm install
 npm run dev
 ```
 
-Curated biography, projects, professional claims, links, and education live in `src/content.ts`. The homepage adapts the cloned Ashutoshx7 portfolio's compact layout and components in an ivory/ink/oxblood theme; see [ATTRIBUTION.md](ATTRIBUTION.md) for source provenance. Existing booking, résumé, AWS project, video, PDF URLs, redirects, and analytics are retained.
+Curated biography, project descriptions, professional claims, links and education live in `src/content.ts`.
 
-The header index opens with its button or Cmd/Ctrl+K, supports search and arrow-key navigation, and closes with Escape. The desktop side index tracks the active section. The theme control switches between ivory and dark noir, and social buttons reveal profile hover cards. Booking uses the source's flip-cover button, adapted for keyboard focus and the existing `/book` route. Motion respects reduced-motion preferences.
+The current homepage is an original noir editorial design: ivory newsprint, ink-black panels, vermilion actions, a Bodoni nameplate and an original detective illustration. Project work is presented as numbered case files with custom SVG illustrations and full detail pages. See [DESIGN.md](DESIGN.md) for the design direction and artwork prompt, and [ATTRIBUTION.md](ATTRIBUTION.md) for provenance.
 
-Featured work begins with EcoAudit, JanSamadhan, and RailMind. Project cards link to `/projects/[slug]`, where the full original descriptions, engineering challenges, tech stacks, and links are retained. Two cards use genuine demo thumbnails; the other covers are illustrations until preferred screenshots are available. The compact toolkit uses technologies already documented in the projects. Client recommendations are curated separately from public open-source review excerpts, with source links and expandable full text where supplied.
+The previous reference-based design was committed as `da506ae` before the redesign. The copied banner and reference UI components have been removed. Existing GitHub data, Cal.com booking, résumé/PDF URLs, AWS pages, redirects, analytics and endorsements remain connected.
+
+The keyboard index opens with its button or Cmd/Ctrl+K, supports search and arrow keys, and closes with Escape. Disclosure lists remain native controls; motion respects reduced-motion preferences. Featured work begins with EcoAudit, JanSamadhan and RailMind.
+
+This checkout is `noir-site`, separate from the workspace's `portfolio-site` copy and résumé drafts. For a preview alongside another checkout, use `npm run dev -- --port 3002`.
 
 ## Environment
 
