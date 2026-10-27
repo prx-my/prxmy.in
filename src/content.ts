@@ -58,6 +58,7 @@ export type School = {
 
 export const profile = {
   name: "Prakhar Gupta",
+  brand: "prxmy",
   role: "Backend & Full-Stack Developer",
   site: "https://www.prxmy.in",
   initials: "PG",
@@ -178,6 +179,7 @@ export const experience: Experience[] = [
     ],
     links: [
       { label: "Aces Marine & Salvage", href: "https://aces-marine.vercel.app" },
+      { label: "T&J Waterfront Services", href: "https://tjwaterfrontservices.com/" },
       { label: "Grace Electric", href: "https://graceelectric-blond.vercel.app" },
       { label: "Hot Tub Solutions", href: "https://hottubsolutions.vercel.app" },
       { label: "schrader.co", href: "https://schrader.co" },

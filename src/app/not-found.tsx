@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { TextButton, WebLines } from "@/components/noir-details";
+import { Wordmark } from "@/components/wordmark";
 
 export const metadata: Metadata = {
   title: "Page not found · Prakhar Gupta",
@@ -13,7 +14,7 @@ export default function NotFound() {
   return (
     <div className="noir-page lost-page">
       <header className="page-width noir-masthead">
-        <Link href="/" className="noir-wordmark" aria-label="Prakhar Gupta, home">PG<span>.</span></Link>
+        <Link href="/" className="noir-wordmark" aria-label="prxmy — Prakhar Gupta, home"><Wordmark /></Link>
         <ThemeToggle />
       </header>
       <main className="page-width lost-layout">

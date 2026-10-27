@@ -1,18 +1,17 @@
 import { getVisitorStats } from "@/lib/visitors";
-
-function date(value: string) {
-  return new Date(value).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
-}
+import { VisitStamp } from "@/components/visit-stamp";
 
 export async function VisitorCounter() {
   const { snapshot } = await getVisitorStats();
   return (
-    <aside className="page-width visitor-strip" aria-label="Portfolio visitor count">
-      <div>
-        <p className="eyebrow visitor-kicker"><span aria-hidden="true">✦</span> The plot thickens</p>
-        <p className="visitor-total"><strong>{snapshot.visitors.toLocaleString("en-US")}</strong><span>curious minds have<br/>followed the trail.</span></p>
+    <section id="farewell" className="page-width visitor-farewell" aria-labelledby="farewell-heading">
+      <div className="farewell-copy">
+        <p className="eyebrow farewell-kicker"><span aria-hidden="true">✦</span> Before you go</p>
+        <h2 id="farewell-heading">Glad our paths<br/><em>crossed.</em></h2>
+        <p>Thanks for spending a little time in my corner of the internet.</p>
+        <p className="farewell-count"><strong>{snapshot.visitors.toLocaleString("en-US")}</strong><span>curious {snapshot.visitors === 1 ? "mind has" : "minds have"} passed this way.</span></p>
       </div>
-      <p className="visitor-source">Recorded visitors since {date(snapshot.from)}.<br/>Vercel Analytics · counted through <time dateTime={snapshot.through}>{date(snapshot.through)}</time>.</p>
-    </aside>
+      <VisitStamp />
+    </section>
   );
 }
