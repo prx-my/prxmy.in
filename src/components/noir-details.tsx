@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
-export function SectionTitle({ number, title, note }: { number: string; title: string; note?: string }) {
-  return <div className="noir-section-heading"><p className="eyebrow"><span>{number}</span> / {note ?? "The portfolio"}</p><h2>{title}<span>.</span></h2></div>;
+export function SectionTitle({ title }: { title: string }) {
+  return <div className="noir-section-heading"><h2>{title}<span>.</span></h2></div>;
 }
 
 export function WebLines({ className="" }: { className?: string }) {

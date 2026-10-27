@@ -7,6 +7,7 @@ This is a developer's portfolio with a 1930s detective/newspaper/comic sensibili
 - Warm ivory paper, ink black, aged beige, and deliberate vermilion red. Red marks actions, section punctuation and emphasis.
 - Bodoni is the nameplate; Newsreader supplies editorial headlines and quotations; Geist keeps body copy clear; monospace labels carry dates and small metadata.
 - Headlines and body copy must have a visible hierarchy. Main text should not shrink to fit more decoration.
+- Use the shared type scale: 16px body, 14px supporting copy, 13px compact controls, 12px metadata, and 18px small headings. Preserve these sizes at smaller breakpoints; rearrange the layout instead of shrinking text. Large serif headings and the nameplate provide the comic/editorial hierarchy.
 - Double rules, figure captions, numbered case files, line illustrations and small web details provide the newspaper/comic character.
 - Large black sections interrupt the paper rhythm. Avoid repeating identical light cards for every section.
 - Project illustrations are original explanatory compositions, not mock screenshots or invented product data.

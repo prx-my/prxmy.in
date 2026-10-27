@@ -120,7 +120,7 @@ export const portfolio = {
   index: [
     { label: "About", href: "#about" },
     { label: "Experience", href: "#experience" },
-    { label: "Selected work", href: "#projects" },
+    { label: "Projects", href: "#projects" },
     { label: "Open source", href: "#open-source" },
     { label: "GitHub activity", href: "#activity" },
     { label: "Recognition", href: "#wins" },

@@ -14,7 +14,6 @@ export function NoirProjects({ items }: { items: Project[] }) {
             <span className="case-category">{project.slug === "ecoaudit" ? "Developer tools" : project.slug === "railmind" ? "Decision support" : project.slug === "oracle-academy" ? "Developer tools" : "Civic technology"}</span>
           </div>
           <div className="case-copy">
-            <span className="eyebrow case-index">Selected work / {String(index+1).padStart(2,"0")}</span>
             <h3><Link href={`/projects/${project.slug}`}>{project.name}<span aria-hidden="true">↗</span></Link></h3>
             {project.badge && <p className="case-badge">{project.badge}</p>}
             <p className="case-description">{project.summary}</p>

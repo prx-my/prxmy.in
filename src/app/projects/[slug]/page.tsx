@@ -29,7 +29,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   return (
     <main className="project-detail-page">
       <header><Link href="/#projects" className="link">← All projects</Link><ThemeToggle /></header>
-      <p className="eyebrow">Selected work / {project.year}</p>
+      <p className="eyebrow">{project.year}</p>
       <h1>{project.name}<span>.</span></h1>
       {project.badge && <p className="detail-badge">{project.badge}</p>}
       <div className="detail-preview"><ProjectVisual slug={project.slug}/></div>
