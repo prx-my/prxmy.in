@@ -7,7 +7,7 @@ const slugs = new Set(projects.map((project) => project.slug));
 // stream a 200 before the page's notFound() runs. Answer it with a real 404 here.
 export function proxy(request: NextRequest) {
   const slug = request.nextUrl.pathname.split("/")[2];
-  if (!slugs.has(slug)) return NextResponse.rewrite(new URL("/404", request.url));
+  if (!slugs.has(slug)) return NextResponse.rewrite(new URL("/404", request.url), { status: 404 });
 }
 
 export const config = { matcher: "/projects/:slug" };

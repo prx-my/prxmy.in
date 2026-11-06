@@ -91,6 +91,7 @@ npm run lint
 npm test
 npm run build
 ```
+updated
 
 Tests cover date boundaries and leap years, calendar coverage, true count fields, PR pagination and ordering, private/unmerged PR filtering, API errors, and last-known-good fallbacks.
 
