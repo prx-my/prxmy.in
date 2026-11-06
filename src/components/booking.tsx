@@ -34,7 +34,7 @@ const currentLocalDate = () => localDate(new Date());
 
 const chip = (active: boolean) =>
   [
-    "booking-choice border px-3 py-2 text-sm transition-colors",
+    "rounded-md border px-3 py-2 text-sm transition-colors",
     "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink",
     "disabled:cursor-not-allowed disabled:opacity-40",
     active
@@ -43,7 +43,7 @@ const chip = (active: boolean) =>
   ].join(" ");
 
 const field =
-  "booking-field border border-line bg-ivory px-3 py-2 text-sm text-ink outline-none transition-colors placeholder:text-faint focus:border-ink";
+  "rounded-md border border-line bg-ivory px-3 py-2 text-sm text-ink outline-none transition-colors placeholder:text-faint focus:border-ink";
 
 export function Booking() {
   const timeZone = useSyncExternalStore(subscribeToNothing, currentTimeZone, serverSnapshot);
@@ -155,7 +155,6 @@ export function Booking() {
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (!eventTypeId || !slot || submitting) return;
-    const website = new FormData(event.currentTarget).get("website");
 
     setSubmitting(true);
     setFormError(null);
@@ -164,7 +163,7 @@ export function Booking() {
       const res = await fetch("/api/cal/bookings", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ eventTypeId, start: slot, timeZone, name, email, notes, website }),
+        body: JSON.stringify({ eventTypeId, start: slot, timeZone, name, email, notes }),
       });
       const data: { booking?: CalBooking; error?: string } = await res.json();
 
@@ -190,7 +189,7 @@ export function Booking() {
       [booked.meetingUrl, booked.location].find((url) => url?.startsWith("http")) ?? null;
 
     return (
-      <div className="booking-confirmed border-y border-line py-8" role="status">
+      <div className="mt-10 border-y border-line py-8">
         <p className="font-mono text-xs tracking-wide text-faint uppercase">Confirmed</p>
         <h2 className="mt-3 font-serif text-3xl leading-tight tracking-tight">
           {full.format(new Date(booked.start))}
@@ -222,7 +221,7 @@ export function Booking() {
   }
 
   return (
-    <div className="booking-controls">
+    <div className="mt-10">
       {loadError && (
         <p role="alert" className="mb-6 text-sm text-muted">
           {loadError}{" "}
@@ -232,11 +231,9 @@ export function Booking() {
         </p>
       )}
 
-      {eventTypes.length === 0 && !loadError && <p role="status" className="text-sm text-muted">Loading meeting types…</p>}
-
-      {eventTypes.length > 0 && (
+      {eventTypes.length > 1 && (
         <fieldset>
-          <legend className="font-mono text-xs tracking-wide text-faint uppercase">01 / Meeting length</legend>
+          <legend className="font-mono text-xs tracking-wide text-faint uppercase">Length</legend>
           <div className="mt-3 flex flex-wrap gap-2">
             {eventTypes.map((type) => (
               <button
@@ -244,13 +241,10 @@ export function Booking() {
                 type="button"
                 aria-pressed={type.id === eventTypeId}
                 disabled={submitting}
-                onClick={() => {
-                  setEventTypeId(type.id);
-                  setSlot(null);
-                }}
+                onClick={() => setEventTypeId(type.id)}
                 className={chip(type.id === eventTypeId)}
               >
-                {type.title}<span className="booking-duration">{type.lengthInMinutes} min</span>
+                {type.title}
               </button>
             ))}
           </div>
@@ -258,8 +252,8 @@ export function Booking() {
       )}
 
       <div className="mt-8">
-        <p className="font-mono text-xs tracking-wide text-faint uppercase">02 / Choose a date</p>
-        <ul className="booking-dates mt-3" aria-label="Available dates in the next two weeks">
+        <p className="font-mono text-xs tracking-wide text-faint uppercase">Date</p>
+        <ul className="-mx-1 mt-3 flex gap-1 overflow-x-auto pb-1">
           {!ready && <li className="text-sm text-faint">Loading availability…</li>}
           {ready &&
             days.map((candidate) => {
@@ -275,13 +269,13 @@ export function Booking() {
                       setDay(candidate);
                       setSlot(null);
                     }}
-                    className={`${chip(candidate === day)} w-full px-0 text-center leading-tight`}
+                    className={`${chip(candidate === day)} w-14 px-0 text-center leading-tight`}
                   >
-                    <span className="block text-xs tracking-wide uppercase">
+                    <span className="block text-[0.65rem] tracking-wide uppercase">
                       {weekday.format(date)}
                     </span>
                     <span className="block text-base">{dayOfMonth.format(date)}</span>
-                    <span className="booking-date-month block text-xs uppercase">
+                    <span className="block text-[0.65rem] uppercase text-faint">
                       {monthShort.format(date)}
                     </span>
                   </button>
@@ -291,18 +285,18 @@ export function Booking() {
         </ul>
       </div>
 
-      <div className="mt-8" aria-live="polite" aria-busy={slotsLoading}>
+      <div className="mt-8">
         <p className="font-mono text-xs tracking-wide text-faint uppercase">
-          03 / Choose a time{timeZone && <span className="normal-case"> · {timeZone.replace(/_/g, " ")}</span>}
+          Time{timeZone && <span className="normal-case"> · {timeZone.replace(/_/g, " ")}</span>}
         </p>
         {slotsLoading ? (
           <p className="mt-3 text-sm text-faint">Checking…</p>
         ) : slotsError ? (
           <p role="alert" className="mt-3 text-sm text-muted">
-            {slotsError}{" "}<button type="button" className="link" onClick={() => setReload((count) => count + 1)}>Try again</button>
+            {slotsError}
           </p>
         ) : daySlots.length === 0 ? (
-          <p className="mt-3 text-sm text-muted">{days.some((candidate) => (slots[candidate]?.length ?? 0) > 0) ? "No times available on this date. Please choose another day." : copy.empty}</p>
+          <p className="mt-3 text-sm text-muted">{copy.empty}</p>
         ) : (
           <ul className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-4">
             {daySlots.map((option) => (
@@ -362,19 +356,11 @@ export function Booking() {
           />
         </label>
 
-        {/* Honeypot: hidden from people and assistive tech, filled in by form bots. */}
-        <div aria-hidden="true" className="absolute -left-[9999px] size-px overflow-hidden">
-          <label>
-            Website
-            <input name="website" tabIndex={-1} autoComplete="off" defaultValue="" />
-          </label>
-        </div>
-
         <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
           <button
             type="submit"
             disabled={!slot || submitting}
-            className="noir-button noir-button-red booking-submit disabled:cursor-not-allowed disabled:opacity-40"
+            className="rounded-md border border-ink bg-ink px-4 py-2 text-sm text-ivory transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
           >
             {submitting
               ? "Booking…"

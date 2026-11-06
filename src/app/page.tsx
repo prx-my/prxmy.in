@@ -1,93 +1,184 @@
-import type { Metadata } from "next";
-import { cacheLife } from "next/cache";
-import { about, booking, education, experience, feedback, openSource, portfolio, profile, projects, toolkit, wins } from "@/content";
-import { getGitHubData } from "@/lib/github";
-import { QuickNavigation } from "@/components/quick-navigation";
-import { ThemeToggle } from "@/components/theme-toggle";
-import { NoirProjects } from "@/components/noir-projects";
-import { SectionTitle, TextButton, WebLines } from "@/components/noir-details";
-import { Arrow, ExtLink } from "@/components/ui";
+import { AwsLogo } from "@/components/aws-logo";
+import { Scribble } from "@/components/scribble";
 import { OpenSource } from "@/components/open-source";
-import { GitHubActivity } from "@/components/github-activity";
-import { Feedback } from "@/components/feedback";
-import { VisitorCounter } from "@/components/visitor-counter";
-import { homeStructuredData, serializeJsonLd } from "@/lib/structured-data";
-import { Wordmark } from "@/components/wordmark";
-import { ComicHero } from "@/components/comic-hero";
+import { Projects } from "@/components/projects";
+import { Arrow, ExtLink, Section } from "@/components/ui";
+import {
+  about,
+  booking,
+  education,
+  experience,
+  openSource,
+  profile,
+  projects,
+  wins,
+} from "@/content";
 
-export const metadata: Metadata = { alternates: { canonical: "/" } };
-
-export default async function Home() {
-  "use cache";
-  cacheLife({ stale: 300, revalidate: 3600, expire: 86400 });
-  const github = await getGitHubData();
-
+export default function Home() {
   return (
-    <div className="noir-page">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(homeStructuredData()) }} />
-      <a href="#main" className="skip-link">Skip to content</a>
-      <header className="noir-header page-width">
-        <div className="noir-masthead">
-          <a className="noir-wordmark" href="#main" aria-label="prxmy — Prakhar Gupta, home"><Wordmark /></a>
-          <nav aria-label="Main navigation"><a href="#projects">The work</a><a href="#about">About</a><a href="#open-source">Open source</a><a href="#contact">Contact</a></nav>
-          <div className="masthead-tools"><QuickNavigation items={portfolio.index}/><ThemeToggle/></div>
+    <main className="mx-auto max-w-[680px] px-6 pt-20 pb-28 sm:pt-28">
+      <header className="flex flex-col-reverse gap-6 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <h1 className="font-serif text-5xl leading-none tracking-tight">{profile.name}</h1>
+          <p className="mt-4 max-w-md text-lg leading-snug text-muted">{profile.tagline}</p>
+          <p className="mt-5 text-sm text-muted">
+            <span className="mr-2 font-mono text-xs tracking-wide text-faint uppercase">Now</span>
+            {profile.now}
+          </p>
+          <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            <li>
+              <ExtLink href={`mailto:${profile.email}`}>{profile.email}</ExtLink>
+            </li>
+            {profile.links.map((l) => (
+              <li key={l.label}>
+                <ExtLink href={l.href}>
+                  {l.label}
+                  <Arrow />
+                </ExtLink>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <a
+              href="/resume"
+              className="group relative inline-flex items-center gap-1 self-center text-sm font-medium"
+            >
+              Resume <span aria-hidden className="text-faint">↗</span>
+              <Scribble />
+            </a>
+            <a
+              href="/aws~env"
+              aria-label="Open the aws~env page"
+              className="group relative inline-flex items-center gap-2 opacity-80 transition-opacity hover:opacity-100 focus-visible:opacity-100"
+            >
+              <AwsLogo small />
+              <Scribble flip />
+              <span
+                aria-hidden
+                className="text-faint transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-ink"
+              >
+                ↗
+              </span>
+            </a>
+            <a
+              href="/book"
+              className="group inline-flex items-center gap-1 text-sm text-muted transition-colors hover:text-ink focus-visible:text-ink"
+            >
+              {booking.navLabel}
+              <span
+                aria-hidden
+                className="text-faint transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-ink"
+              >
+                ↗
+              </span>
+            </a>
+          </div>
+        </div>
+        <div
+          aria-hidden
+          className="flex size-24 shrink-0 items-center justify-center rounded-full border border-line bg-beige font-serif text-4xl tracking-tight select-none sm:size-28 sm:text-[2.6rem]"
+        >
+          {profile.initials}
         </div>
       </header>
-      <main id="main">
-        <ComicHero />
 
-        <div className="work-wire page-width" aria-label="Work overview">
-          <a href="#experience"><span>01</span><div><strong>Client work</strong><p>Currently at Schrader</p></div><span aria-hidden="true">↗</span></a>
-          <a href="#open-source"><span>02</span><div><strong>Open source</strong><p>OWASP · Sugar Labs · FaceGate</p></div><span aria-hidden="true">↗</span></a>
-          <a href="#projects"><span>03</span><div><strong>Independent builds</strong><p>Tools with a job to do</p></div><span aria-hidden="true">↗</span></a>
+      <Section id="about" title="About">
+        <div className="flex flex-col gap-4 leading-relaxed">
+          {about.map((p) => (
+            <p key={p}>{p}</p>
+          ))}
         </div>
+      </Section>
 
-        <section id="projects" className="noir-section page-width" aria-labelledby="projects-heading">
-          <div id="projects-heading"><SectionTitle title="Projects"/></div>
-          <NoirProjects items={projects}/>
-        </section>
-
-        <section id="about" className="noir-section page-width about-section" aria-labelledby="about-heading">
-          <div id="about-heading"><SectionTitle title="About"/></div>
-          <div className="about-layout">
-            <p className="about-lead">{profile.tagline}</p>
-            <div className="about-body">{about.map(paragraph=><p key={paragraph}>{paragraph}</p>)}<p className="now-note"><span>On the desk</span>{profile.now}</p></div>
-          </div>
-          <div className="toolkit-strip">{toolkit.map(group=><div key={group.label}><h3>{group.label}</h3><p>{group.items.join(" · ")}</p></div>)}</div>
-        </section>
-
-        <section id="experience" className="noir-section page-width" aria-labelledby="experience-heading">
-          <div id="experience-heading"><SectionTitle title="Experience"/></div>
-          <div className="experience-layout">
-            <div className="experience-timeline">{experience.map(job=><article key={job.org}><p className="eyebrow job-date">{job.period}</p><h3>{job.href ? <ExtLink href={job.href}>{job.org}<Arrow/></ExtLink> : job.org}</h3><p className="job-role">{job.role}</p><p className="job-place">{job.place}</p><ul className="experience-points">{job.points.map(point=><li key={point}>{point}</li>)}</ul>{job.links && <ul className="client-links">{job.links.map(link=><li key={link.href}><ExtLink href={link.href}>{link.label}<Arrow/></ExtLink></li>)}</ul>}</article>)}</div>
-            <aside className="client-note"><span className="note-pin" aria-hidden="true"/><Feedback quote={feedback.client}/></aside>
-          </div>
-        </section>
-
-        <section id="open-source" className="ink-section noir-section" aria-labelledby="oss-heading">
-          <div className="page-width ink-inner"><div id="oss-heading"><SectionTitle title="Open source"/></div><p className="ink-intro">Security tooling. Music education. A safer desktop.<br/>A few places where I’ve left the code better.</p><div className="oss-reading"><OpenSource repos={openSource} github={github}/><Feedback quote={feedback.upstream}/></div><WebLines className="ink-web"/></div>
-        </section>
-
-        <section id="activity" className="noir-section page-width activity-section" aria-labelledby="activity-heading">
-          <div id="activity-heading"><SectionTitle title="GitHub activity"/></div>
-          <div className="activity-sheet"><div className="sheet-rule" aria-hidden="true"/><GitHubActivity github={github}/></div>
-        </section>
-
-        <div className="page-width closing-columns">
-          <section id="wins" className="noir-section" aria-labelledby="wins-heading"><div id="wins-heading"><SectionTitle title="Recognition"/></div><ul className="noir-wins">{wins.map(win=><li key={win.title}><span>{win.year}</span><div><h3>{win.title}</h3><p>{win.context}</p></div></li>)}</ul></section>
-          <section id="education" className="noir-section" aria-labelledby="education-heading"><div id="education-heading"><SectionTitle title="Education"/></div><div className="education-list">{education.map(school=><article key={school.name}><span className="eyebrow">{school.period}</span><h3>{school.name}</h3><p>{school.degree}</p><p className="education-note">{school.note} · {school.place}</p></article>)}</div></section>
+      <Section id="experience" title="Experience">
+        <div className="flex flex-col gap-8">
+          {experience.map((e) => (
+            <div key={e.org}>
+              <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                <h3 className="font-medium">
+                  {e.href ? <ExtLink href={e.href}>{e.org}</ExtLink> : e.org}
+                  <span className="font-normal text-muted">, {e.role}</span>
+                </h3>
+                <span className="font-mono text-xs text-faint">{e.period}</span>
+              </div>
+              <p className="text-sm text-faint">{e.place}</p>
+              <ul className="mt-3 flex flex-col gap-2 text-[0.95rem] leading-relaxed text-muted">
+                {e.points.map((pt) => (
+                  <li key={pt} className="relative pl-4 before:absolute before:left-0 before:content-['–']">
+                    {pt}
+                  </li>
+                ))}
+              </ul>
+              {e.links && (
+                <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+                  {e.links.map((l) => (
+                    <li key={l.href}>
+                      <ExtLink href={l.href}>
+                        {l.label}
+                        <Arrow />
+                      </ExtLink>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
         </div>
+      </Section>
 
-        <section id="contact" className="noir-contact noir-section" aria-labelledby="contact-heading">
-          <div className="page-width contact-layout">
-            <div><h2 id="contact-heading">Let’s build<br/><em>something</em><span>.</span></h2></div>
-            <div className="contact-copy"><p>{portfolio.contactIntro}</p><TextButton href="/book" variant="red">{booking.navLabel}</TextButton><ExtLink href={`mailto:${profile.email}`} className="contact-email">{profile.email}<Arrow/></ExtLink></div>
-            <WebLines className="contact-web"/>
-          </div>
-        </section>
-        <VisitorCounter />
-      </main>
-      <footer className="page-width noir-footer"><span className="footer-mark"><Wordmark /></span><p>© 2026 Prakhar Gupta · Jaipur, India</p><ul>{profile.links.map(link=><li key={link.label}><ExtLink href={link.href}>{link.label}<Arrow/></ExtLink></li>)}</ul><a href="#main" className="back-top" aria-label="Back to top">↑</a></footer>
-    </div>
+      <Section id="projects" title="Projects">
+        <Projects items={projects} />
+      </Section>
+
+      {openSource.length > 0 && (
+        <Section id="open-source" title="Open source">
+          <OpenSource repos={openSource} />
+        </Section>
+      )}
+
+      <Section id="wins" title="Recognition">
+        <ul className="divide-y divide-line border-y border-line">
+          {wins.map((w) => (
+            <li key={w.title} className="flex items-baseline justify-between gap-4 py-3">
+              <div>
+                <p>{w.href ? <ExtLink href={w.href}>{w.title}</ExtLink> : w.title}</p>
+                <p className="text-sm text-muted">{w.context}</p>
+              </div>
+              <span className="font-mono text-xs text-faint">{w.year}</span>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section id="education" title="Education">
+        <div className="flex flex-col gap-5">
+          {education.map((s) => (
+            <div key={s.name} className="flex flex-wrap items-baseline justify-between gap-x-4">
+              <div>
+                <h3 className="font-medium">{s.name}</h3>
+                <p className="text-sm text-muted">
+                  {s.degree}
+                  {s.note && <span className="text-faint"> · {s.note}</span>}
+                </p>
+              </div>
+              <span className="font-mono text-xs text-faint">{s.period}</span>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <footer className="mt-24 border-t border-line pt-10">
+        <p className="font-serif text-3xl tracking-tight">Let&apos;s build something.</p>
+        <p className="mt-3 max-w-md leading-relaxed text-muted">
+          Open to backend and full-stack internships and interesting collaborations.
+        </p>
+        <ExtLink href={`mailto:${profile.email}`} className="mt-5 inline-block text-lg">
+          {profile.email}
+        </ExtLink>
+        <p className="mt-16 font-mono text-xs text-faint">
+          © 2026 {profile.name} · {profile.location}
+        </p>
+      </footer>
+    </main>
   );
 }
