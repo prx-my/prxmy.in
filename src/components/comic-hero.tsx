@@ -11,7 +11,6 @@ export function ComicHero() {
   return (
     <section className="comic-hero page-width" aria-labelledby="hero-heading">
       <div className="comic-hero-copy">
-        <p className="eyebrow comic-page-label">{hero.pageLabel}</p>
         <h1 id="hero-heading" className="comic-name">
           <span>{first}</span> <span>{rest.join(" ")}</span>
         </h1>

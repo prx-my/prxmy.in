@@ -10,7 +10,6 @@ export default function Book() {
   return (
     <EditorialPage current="book">
       <header className="editorial-heading">
-        <p className="eyebrow">A little time. A good conversation.</p>
         <h1>Book a call<span>.</span></h1>
       </header>
       <div className="booking-layout">
@@ -31,7 +30,6 @@ export default function Book() {
         </aside>
         <section className="booking-sheet" aria-label="Choose a time and book a call">
           <div className="sheet-rule" aria-hidden="true" />
-          <div className="booking-sheet-heading"><span className="eyebrow">Your next conversation</span><span className="eyebrow">01 / Schedule</span></div>
           <Booking />
         </section>
       </div>

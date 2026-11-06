@@ -64,7 +64,6 @@ export default function AwsEnv() {
     <EditorialPage current="aws">
       <header className="editorial-heading aws-heading">
         <div>
-          <p className="eyebrow">WeMakeDevs × AWS Environmental Hacks</p>
           <h1>aws~env<span>.</span></h1>
           <p className="editorial-lead">A closer look at the cost of code.</p>
         </div>
@@ -79,7 +78,7 @@ export default function AwsEnv() {
 
       <div className="aws-layout">
         <section aria-labelledby="demo-heading" className="aws-demo">
-          <div className="editorial-section-label"><span className="eyebrow">01 / The demo</span><h2 id="demo-heading">EcoAudit</h2></div>
+          <div className="editorial-section-label"><h2 id="demo-heading">EcoAudit</h2></div>
           <figure className="aws-video">
             <div className="aws-video-frame">
               <iframe
@@ -94,7 +93,6 @@ export default function AwsEnv() {
             <figcaption><span>{awsVideo.title}</span><a href="/aws-env/video" className="link">Full screen <span aria-hidden="true">↗</span></a></figcaption>
           </figure>
           <div className="aws-project-note">
-            <p className="eyebrow">Behind the build</p>
             <p>Find the waste.<br/>Follow the evidence.</p>
             <p className="aws-project-description">{projects.find(project => project.slug === "ecoaudit")?.summary}</p>
             <div className="aws-project-links">
@@ -105,7 +103,7 @@ export default function AwsEnv() {
         </section>
 
         <nav aria-labelledby="team-heading" className="aws-team">
-          <div className="editorial-section-label"><span className="eyebrow">02 / The people</span><h2 id="team-heading">Meet the team<span>.</span></h2></div>
+          <div className="editorial-section-label"><h2 id="team-heading">Meet the team<span>.</span></h2></div>
           <p className="aws-team-intro">Four developers. One shared build.<br/>Résumés and places to find us.</p>
           <ul className="aws-team-list">
             {people.map((p, index) => (

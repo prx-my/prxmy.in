@@ -323,7 +323,6 @@ export function Booking() {
       </div>
 
       <form onSubmit={onSubmit} className="mt-10 border-t border-line pt-8">
-        <p className="eyebrow mb-5 text-muted">04 / Your details</p>
         <div className="grid gap-4 sm:grid-cols-2">
           <label className="flex flex-col gap-1.5 text-sm">
             Name

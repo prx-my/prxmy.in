@@ -19,7 +19,6 @@ export default function NotFound() {
       </header>
       <main className="page-width lost-layout">
         <div className="lost-copy">
-          <p className="eyebrow">Page not found</p>
           <h1>The trail<br/>went <em>cold.</em></h1>
           <p>This page has slipped off the map. The work is still here — let’s get you back to it.</p>
           <div className="lost-actions">
