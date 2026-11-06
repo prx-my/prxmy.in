@@ -462,3 +462,66 @@ details > summary::-webkit-details-marker { display: none; }
   .aws-footprint > div:first-child { border-top: 0; }
   .aws-footprint dd { margin-top: 4px; }
 }
+
+/* ── Comic hero: the page as a comic being made ───────────────────────────
+   Pencils (non-photo blue) → inks → one spot colour. Pencil blue is only for
+   sketch lines and margin notes; --pencil-ink is the readable text shade. */
+:root { --pencil: #8fb8d8; --pencil-ink: #3a6789; }
+.dark { --pencil: #5f8fb4; --pencil-ink: #9cc3e0; }
+@property --wipe { syntax: "<percentage>"; inherits: false; initial-value: 30%; }
+
+.comic-hero { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(0,1fr); gap: 64px; align-items: center; position: relative; padding-block: 60px 64px; }
+.comic-hero::before { content: ""; position: absolute; inset: 0 -48px; z-index: -1; pointer-events: none; background-image: linear-gradient(color-mix(in srgb,var(--pencil) 22%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--pencil) 22%,transparent) 1px,transparent 1px); background-size: 32px 32px; -webkit-mask-image: radial-gradient(ellipse 70% 80% at 40% 45%,#000 20%,transparent 75%); mask-image: radial-gradient(ellipse 70% 80% at 40% 45%,#000 20%,transparent 75%); opacity: .7; }
+.comic-hero-copy { position: relative; z-index: 2; animation: copy-arrive 600ms ease-out both; }
+.comic-page-label { color: var(--accent); }
+.comic-name { margin-top: 14px; font-family: var(--font-letter),var(--font-bodoni),Georgia,serif; font-weight: 400; font-size: clamp(64px,8vw,112px); line-height: .92; letter-spacing: .01em; text-transform: uppercase; transform: rotate(-1.2deg); transform-origin: left center; }
+.comic-name > span { display: block; }
+.comic-role { margin-top: 24px; }
+.comic-role > span { display: inline-block; padding: 7px 16px; background: #bd3328; color: #fff3df; font-family: var(--font-geist-mono),monospace; font-size: var(--text-small); letter-spacing: .1em; line-height: 1.6; text-transform: uppercase; transform: rotate(-1.5deg); box-shadow: 3px 3px 0 var(--ink); }
+.comic-intro { max-width: 480px; margin-top: 22px; font-size: var(--text-body); line-height: 1.75; color: var(--muted); }
+
+.comic-cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin-top: 30px; }
+.comic-cta { position: relative; display: inline-flex; align-items: center; justify-content: space-between; gap: 28px; min-height: 52px; padding: 14px 22px; background: var(--ink); color: var(--paper); font-family: var(--font-geist-mono),monospace; font-size: var(--text-control); letter-spacing: .09em; line-height: 1.5; text-transform: uppercase; transition: transform 170ms ease,box-shadow 170ms ease; }
+.comic-cta:hover { transform: translate(-1px,-1px); box-shadow: 4px 4px 0 var(--signal); }
+.comic-cta-border { position: absolute; inset: -6px; width: calc(100% + 12px); height: calc(100% + 12px); overflow: visible; pointer-events: none; }
+.comic-cta-border path { fill: none; stroke: var(--ink); stroke-width: 1.3; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.pencil-note { display: flex; align-items: flex-end; gap: 6px; color: var(--pencil-ink); font-family: var(--font-hand),cursive; font-size: 21px; line-height: 1.2; transform: rotate(-2deg); max-width: 240px; }
+.pencil-note svg { flex-shrink: 0; width: 44px; height: 30px; }
+.pencil-note path { fill: none; stroke: var(--pencil-ink); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.comic-secondary { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 26px; font-size: var(--text-small); line-height: 1.8; }
+.comic-secondary > span { color: var(--line); }
+.comic-secondary a { display: inline-flex; align-items: center; min-height: 36px; }
+
+.comic-panel-wrap { position: relative; width: 100%; max-width: 440px; justify-self: end; z-index: 1; animation: art-arrive 750ms ease-out both; }
+.comic-panel { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: #151411; border: 4px solid var(--ink); box-shadow: 10px 10px 0 var(--beige); transform: rotate(1.5deg); }
+.comic-panel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.comic-panel-pencil { filter: grayscale(1) invert(1) contrast(1.35) sepia(1) hue-rotate(168deg) saturate(1.7) brightness(1.06); -webkit-mask-image: linear-gradient(100deg,#000 0%,#000 var(--wipe),transparent calc(var(--wipe) + 16%)); mask-image: linear-gradient(100deg,#000 0%,#000 var(--wipe),transparent calc(var(--wipe) + 16%)); animation: ink-in 1.7s cubic-bezier(.6,.05,.3,1) .35s both; }
+.comic-focus-lines { position: absolute; inset: 0; pointer-events: none; background: repeating-conic-gradient(from 0deg at 62% 56%,rgba(242,235,220,.17) 0deg .7deg,transparent .7deg 5deg); -webkit-mask-image: radial-gradient(circle at 62% 56%,transparent 22%,#000 72%); mask-image: radial-gradient(circle at 62% 56%,transparent 22%,#000 72%); mix-blend-mode: screen; }
+.comic-rain { position: absolute; inset: 0; pointer-events: none; background-image: repeating-linear-gradient(104deg,rgba(242,235,220,.09) 0 1px,transparent 1px 12px); background-size: 120px 240px; -webkit-mask-image: linear-gradient(90deg,transparent 28%,#000 52%); mask-image: linear-gradient(90deg,transparent 28%,#000 52%); animation: comic-rain .8s linear infinite; }
+.comic-thought { position: absolute; top: 6%; right: 7%; width: 32%; overflow: visible; animation: comic-pop 420ms cubic-bezier(.3,1.6,.5,1) 1.5s both; transform-origin: 20% 100%; }
+.comic-thought .cloud-outline { fill: #151411; }
+.comic-thought .cloud-fill { fill: #f2ebdc; }
+.comic-thought .cloud-dots { fill: #151411; }
+.comic-burst { position: absolute; bottom: 5%; right: 6%; width: 22%; overflow: visible; transform: rotate(-8deg); animation: comic-pop 380ms cubic-bezier(.3,1.6,.5,1) 1.8s both; }
+.comic-burst polygon { fill: #bd3328; stroke: #151411; stroke-width: 3; stroke-linejoin: round; }
+.comic-panel-edge { position: absolute; inset: 8px; border: 1px solid #f2ebdc35; pointer-events: none; }
+.comic-panel-wrap figcaption { display: flex; justify-content: space-between; gap: 14px; padding-top: 20px; font-family: var(--font-geist-mono),monospace; font-size: var(--text-meta); line-height: 1.8; color: var(--muted); }
+.comic-panel-wrap figcaption > span:first-child { color: var(--accent); text-transform: uppercase; }
+
+@keyframes ink-in { from { --wipe: 110%; } to { --wipe: 30%; } }
+@keyframes comic-pop { from { opacity: 0; scale: .6; } to { opacity: 1; scale: 1; } }
+@keyframes comic-rain { to { background-position: -60px 240px; } }
+
+@media (max-width:1100px) {
+  .comic-hero { gap: 44px; padding-block: 48px; }
+}
+@media (max-width:800px) {
+  .comic-hero { grid-template-columns: minmax(0,1fr); gap: 48px; padding-block: 38px 44px; }
+  .comic-hero::before { inset: 0 -24px; }
+  .comic-name { font-size: clamp(52px,15vw,100px); }
+  .comic-panel-wrap { justify-self: center; max-width: 440px; }
+}
+@media (max-width:420px) {
+  .comic-cta { width: 100%; }
+  .pencil-note { font-size: 20px; }
+}

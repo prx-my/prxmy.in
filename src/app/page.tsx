@@ -13,6 +13,7 @@ import { Feedback } from "@/components/feedback";
 import { VisitorCounter } from "@/components/visitor-counter";
 import { homeStructuredData, serializeJsonLd } from "@/lib/structured-data";
 import { Wordmark } from "@/components/wordmark";
+import { ComicHero } from "@/components/comic-hero";
 
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 
@@ -33,16 +34,7 @@ export default async function Home() {
         </div>
       </header>
       <main id="main">
-        <section className="noir-hero page-width" aria-labelledby="hero-heading">
-          <div className="hero-copy">
-            <h1 id="hero-heading"><span>Prakhar</span>{" "}<span>Gupta</span></h1>
-            <p className="hero-role">{profile.role}</p>
-            <div className="hero-buttons"><TextButton href="#projects" variant="red">View the work</TextButton><TextButton href="/resume" variant="outline">Résumé</TextButton></div>
-            <div className="hero-secondary"><a href="/book" className="link">{booking.navLabel}<Arrow/></a><span aria-hidden="true">/</span><a href="/aws~env" className="link">The AWS project<Arrow/></a></div>
-            <ul className="hero-social-links">{profile.links.map(link=><li key={link.label}><ExtLink href={link.href}>{link.label}<Arrow/></ExtLink></li>)}</ul>
-          </div>
-          <WebLines className="hero-web"/>
-        </section>
+        <ComicHero />
 
         <div className="work-wire page-width" aria-label="Work overview">
           <a href="#experience"><span>01</span><div><strong>Client work</strong><p>Currently at Schrader</p></div><span aria-hidden="true">↗</span></a>

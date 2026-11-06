@@ -76,6 +76,16 @@ export const profile = {
   ] satisfies Link[],
 };
 
+// Homepage splash copy. The page is framed as a comic being made.
+export const hero = {
+  pageLabel: "Page 01 · Panel 1",
+  intro: profile.summary,
+  cta: "Pitch me a story",
+  ctaNote: "30 min, no slides — bring the problem",
+  figLabel: "Fig. 01",
+  figCaption: "Curiosity doesn’t clock out.",
+};
+
 export const booking = {
   navLabel: "Book a call",
   eyebrow: "Booking",

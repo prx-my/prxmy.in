@@ -19,7 +19,18 @@ This is a developer's portfolio with a 1930s detective/newspaper/comic sensibili
 
 ## Secondary pages
 
-`/book` and `/aws~env` use a shared editorial masthead and footer, with the same theme control, Bodoni headlines, red punctuation, and ruled sections as the homepage. Booking keeps the Cal.com flow in a paper scheduling sheet with a two-week date grid, meeting durations, and a short booking guide. The AWS page frames the EcoAudit demo beside a numbered team directory, with an energy/carbon/water strip and project/source links; mobile stacks the sections. The homepage hero uses a single text column without the Night Shift illustration.
+`/book` and `/aws~env` use a shared editorial masthead and footer, with the same theme control, Bodoni headlines, red punctuation, and ruled sections as the homepage. Booking keeps the Cal.com flow in a paper scheduling sheet with a two-week date grid, meeting durations, and a short booking guide. The AWS page frames the EcoAudit demo beside a numbered team directory, with an energy/carbon/water strip and project/source links; mobile stacks the sections.
+
+## Comic-making layer (redesign/comic-noir)
+
+The page is framed as a comic being made: pencils → inks → one spot colour, the same way a product moves from sketch to shipped.
+
+- Non-photo blue (`--pencil` for lines, `--pencil-ink` for readable text) is a fifth colour, used only for sketch lines, the art-board grid and handwritten margin notes. Never for body copy or actions.
+- Labels speak the metaphor: "Page 01 · Panel 1", figure captions, credits.
+- The hero name is hand-lettered (Permanent Marker, `--font-letter`); margin notes are handwritten (Caveat, `--font-hand`). The `prxmy.` wordmark stays Bodoni.
+- The hero art panel arrives as blue pencils and is inked in on load; the left edge stays unfinished on purpose. A thought cloud and a red burst pop in after the ink. All of it is still with reduced motion.
+- Comic effects (focus lines, rain, thought clouds, bursts) are CSS or inline SVG and are used to point at something, not as wallpaper.
+- Copy for the hero lives in `hero` in `src/content.ts`.
 
 ## Original artwork
 
