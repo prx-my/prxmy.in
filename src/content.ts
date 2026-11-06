@@ -76,9 +76,17 @@ export const profile = {
   ] satisfies Link[],
 };
 
+// Homepage splash copy. The page is framed as a comic being made.
+export const hero = {
+  intro: profile.summary,
+  cta: "Pitch me a story",
+  ctaNote: "30 min, no slides — bring the problem",
+  figLabel: "Fig. 01",
+  figCaption: "Curiosity doesn’t clock out.",
+};
+
 export const booking = {
   navLabel: "Book a call",
-  eyebrow: "Booking",
   headline: "Book a call",
   intro:
     "Pick a slot and it lands on my calendar with a Google Meet link. I'm in Jaipur, so times are shown in yours.",
@@ -145,7 +153,6 @@ export const toolkit = [
 // the GitHub excerpt was checked against the linked public discussion.
 export const feedback = {
   client: {
-    label: "From a client",
     excerpt: "He’s reliable, communicates well, and consistently delivers quality work on time.",
     author: "Bret Schrader",
     context: "Owner, Schrader Web Solutions · Client recommendation",
@@ -157,7 +164,6 @@ export const feedback = {
     ],
   },
   upstream: {
-    label: "From an open-source reviewer",
     excerpt: "Thanks, and the work has been consistently good.",
     author: "@sonukapoor",
     context: "OWASP/cve-lite-cli · Public feedback on PR #1202",

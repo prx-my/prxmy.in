@@ -1,7 +1,6 @@
 import { Arrow, ExtLink } from "./ui";
 
 export type FeedbackQuote = {
-  label: string;
   excerpt: string;
   author: string;
   context: string;
@@ -13,7 +12,6 @@ export type FeedbackQuote = {
 export function Feedback({ quote }: { quote: FeedbackQuote }) {
   return (
     <figure className="feedback-quote">
-      <p className="eyebrow">{quote.label}</p>
       <blockquote cite={quote.href}><p>“{quote.excerpt}”</p></blockquote>
       <figcaption>
         <ExtLink href={quote.href}>{quote.author}<Arrow /></ExtLink>

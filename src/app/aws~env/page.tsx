@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { EditorialPage } from "@/components/editorial-page";
 import { AwsLogo } from "@/components/aws-logo";
 import { SocialIcon, type SocialKind } from "@/components/social-icon";
-import { awsVideo } from "@/content";
+import { awsVideo, projects } from "@/content";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = {
@@ -59,66 +61,66 @@ const order: SocialKind[] = ["github", "linkedin", "x", "email"];
 
 export default function AwsEnv() {
   return (
-    <main className="mx-auto max-w-5xl px-6 pt-16 pb-24 sm:pt-24">
-      <header className="flex flex-col-reverse gap-6 sm:flex-row sm:items-end sm:justify-between">
+    <EditorialPage current="aws">
+      <header className="editorial-heading aws-heading">
         <div>
-          <p className="font-mono text-xs tracking-wide text-faint uppercase">Preview</p>
-          <h1 className="mt-3 font-serif text-5xl leading-none tracking-tight">aws~env</h1>
+          <h1>aws~env<span>.</span></h1>
+          <p className="editorial-lead">A closer look at the cost of code.</p>
         </div>
         <AwsLogo />
       </header>
 
-      <div className="mt-10 grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-12">
-      <div>
-        <div className="aspect-video w-full overflow-hidden rounded-lg border border-line bg-beige">
-          <iframe
-            src={`https://www.youtube-nocookie.com/embed/${awsVideo.id}`}
-            title={awsVideo.title}
-            loading="lazy"
-            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-            allowFullScreen
-            referrerPolicy="strict-origin-when-cross-origin"
-            className="size-full"
-          />
-        </div>
-        <p className="mt-3 text-sm">
-          <a
-            href="/aws-env/video"
-            className="link text-muted transition-colors hover:text-ink focus-visible:text-ink"
-          >
-            Full screen <span aria-hidden className="text-faint">↗</span>
-          </a>
-        </p>
-      </div>
+      <dl className="aws-footprint" aria-label="Environmental footprint categories">
+        <div><dt>01 / Energy</dt><dd>Compute has a cost.</dd></div>
+        <div><dt>02 / Carbon</dt><dd>Make emissions visible.</dd></div>
+        <div><dt>03 / Water</dt><dd>Look beyond the code.</dd></div>
+      </dl>
 
-      <nav aria-label="People" className="min-w-0">
-        <ul className="divide-y divide-line border-y border-line">
-          {people.map((p) => (
-            <li
-              key={p.name}
-              className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-2.5"
-            >
-              <a
-                href={p.href}
-                className="link text-muted transition-colors hover:text-ink focus-visible:text-ink"
-              >
-                {p.name} <span aria-hidden className="text-faint">↗</span>
-              </a>
-              <ul className="-mr-1 flex items-center">
-                {order.map(
-                  (k) =>
-                    p.socials[k] && (
-                      <li key={k}>
-                        <SocialIcon kind={k} href={p.socials[k]!} person={p.name} />
-                      </li>
-                    ),
-                )}
-              </ul>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <div className="aws-layout">
+        <section aria-labelledby="demo-heading" className="aws-demo">
+          <div className="editorial-section-label"><h2 id="demo-heading">EcoAudit</h2></div>
+          <figure className="aws-video">
+            <div className="aws-video-frame">
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${awsVideo.id}`}
+                title={awsVideo.title}
+                loading="lazy"
+                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
+              />
+            </div>
+            <figcaption><span>{awsVideo.title}</span><a href="/aws-env/video" className="link">Full screen <span aria-hidden="true">↗</span></a></figcaption>
+          </figure>
+          <div className="aws-project-note">
+            <p>Find the waste.<br/>Follow the evidence.</p>
+            <p className="aws-project-description">{projects.find(project => project.slug === "ecoaudit")?.summary}</p>
+            <div className="aws-project-links">
+              <Link href="/projects/ecoaudit" className="noir-button noir-button-red">Explore the project ↗</Link>
+              <a href="https://github.com/AWS-env/environmental-hacks" target="_blank" rel="noopener noreferrer" className="link">View source ↗</a>
+            </div>
+          </div>
+        </section>
+
+        <nav aria-labelledby="team-heading" className="aws-team">
+          <div className="editorial-section-label"><h2 id="team-heading">Meet the team<span>.</span></h2></div>
+          <p className="aws-team-intro">Four developers. One shared build.<br/>Résumés and places to find us.</p>
+          <ul className="aws-team-list">
+            {people.map((p, index) => (
+              <li key={p.name}>
+                <span className="eyebrow team-number">0{index + 1}</span>
+                <div>
+                  <a href={p.href} className="team-name link">{p.name} <span aria-hidden="true">↗</span></a>
+                  <p className="team-resume">View résumé</p>
+                  <ul className="team-socials" aria-label={`${p.name}'s links`}>
+                    {order.map((k) => p.socials[k] && <li key={k}><SocialIcon kind={k} href={p.socials[k]!} person={p.name} /></li>)}
+                  </ul>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
-    </main>
+    </EditorialPage>
   );
 }

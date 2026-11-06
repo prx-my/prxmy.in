@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { cacheLife } from "next/cache";
 import { about, booking, education, experience, feedback, openSource, portfolio, profile, projects, toolkit, wins } from "@/content";
 import { getGitHubData } from "@/lib/github";
@@ -14,6 +13,7 @@ import { Feedback } from "@/components/feedback";
 import { VisitorCounter } from "@/components/visitor-counter";
 import { homeStructuredData, serializeJsonLd } from "@/lib/structured-data";
 import { Wordmark } from "@/components/wordmark";
+import { ComicHero } from "@/components/comic-hero";
 
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 
@@ -34,21 +34,7 @@ export default async function Home() {
         </div>
       </header>
       <main id="main">
-        <section className="noir-hero page-width" aria-labelledby="hero-heading">
-          <div className="hero-copy">
-            <h1 id="hero-heading"><span>Prakhar</span>{" "}<span>Gupta</span></h1>
-            <p className="hero-role">{profile.role}</p>
-            <div className="hero-buttons"><TextButton href="#projects" variant="red">View the work</TextButton><TextButton href="/resume" variant="outline">Résumé</TextButton></div>
-            <div className="hero-secondary"><a href="/book" className="link">{booking.navLabel}<Arrow/></a><span aria-hidden="true">/</span><a href="/aws~env" className="link">The AWS project<Arrow/></a></div>
-            <ul className="hero-social-links">{profile.links.map(link=><li key={link.label}><ExtLink href={link.href}>{link.label}<Arrow/></ExtLink></li>)}</ul>
-          </div>
-          <figure className="hero-illustration">
-            <div className="hero-art-frame"><Image src="/art/the-night-shift.webp" alt="Original noir illustration: a detective at a desk, studying diagrams under a red lamp" width={1000} height={1250} priority sizes="(min-width: 1100px) 420px, (min-width: 720px) 40vw, calc(100vw - 64px)"/><div className="hero-art-edge" aria-hidden="true"/></div>
-            <span className="hero-art-tag">The night shift</span>
-            <figcaption><span>Fig. 01</span><span>Curiosity doesn’t clock out.</span></figcaption>
-          </figure>
-          <WebLines className="hero-web"/>
-        </section>
+        <ComicHero />
 
         <div className="work-wire page-width" aria-label="Work overview">
           <a href="#experience"><span>01</span><div><strong>Client work</strong><p>Currently at Schrader</p></div><span aria-hidden="true">↗</span></a>

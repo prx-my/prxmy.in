@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Booking } from "@/components/booking";
+import { EditorialPage } from "@/components/editorial-page";
 import { booking, profile } from "@/content";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -8,18 +8,31 @@ export const metadata: Metadata = pageMetadata({ title: booking.navLabel, descri
 
 export default function Book() {
   return (
-    <main className="mx-auto max-w-[680px] px-6 pt-20 pb-28 sm:pt-28">
-      <p className="font-mono text-xs tracking-wide text-faint uppercase">{booking.eyebrow}</p>
-      <h1 className="mt-3 font-serif text-5xl leading-none tracking-tight">{booking.headline}</h1>
-      <p className="mt-4 max-w-md text-lg leading-snug text-muted">{booking.intro}</p>
-
-      <Booking />
-
-      <footer className="mt-20 border-t border-line pt-6 font-mono text-xs text-faint">
-        <Link href="/" className="link">
-          ← {profile.name}
-        </Link>
-      </footer>
-    </main>
+    <EditorialPage current="book">
+      <header className="editorial-heading">
+        <h1>Book a call<span>.</span></h1>
+      </header>
+      <div className="booking-layout">
+        <aside className="booking-intro">
+          <p className="editorial-lead">Let’s put something<br/>on the calendar.</p>
+          <p>{booking.intro}</p>
+          <ol className="booking-guide" aria-label="How booking works">
+            <li><span>01</span>Choose a meeting length.</li>
+            <li><span>02</span>Find a date and time.</li>
+            <li><span>03</span>Leave your details. You’re booked.</li>
+          </ol>
+          <dl className="meeting-facts">
+            <div><dt>With</dt><dd>{profile.name}</dd></div>
+            <div><dt>Where</dt><dd>Google Meet</dd></div>
+            <div><dt>Time zone</dt><dd>Shown in your local time</dd></div>
+          </dl>
+          <p className="booking-email">Prefer a note?<br/><a href={`mailto:${profile.email}`} className="link">{profile.email} ↗</a></p>
+        </aside>
+        <section className="booking-sheet" aria-label="Choose a time and book a call">
+          <div className="sheet-rule" aria-hidden="true" />
+          <Booking />
+        </section>
+      </div>
+    </EditorialPage>
   );
 }
