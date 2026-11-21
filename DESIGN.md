@@ -19,7 +19,9 @@ This is a developer's portfolio with a 1930s detective/newspaper/comic sensibili
 
 ## Secondary pages
 
-`/book` and `/aws~env` use a shared editorial masthead and footer, with the same theme control, Bodoni headlines, red punctuation, and ruled sections as the homepage. Booking keeps the Cal.com flow in a paper scheduling sheet with a two-week date grid, meeting durations, and a short booking guide. The AWS page frames the EcoAudit demo beside a numbered team directory, with an energy/carbon/water strip and project/source links; mobile stacks the sections.
+`/book` uses the portfolio's shared editorial masthead and footer, theme control, Bodoni headlines, red punctuation, and ruled sections. Booking keeps the Cal.com flow in a paper scheduling sheet with a two-week date grid, meeting durations, and a short booking guide.
+
+`/ecoaudit` is an independent EcoAudit team project brief. It pairs a Newsreader headline with Geist body text on an off-white surface. The desktop grid pairs the project overview with the playable demo, then research with the team directory. Smaller screens stack those sections in that order. See `src/app/ecoaudit/DESIGN.md` for route-specific guidance.
 
 ## The Prxmy Files (redesign/comic-noir)
 

@@ -264,7 +264,7 @@ export function ProjectRack() {
                     ? "Winner · India Innovates ’26"
                     : project.slug === "leafline"
                       ? "1st place · InnovateNSUT ’26"
-                      : "WeMakeDevs × AWS Environmental Hacks"}
+                      : "Campus to Cloud Hackathon · Techfest, IIT Bombay"}
                 </p>
               )}
               <ul

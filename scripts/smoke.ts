@@ -84,7 +84,7 @@ for (const path of [`/projects/missing-${nonce}`, `/projects/missing-${nonce}/in
   check((await get(path)).status === 404, `${path} should return 404`);
 }
 
-for (const path of ["/aws~env", "/aws-env/video"]) {
+for (const path of ["/ecoaudit", "/ecoaudit/video"]) {
   const response = await get(path);
   check(response.status === 200, `${path} should return 200`);
   const html = await response.text();

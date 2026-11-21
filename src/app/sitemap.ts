@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { profile, projects } from "@/content";
 
-// Only indexable pages belong here. /aws~env and /aws-env/video are noindex.
+// Only indexable pages belong here. /ecoaudit and /ecoaudit/video are noindex.
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: profile.site, changeFrequency: "monthly", priority: 1 },

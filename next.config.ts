@@ -46,7 +46,10 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: "/llm.txt", destination: "/llms.txt", permanent: true },
-      { source: "/aws~env/video", destination: "/aws-env/video", permanent: false },
+      { source: "/aws~env", destination: "/ecoaudit", permanent: true },
+      { source: "/aws~env/video", destination: "/ecoaudit/video", permanent: true },
+      { source: "/aws-env/video", destination: "/ecoaudit/video", permanent: true },
+      { source: "/aws~env/icon.svg", destination: "/ecoaudit/icon.svg", permanent: true },
       { source: "/aws~env/shrey-resume.pdf", destination: "/shrey/resume.pdf", permanent: false },
       { source: "/aws~env/shreyas-resume.pdf", destination: "/shreyas/resume.pdf", permanent: false },
       // www is the canonical host (see metadataBase in src/app/layout.tsx).

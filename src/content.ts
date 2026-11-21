@@ -73,7 +73,7 @@ export const profile = {
   availability: "Open to full-time roles & freelance projects",
   summary:
     "Backend and full-stack developer from Jaipur. Web developer at Schrader, contributor to OWASP and Sugar Labs, and winner of the India Innovates '26 grand finale.",
-  now: "Writing compute-waste detectors at WeMakeDevs × AWS Environmental Hacks. Fixing bugs in OWASP cve-lite-cli.",
+  now: "Writing compute-waste detectors for EcoAudit. Fixing bugs in OWASP cve-lite-cli.",
   email: "prakhar06.work@gmail.com",
   links: [
     { label: "GitHub", href: "https://github.com/prx-my" },
@@ -162,7 +162,7 @@ export const portfolio = {
     { label: "Letters (contact)", href: "/#letters" },
     { label: "Résumé", href: "/resume" },
     { label: "Book a call", href: "/book" },
-    { label: "AWS project", href: "/aws~env" },
+    { label: "AWS project", href: "/ecoaudit" },
     { label: "GitHub profile", href: "https://github.com/prx-my" },
   ] satisfies Link[],
 };
@@ -228,14 +228,14 @@ export const projects: Project[] = [
     myPart: "Wrote 45 of the ~120 detectors and the AWS scan API.",
     preview: "/portfolio/ecoaudit.jpg",
     year: "2026",
-    badge: "WeMakeDevs × AWS Environmental Hacks · in progress",
+    badge: "Campus to Cloud Hackathon · Techfest, IIT Bombay · Sponsored by AWS",
     summary:
       "Clones any public repo and reports code, infra, logging and LLM patterns that waste compute, with the exact line as evidence. I wrote 45 of its ~120 detectors and the AWS scan API.",
     hardPart:
       "Proving waste from static evidence alone, never running the scanned code, and making detectors written in Python and TypeScript by four people pass one shared contract.",
     stack: ["Python", "TypeScript", "AWS Lambda", "API Gateway", "S3", "Next.js"],
     links: [
-      { label: "Demo", href: "/aws-env/video" },
+      { label: "Demo", href: "/ecoaudit/video" },
       { label: "Source", href: "https://github.com/AWS-env/environmental-hacks" },
     ],
   },

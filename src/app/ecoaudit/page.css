@@ -1,0 +1,135 @@
+.eco-page {
+  --eco-bg: #fafaf8;
+  --eco-text: #171717;
+  --eco-secondary: #525252;
+  --eco-line: #deded9;
+  --eco-accent: #171717;
+  --eco-accent-hover: #333333;
+  --eco-on-accent: #ffffff;
+  min-height: 100vh;
+  background: var(--eco-bg);
+  color: var(--eco-text);
+  color-scheme: light;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.eco-page ::selection { background: var(--eco-accent); color: var(--eco-on-accent); }
+.eco-page a { text-underline-offset: 4px; transition: color 160ms ease, background-color 160ms ease; }
+.eco-page a:hover { color: var(--eco-accent); }
+.eco-page a:focus-visible { outline: 2px solid var(--eco-accent); outline-offset: 4px; }
+.eco-page [id] { scroll-margin-top: 24px; }
+.eco-width { width: min(1200px, calc(100% - 96px)); margin-inline: auto; }
+.eco-skip { position: fixed; z-index: 100; left: 12px; top: 12px; padding: 12px 20px; color: var(--eco-bg); background: var(--eco-text); transform: translateY(-180%); }
+.eco-skip:focus { transform: translateY(0); }
+.eco-masthead { min-height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--eco-line); }
+.eco-brand { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 22px; font-weight: 600; letter-spacing: -.025em; white-space: nowrap; }
+.eco-brand img { flex-shrink: 0; }
+.eco-navigation { display: flex; align-items: center; gap: 24px; font-size: 14px; color: var(--eco-secondary); }
+.eco-navigation > a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; }
+.eco-navigation > a:hover { text-decoration: underline; }
+.eco-page .eco-navAction { position: relative; padding: 8px 14px; min-height: 36px; border: 1px solid #888884; border-radius: 4px; background: transparent; color: var(--eco-text); font-size: 13px; line-height: 18px; font-weight: 500; }
+.eco-navAction::before { content: ""; position: absolute; inset: -4px 0; }
+.eco-page .eco-navAction:hover { background: #efefeb; color: var(--eco-text); text-decoration: none; }
+.eco-opening { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; column-gap: 64px; row-gap: 28px; padding-block: 40px; }
+.eco-summary h1 { max-width: 410px; font-size: 48px; font-weight: 600; line-height: 1.05; letter-spacing: -.025em; text-wrap: balance; }
+.eco-description { margin-top: 12px; max-width: 58ch; color: var(--eco-secondary); font-size: 16px; }
+.eco-principles { margin-top: 8px; font-size: 14px; }
+.eco-principles strong { font-weight: 600; }
+.eco-inputIntro { margin-top: 16px; font-size: 14px; font-weight: 600; }
+.eco-analysis { margin-top: 12px; font-size: 14px; color: var(--eco-secondary); }
+.eco-inputs { list-style: none; display: grid; gap: 6px; padding: 0; margin-top: 8px; }
+.eco-inputs li { font-size: 14px; }
+.eco-inputs strong { font-weight: 600; }
+.eco-inputs span { color: var(--eco-secondary); }
+.eco-local { display: inline-flex; align-items: center; min-height: 36px; padding-inline: 6px; color: var(--eco-secondary); font-size: 13px; text-decoration: underline; }
+.eco-primary { position: relative; display: inline-flex; justify-content: center; align-items: center; min-height: 36px; padding: 8px 14px; margin-top: 24px; border: 1px solid #888884; border-radius: 4px; background: transparent; color: var(--eco-text); font-size: 13px; line-height: 18px; font-weight: 500; }
+.eco-primary::before { content: ""; position: absolute; inset: -4px 0; }
+.eco-page .eco-primary:hover { background: #efefeb; color: var(--eco-text); }
+.eco-projectLinks { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; margin-top: 16px; }
+.eco-projectLinks .eco-primary { margin-top: 0; }
+.eco-hackathon span { display: block; margin-top: 4px; }
+.eco-sectionHeading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+.eco-sectionHeading h2, .eco-team > h2 { font-size: 22px; line-height: 1.3; font-weight: 600; letter-spacing: -.02em; }
+.eco-fullScreen { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; color: var(--eco-secondary); text-decoration: underline; }
+.eco-video { overflow: hidden; aspect-ratio: 16 / 9; border-radius: 8px; background: #171717; }
+.eco-video iframe { display: block; width: 100%; height: 100%; border: 0; }
+.eco-team, .eco-research { display: flex; flex-direction: column; align-self: stretch; border-top: 1px solid var(--eco-line); padding-top: 20px; }
+.eco-people { list-style: none; margin-top: 8px; }
+.eco-people > li { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: 16px; min-height: 48px; border-bottom: 1px solid var(--eco-line); }
+.eco-people > li:last-child { border-bottom: 0; }
+.eco-people h3 { display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; white-space: nowrap; }
+.eco-people h3 img { width: 24px; height: 24px; flex-shrink: 0; object-fit: contain; }
+.eco-personLinks { display: contents; }
+.eco-personLinks a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; color: var(--eco-secondary); }
+.eco-profileActions { display: flex; align-items: center; gap: 12px; }
+.eco-profileActions a { color: var(--eco-text); font-size: 13px; text-decoration: underline; text-decoration-color: #888884; }
+.eco-profileActions a:hover, .eco-profileActions a:focus-visible { text-decoration-color: currentColor; }
+.eco-contactLinks { display: flex; align-items: center; }
+.eco-contactLinks a { width: 44px; height: 44px; justify-content: center; flex-shrink: 0; border-radius: 4px; }
+.eco-contactLinks a:hover { background: #efefeb; }
+.eco-contactLinks svg { width: 16px; height: 16px; }
+.eco-research > h2 { font-size: 22px; line-height: 1.3; font-weight: 600; letter-spacing: -.02em; }
+.eco-researchEntries { margin-top: 8px; list-style: none; }
+.eco-researchEntries li + li { border-top: 1px solid var(--eco-line); }
+.eco-researchEntries a { display: grid; grid-template-columns: 24px minmax(0, 1fr) 112px; align-items: start; gap: 12px; padding-block: 12px; }
+.eco-sourceArxiv { --eco-source: #b31b1b; }
+.eco-sourceMit { --eco-source: #750014; }
+.eco-sourceIcon { width: 24px; height: 24px; color: var(--eco-source); }
+.eco-researchPreview { position: relative; align-self: center; display: block; aspect-ratio: 3 / 2; overflow: hidden; border: 1px solid var(--eco-line); border-radius: 4px; background: white; }
+.eco-researchPreview img { object-fit: cover; }
+.eco-paperPreview img { object-position: center top; }
+.eco-sourceArrow { position: absolute; right: 3px; bottom: 3px; width: 19px; height: 19px; padding: 2px; border-radius: 2px; color: var(--eco-text); background: var(--eco-bg); }
+.eco-sourceLabel { display: block; color: var(--eco-source); font-size: 12px; font-weight: 600; }
+.eco-researchTitle { display: block; font-size: 16px; font-weight: 600; }
+.eco-researchNote { display: block; margin-top: 2px; color: var(--eco-secondary); font-size: 13px; line-height: 20px; }
+.eco-previewCredit { display: block; margin-top: 2px; color: var(--eco-secondary); font-size: 11px; }
+.eco-researchEntries a:is(:hover, :focus-visible) .eco-researchTitle { text-decoration: underline; }
+.eco-footer { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; border-top: 1px solid var(--eco-line); padding-block: 24px; font-size: 12px; color: var(--eco-secondary); }
+.eco-footer a { text-decoration: underline; }
+@media (width > 1100px) {
+  .eco-people, .eco-researchEntries { display: grid; flex: 1; grid-auto-rows: 1fr; }
+  .eco-researchEntries a { height: 100%; align-content: center; }
+}
+@media (max-width: 1100px) {
+  .eco-width { width: min(760px, calc(100% - 64px)); }
+  .eco-opening { grid-template-columns: minmax(0, 1fr); row-gap: 32px; }
+}
+@media (max-width: 760px) {
+  .eco-width { width: calc(100% - 40px); }
+  .eco-masthead { position: relative; min-height: 68px; flex-wrap: wrap; gap: 0 16px; padding-top: 12px; }
+  .eco-navigation { width: 100%; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-top: 8px; padding-bottom: 12px; font-size: 14px; }
+  .eco-page .eco-navAction { position: absolute; right: 0; top: 14px; padding-inline: 12px; }
+  .eco-opening { grid-template-columns: 1fr; grid-template-rows: auto; gap: 32px; padding-block: 32px; }
+  .eco-summary h1 { font-size: clamp(34px, 10vw, 40px); }
+  .eco-description { font-size: 16px; }
+  .eco-sectionHeading h2, .eco-team > h2, .eco-research > h2 { font-size: 20px; }
+  .eco-sectionHeading { margin-bottom: 8px; }
+  .eco-researchEntries a { grid-template-columns: 18px minmax(0, 1fr) 76px; gap: 8px; }
+  .eco-sourceIcon { width: 18px; height: 18px; }
+  .eco-people > li { gap: 0 8px; }
+  .eco-people h3 { gap: 6px; font-size: 14px; }
+  .eco-people h3 img { width: 20px; height: 20px; }
+  .eco-profileActions { gap: 8px; }
+  .eco-profileActions a { font-size: 12px; }
+  .eco-contactLinks a { width: 29px; }
+}
+@media (max-width: 359px) {
+  .eco-people > li { grid-template-columns: minmax(0, 1fr) auto; }
+  .eco-contactLinks { grid-column: 2; justify-content: flex-end; }
+  .eco-contactLinks a { min-height: 32px; height: 32px; }
+}
+@media (forced-colors: none) {
+  html:has(.eco-page) {
+    scrollbar-width: thin;
+    scrollbar-color: #888884 #fafaf8;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html:has(.eco-page) { scroll-behavior: smooth; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html:has(.eco-page) { scroll-behavior: auto; }
+  .eco-page a { transition: none; }
+}
